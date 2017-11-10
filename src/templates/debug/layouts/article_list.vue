@@ -28,6 +28,13 @@
 
 <script>
   import pagination from '../components/pagination.vue'
-  import ArticleList from 'scripts/article_list'
-  export default ArticleList(pagination)
+  import { defaultData, defaultMounted, getPosts } from 'scripts/article_list'
+  import formatDate from 'plugins/format_date'
+  export default {
+    data: defaultData,
+    mounted: defaultMounted,
+    methods: { getPosts },
+    filters: { formatDate },
+    components: { pagination }
+  }
 </script>
