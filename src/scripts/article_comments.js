@@ -12,9 +12,8 @@ export default pagination => {
         ready: false,
         commentContent: '',
         commentPosting: false,
-        uid: currentUser,
-        luoguAddress: luoguAddress,
-        picAddress: picAddress
+        BlogGlobals,
+        uid: BlogGlobals.currentUser
       }
     },
     mounted: function () {
@@ -26,7 +25,7 @@ export default pagination => {
       async getComments (page) {
         this.page = page
         this.ready = false
-        const response = await axios.get('/api/blog/replies/' + blogID, {
+        const response = await axios.get('/api/blog/replies/' + this.BlogGlobals.blogID, {
           params: {
             page: page
           }
@@ -39,7 +38,7 @@ export default pagination => {
       },
       async postComment () {
         this.commentPosting = true
-        await axios.post('/api/blog/reply/' + blogID, {
+        await axios.post('/api/blog/reply/' + this.BlogGlobals.blogID, {
           content: this.commentContent
         })
         this.commentContent = ''

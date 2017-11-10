@@ -18,13 +18,13 @@
     <div v-if="ready">
       <div class="comment" v-for="comment in comments">
         <a class="avatar"
-           :href="luoguAddress +'/space/show?uid=' + comment.Author.UID"
+           :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
            target="_blank">
-          <img :src="picAddress + '/upload/usericon/' + comment.Author.UID + '.png'">
+          <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'">
         </a>
         <div class="content">
           <a class="author"
-             :href="luoguAddress + '/space/show?uid=' + comment.Author.UID"
+             :href="BlogGlobals.luoguAddress + '/space/show?uid=' + comment.Author.UID"
              target="_blank">
             {{ comment.Author.Username }}
           </a>

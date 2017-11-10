@@ -9,7 +9,7 @@
     "__disabled_dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build-dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "lint": "standard"
+    "lint": "standard --global BlogGlobals"
   },
   "dependencies": {
     "axios": "^0.17.0",

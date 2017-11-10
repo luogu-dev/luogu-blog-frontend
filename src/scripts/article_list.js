@@ -9,7 +9,8 @@ export default pagination => {
         posts: [],
         page: 1,
         totalPages: 1,
-        ready: false
+        ready: false,
+        uid: BlogGlobals.currentUser
       }
     },
     mounted () {
@@ -23,8 +24,8 @@ export default pagination => {
         this.ready = false
         const response = await axios.get('/api/blog/lists', {
           params: {
-            uid: blogUID,
-            page: page
+            uid: this.uid,
+            page
           }
         })
         this.postCount = response.data.data.count

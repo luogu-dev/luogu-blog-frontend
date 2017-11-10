@@ -3,9 +3,10 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      vote: vote,
-      thumbUp: thumbUp,
-      uid: currentUser
+      vote: BlogGlobals.vote,
+      thumbUp: BlogGlobals.thumbUp,
+      uid: BlogGlobals.currentUser,
+      BlogGlobals
     }
   },
   methods: {
@@ -14,7 +15,7 @@ export default {
 
       if (voteType === 1 && this.vote === 0) { this.thumbUp-- } else if (voteType === 1 && this.vote === 1) { this.thumbUp++ }
 
-      await axios.post('/api/blog/vote/' + blogID, {
+      await axios.post('/api/blog/vote/' + this.BlogGlobals.blogID, {
         Type: this.vote
       })
     }
