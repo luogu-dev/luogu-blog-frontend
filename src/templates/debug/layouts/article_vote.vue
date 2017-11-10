@@ -26,10 +26,10 @@
     data: defaultData,
     computed: {
       canVoteUp() {
-        return this.vote, this.checkCanVote(1)
+        return this.checkCanVote(1)
       },
       canVoteDown() {
-        return this.vote, this.checkCanVote(-1)
+        return this.checkCanVote(-1)
       }
     },
     methods: {
