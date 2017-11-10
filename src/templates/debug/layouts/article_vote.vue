@@ -13,7 +13,7 @@
     </div>
     <div class="or"></div>
     <button class="ui button"
-            :class="{ disabled: !uid || (vote !== 0 && vote !== -1), active: vote == -1 }"
+            :class="{ disabled: !uid || (vote !== 0 && vote !== -1), active: vote === -1 }"
             @click="performVote(-1)">
       <i class="thumbs down icon"></i> <span :hidden="vote !== -1">取消</span>踩
     </button>

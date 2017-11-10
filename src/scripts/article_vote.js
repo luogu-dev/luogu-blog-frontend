@@ -11,7 +11,7 @@ export default {
   methods: {
     async performVote(voteType) {
       if(voteType === this.vote)
-        this.vote = -1;
+        this.vote = 0;
       else
         this.vote = voteType;
 
