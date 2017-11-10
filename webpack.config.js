@@ -1,7 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 
-var themeName = process.env.THEME || "debug"
+var themeName = process.env.THEME || 'debug'
 
 module.exports = {
   entry: {

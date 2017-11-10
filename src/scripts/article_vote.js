@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default {
-  data() {
+  data () {
     return {
       vote: vote,
       thumbUp: thumbUp,
@@ -9,20 +9,14 @@ export default {
     }
   },
   methods: {
-    async performVote(voteType) {
-      if(voteType === this.vote)
-        this.vote = 0;
-      else
-        this.vote = voteType;
+    async performVote (voteType) {
+      if (voteType === this.vote) { this.vote = 0 } else { this.vote = voteType }
 
-      if(voteType === 1 && this.vote === 0)
-        this.thumbUp--;
-      else if(voteType === 1 && this.vote === 1)
-        this.thumbUp++;
+      if (voteType === 1 && this.vote === 0) { this.thumbUp-- } else if (voteType === 1 && this.vote === 1) { this.thumbUp++ }
 
-      await axios.post("/api/blog/vote/" + blogID, {
+      await axios.post('/api/blog/vote/' + blogID, {
         Type: this.vote
-      });
+      })
     }
   }
 }
