@@ -21,6 +21,6 @@
 </template>
 
 <script>
-  import ArticleVote from '../../../scripts/article_vote.js'
+  import ArticleVote from 'scripts/article_vote'
   export default ArticleVote
 </script>

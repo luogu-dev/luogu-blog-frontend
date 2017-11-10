@@ -28,6 +28,6 @@
 
 <script>
   import pagination from '../components/pagination.vue'
-  import ArticleList from '../../../scripts/article_list'
+  import ArticleList from 'scripts/article_list'
   export default ArticleList(pagination)
 </script>

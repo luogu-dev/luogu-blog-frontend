@@ -50,7 +50,7 @@
 
 <script>
   import pagination from '../components/pagination.vue'
-  import ArticleComments from '../../../scripts/article_comments'
+  import ArticleComments from 'scripts/article_comments'
   export default ArticleComments(pagination)
 </script>
 
