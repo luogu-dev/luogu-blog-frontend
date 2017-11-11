@@ -6,7 +6,7 @@
           </button>
           <div class="mdui-fab-dial">
               <button class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-red"
-                      @click="performVote(0)"
+                      @click="performVote(vote)"
                       :hidden="vote == 0" v-if="uid"><i class="mdui-icon material-icons">cancel</i></button>
               <button class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-red"
                       :class="{ disabled: !uid || (vote !== 0 && vote !== 1) }"
@@ -34,6 +34,16 @@
       },
       canVoteDown () {
         return this.checkCanVote(-1)
+      }
+    },
+    watch: {
+      thumbUp: function (newthumbUp) {
+        BlogGlobals.thumbUp = newthumbUp
+        BlogGlobals.vote = this.vote
+      },
+      vote: function (newVote) {
+        BlogGlobals.vote = newVote
+        BlogGlobals.thumbUp = this.thumbUp
       }
     },
     methods: {
