@@ -25,16 +25,16 @@
   export default {
     data: defaultData,
     computed: {
-      canVoteUp() {
+      canVoteUp () {
         return this.checkCanVote(1)
       },
-      canVoteDown() {
+      canVoteDown () {
         return this.checkCanVote(-1)
       }
     },
     methods: {
       performVote,
-      checkCanVote(voteType) {
+      checkCanVote (voteType) {
         // Must be logged in, and either not voted,
         // or voted the same voteType,
         // (in which case triggers un-vote)

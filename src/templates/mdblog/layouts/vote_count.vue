@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import {defaultData} from 'scripts/article_vote'
+  import { defaultData } from 'scripts/article_vote'
   export default {
     data: defaultData,
     computed: {},
