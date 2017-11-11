@@ -29,13 +29,13 @@
 </template>
 
 <script>
-  import { defaultData, defaultMounted, getComments, postComment } from 'scripts/article_comments'
-  import formatDate from 'plugins/format_date'
-  export default {
-    data: defaultData,
-    mounted: defaultMounted,
-    methods: { getComments, postComment },
-    filters: { formatDate },
-    components: { pagination }
-  }
+import { defaultData, defaultMounted, getComments, postComment } from 'scripts/article_comments'
+import formatDate from 'plugins/format_date'
+export default {
+  data: defaultData,
+  mounted: defaultMounted,
+  methods: { getComments, postComment },
+  filters: { formatDate },
+  components: { pagination }
+}
 </script>

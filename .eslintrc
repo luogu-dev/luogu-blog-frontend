@@ -1,0 +1,13 @@
+{
+  "extends": ["standard"],
+  "plugins": ["html"],
+  "rules": {
+  },
+  "globals": {
+    "BlogGlobals": false
+  },
+  "env": {
+    "browser": true
+  },
+  "parser": "babel-eslint"
+}
