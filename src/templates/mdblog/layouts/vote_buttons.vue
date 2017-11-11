@@ -18,9 +18,10 @@
                       :hidden="vote != 0" v-if="uid"><i class="mdui-icon material-icons">thumb_down</i></button>
               <a class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-orange" href="#blog-comments"> <i class="mdui-icon material-icons">chat</i></a>
               <a class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue"
-                 href="/blog/post_edit/BlogGlobals.blogID" v-if="BlogGlobals.isAuthor"><i class="mdui-icon material-icons">edit</i></a>
+                 :href="'/blog/post_edit/' + BlogGlobals.blogID" v-if="BlogGlobals.isAuthor"><i class="mdui-icon material-icons">edit</i></a>
           </div>
       </div>
+
 </template>
 
 <script>
