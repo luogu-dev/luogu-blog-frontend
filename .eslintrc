@@ -3,6 +3,10 @@
   "plugins": ["html"],
   "rules": {
   },
+  "settings": {
+    "html/indent": "+2",
+    "html/report-bad-indent": "error"
+  },
   "globals": {
     "BlogGlobals": false
   },
