@@ -14,12 +14,7 @@
           <p>{{ post.ContentDescription }}</p>
         </div>
       </div>
-      <div class="ui segment" v-else>
-        <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
-        <div class="ui active inverted dimmer">
-          <div class="ui text loader"></div>
-        </div>
-      </div>
+      <loader v-else></loader>
     </div>
 
     <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getPosts"></pagination>
@@ -28,6 +23,7 @@
 
 <script>
   import pagination from '../components/pagination.vue'
+  import loader from '../components/loader.vue'
   import { defaultData, defaultMounted, getPosts } from 'scripts/article_list'
   import formatDate from 'plugins/format_date'
   export default {
@@ -35,6 +31,6 @@
     mounted: defaultMounted,
     methods: { getPosts },
     filters: { formatDate },
-    components: { pagination }
+    components: { pagination, loader }
   }
 </script>

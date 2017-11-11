@@ -39,17 +39,13 @@
 
       <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getComments"></pagination>
     </div>
-    <div class="ui segment" v-else>
-      <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
-      <div class="ui active inverted dimmer">
-        <div class="ui text loader"></div>
-      </div>
-    </div>
+    <loader v-else></loader>
   </div>
 </template>
 
 <script>
   import pagination from '../components/pagination.vue'
+  import loader from '../components/loader.vue'
   import { defaultData, defaultMounted, getComments, postComment } from 'scripts/article_comments'
   import formatDate from 'plugins/format_date'
   export default {
@@ -57,7 +53,7 @@
     mounted: defaultMounted,
     methods: { getComments, postComment },
     filters: { formatDate },
-    components: { pagination }
+    components: { pagination, loader }
   }
 </script>
 
