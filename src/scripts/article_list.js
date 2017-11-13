@@ -22,7 +22,7 @@ export async function getPosts (page) {
   this.ready = false
   const response = await axios.get('/api/blog/lists', {
     params: {
-      uid: this.blogID,
+      uid: BlogGlobals.blogUID,
       page
     }
   })
