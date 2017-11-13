@@ -1,4 +1,33 @@
 import axios from 'axios'
+import { renderMathInElement } from 'katex'
+
+export function initKatex () {
+  renderMathInElement(document.getElementById('article-content'), {
+    delimiters: [
+      {
+        left: '$$',
+        right: '$$',
+        display: true
+      },
+      {
+        left: '$',
+        right: '$',
+        display: false
+      },
+      {
+        left: '\\[',
+        right: '\\]',
+        display: true
+      },
+      {
+        left: '\\(',
+        right: '\\)',
+        display: false
+      }
+    ],
+    throwOnError: false
+  })
+}
 
 export function defaultData () {
   return {

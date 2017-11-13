@@ -43,34 +43,8 @@ Vote::includeConstants();
 @endsection
 
 @section('scripts')
-    <script src="/js/katex.min.js"></script>
     <script src="/js/auto-render.min.js"></script>
     <script>
-        renderMathInElement(document.getElementById("article-content"), {
-            delimiters: [
-                {
-                    left: "$$",
-                    right: "$$",
-                    display: true
-                },
-                {
-                    left: "$",
-                    right: "$",
-                    display: false
-                },
-                {
-                    left: "\\[",
-                    right: "\\]",
-                    display: true
-                },
-                {
-                    left: "\\(",
-                    right: "\\)",
-                    display: false
-                }
-            ],
-            throwOnError: false
-        });
         var blogContainer = document.getElementById("blog-container");
         BlogGlobals.blogID = parseInt(blogContainer.getAttribute("data-blogid"));
         BlogGlobals.vote = parseInt(blogContainer.getAttribute("data-vote"));
