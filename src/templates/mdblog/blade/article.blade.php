@@ -43,7 +43,6 @@ Vote::includeConstants();
 @endsection
 
 @section('scripts')
-    <script src="/js/katex.min.js"></script>
     <script src="/js/auto-render.min.js"></script>
     <script>
         var blogContainer = document.getElementById("blog-container");
