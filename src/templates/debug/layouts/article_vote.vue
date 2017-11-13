@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import { defaultData, performVote } from 'scripts/article_vote'
+  import { defaultData, performVote } from 'scripts/article'
   export default {
     data: defaultData,
     computed: {
