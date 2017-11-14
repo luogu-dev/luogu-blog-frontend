@@ -6,7 +6,6 @@
   "license": "AGPL",
   "private": true,
   "scripts": {
-    "__disabled_dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build-dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "lint": "eslint --ext .js,.vue src/",
