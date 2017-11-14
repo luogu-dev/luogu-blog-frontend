@@ -30,6 +30,8 @@ const registerPartials = (theme, page) => {
   partials.forEach(({name, partial}) => Handlebars.registerPartial(name, partial))
 }
 
+const compileTmpl = theme => Handlebars.compile(fs.readFileSync(path.resolve(__dirname, '..', 'templates', theme, 'handlebars', 'template.hbs'), 'utf8'))
+
 const app = express()
 
 app.use('/js/blog/', express.static(path.resolve(__dirname, '..', '..', 'dist')))
@@ -38,8 +40,12 @@ app.get('/favicon.ico', (req, res) => res.sendStatus(404))
 
 app.get('/:theme/', (req, res) => {
   registerPartials(req.params.theme, 'index')
-  const tmpl = Handlebars.compile(fs.readFileSync(path.resolve(__dirname, '..', 'templates', req.params.theme, 'handlebars', 'template.hbs'), 'utf8'))
-  res.send(tmpl())
+  res.send(compileTmpl(req.params.theme)({ isBlogAdmin: req.query.isAdmin }))
+})
+
+app.get('/:theme/:articleId', (req, res) => {
+  registerPartials(req.params.theme, 'article')
+  res.send(compileTmpl(req.params.theme)(Object.assign(require('./fakepost')(), { isBlogAdmin: req.query.isAdmin })))
 })
 
 app.listen(process.env.PORT || 3000, () => console.log(`Preview server is running at http://localhost:${process.env.PORT || 3000}`))

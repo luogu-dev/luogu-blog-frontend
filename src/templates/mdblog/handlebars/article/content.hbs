@@ -1,0 +1,26 @@
+<div id="blog-container"
+     data-blogid="{{ postID }}"
+     data-vote="{{ userVote }}"
+     data-thumbUp="{{ postThumbUp }}">
+    <div class="mdblog-article-container mdui-shadow-2 mdui-hoverable">
+        <div class="mdui-typo-display-1-opacity">{{ postTitle }}</div>
+        <br>
+        <div style="margin-bottom: 8px;">
+            <div class="mdui-typo-caption-opacity  mdblog-article-time mdui-float-left">{{ postTime }}</div>
+            <div id="vote-count"></div>
+        </div>
+        <br>
+        <div class="mdui-typo"><hr/></div>
+        <div class="mdui-typo mdblog-article-content" id="article-content">
+            {{{ postContent }}}
+        </div>
+    </div>
+
+    <div id="blog-comments"></div>
+
+    <div id="vote-buttons"></div>
+
+</div>
+
+<link rel="stylesheet" href="/css/katex.min.css"/>
+
