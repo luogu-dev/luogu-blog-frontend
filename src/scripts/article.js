@@ -1,8 +1,8 @@
 import axios from 'axios'
-import { renderMathInElement } from 'katex'
+import katexAutoRender from 'plugins/katex'
 
 export function initKatex () {
-  renderMathInElement(document.getElementById('article-content'), {
+  katexAutoRender(document.getElementById('article-content'), {
     delimiters: [
       {
         left: '$$',
