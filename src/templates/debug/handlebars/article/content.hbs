@@ -13,12 +13,11 @@
     </div>
     <p>
         <i class="wait icon"></i>{{ postTime }}
-        {{#isBlogAdmin}}
+        {{#if isBlogAdmin}}
             &emsp;
             <a href="/blog/post_edit/{{ postID }}">编辑</a>
-        {{/isBlogAdmin}}
+        {{/if}}
     </p>
 
     <div id="article-comments"></div>
 </div>
-<link rel="stylesheet" href="/css/katex.min.css"/>
