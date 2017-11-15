@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="hola-html-reset hola-var">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>{{ title }} - {{ blogName }}</title>
+  <meta name="blog-uid" content="{{ blogUID }}">
+  <meta name="blog-name" content="{{ blogName }}">
+  <meta name="current-user" content="{{ currentUser }}">
+  {{>styles}}
+</head>
+<body class="hola-body-typography hola-grey-bg">
+<header class="hola-navbar hola-navbar-transparent hola-navbar-darkbg hola-navbar-with-hero">
+  <div class="hola-container">
+    <nav class="hola-navbar-main">
+      <a href="/" class="hola-navbar-brand">{{ blogName }}</a>
+    </nav>
+    <nav class="hola-navbar-sub">
+      <a href="">文章</a>
+    </nav>
+  </div>
+</header>
+<div class="hola-hero hola-hero-height-extended">
+  <div class="hola-container hola-hero-content">
+    <h1>{{ blogName }}</h1>
+    <p>{{ blogSubtitle }}</p>
+  </div>
+</div>
+{{>content}}
+<script>
+  var BlogGlobals = {
+    blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+    blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+    currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+    luoguAddress: '{{ luoguAddress }}',
+    picAddress: '{{ picAddress }}'
+  }
+</script>
+{{>scripts}}
+<footer class="hola-footer">
+  <div class="hola-container">
+    <p>Copyright 2017 Team ¡Hola!.</p>
+    <p>This project is hosted on <a href="https://github.com/teamhola/holakit">GitHub</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -15,9 +15,12 @@
   "dependencies": {
     "axios": "^0.17.0",
     "babel-polyfill": "^6.26.0",
+    "holakit": "^0.10.0",
+    "jquery": "^3.2.1",
     "katex": "^0.9.0-alpha1",
     "moment": "^2.19.1",
     "moment-timezone": "^0.5.14",
+    "semantic-ui": "^2.2.13",
     "vue": "^2.4.4"
   },
   "browserslist": [
@@ -43,6 +46,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "express": "^4.16.2",
     "express-hbs": "^1.0.4",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.4",
     "handlebars": "^4.0.11",
     "vue-loader": "^13.0.5",
