@@ -31,3 +31,19 @@ export async function getPosts (page) {
   this.posts = response.data.data.result
   this.ready = true
 }
+
+export async function getWaterfallPosts (page) {
+  if (!this.ready || this.page === this.totalPages) return
+  this.page = page
+  this.ready = false
+  const response = await axios.get('/api/blog/lists', {
+    params: {
+      uid: BlogGlobals.blogUID,
+      page
+    }
+  })
+  this.postCount = response.data.data.count
+  this.totalPages = 1 + parseInt((this.postCount - 1) / 10)
+  this.posts = this.posts.concat(response.data.data.result)
+  this.ready = true
+}

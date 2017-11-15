@@ -14,12 +14,31 @@
 </template>
 
 <script>
-  import { defaultData, defaultMounted, getPosts } from 'scripts/article_list'
+  import { defaultData, getPosts, getWaterfallPosts } from 'scripts/article_list'
   import formatDate from 'plugins/format_date'
   export default {
-    data: defaultData,
-    mounted: defaultMounted,
-    methods: { getPosts },
+    data () {
+      let data = defaultData()
+      data.lastScroll = 0
+      return data
+    },
+    mounted () {
+      this.$nextTick(function () {
+        this.getPosts(this.page)
+        
+        window.addEventListener('scroll', () => {
+          const maxHeight = window.document.body.offsetHeight - window.innerHeight
+
+          if (maxHeight - 230 <= window.scrollY && window.scrollY > this.lastScroll && this.ready && this.page !== this.totalPages) {
+            console.log('getPost')
+            this.getWaterfallPosts(this.page + 1)
+          }
+
+          this.lastScroll = window.scrollY
+        })
+      })
+    },
+    methods: { getPosts, getWaterfallPosts },
     filters: { formatDate },
     components: { }
   }
