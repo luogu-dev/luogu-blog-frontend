@@ -10,7 +10,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "lint": "eslint --ext .js,.vue src/",
     "lint-fix": "eslint --ext .js,.vue --fix src/",
-    "dev": "npm run build && node src/devserver/index.js"
+    "dev": "npm run build-dev && node src/devserver/index.js"
   },
   "dependencies": {
     "axios": "^0.17.0",
