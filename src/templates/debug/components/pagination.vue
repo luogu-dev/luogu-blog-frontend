@@ -9,7 +9,7 @@
       <a @click="callback(page + 1)" v-if="page + 1 <= totalPages" class="item">{{ page + 1 }}</a>
       <a @click="callback(page + 2)" v-if="page + 2 <= totalPages" class="item">{{ page + 2 }}</a>
       <a @click="callback(page + 1)" :class="{ disabled: page == totalPages }" class="item">&gt;</a>
-      <a @click="callback(totalPages)" :class="{ disabled: page == totalPages }"  class="item">&gt;&gt;</a>
+      <a @click="callback(totalPages)" :class="{ disabled: page == totalPages }" class="item">&gt;&gt;</a>
     </div>
   </div>
 </template>

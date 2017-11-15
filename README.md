@@ -1,7 +1,5 @@
 # luogu-blog-frontend
 
-> Luogu Blog Frontend
-
 ## Build Setup
 
 ``` bash
