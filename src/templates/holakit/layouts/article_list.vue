@@ -30,7 +30,6 @@
           const maxHeight = window.document.body.offsetHeight - window.innerHeight
 
           if (maxHeight - 230 <= window.scrollY && window.scrollY > this.lastScroll && this.ready && this.page !== this.totalPages) {
-            console.log('getPost')
             this.getWaterfallPosts(this.page + 1)
           }
 
