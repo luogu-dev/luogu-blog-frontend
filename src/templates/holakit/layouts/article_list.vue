@@ -25,7 +25,7 @@
     mounted () {
       this.$nextTick(function () {
         this.getPosts(this.page)
-        
+
         window.addEventListener('scroll', () => {
           const maxHeight = window.document.body.offsetHeight - window.innerHeight
 
