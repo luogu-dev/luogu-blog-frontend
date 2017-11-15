@@ -39,7 +39,7 @@
 <section>
     <div class="mdui-drawer mdui-drawer-close" id="mdblog-drawer">
         <ul class="mdui-list">
-            <li onclick="window.location.href='/blog/{{ currentUser }}';"
+            <li onclick="window.location.href='/blog/{{ blogUID }}';"
                 class="mdui-list-item mdui-ripple">
                 <i class="mdui-list-item-icon mdui-icon material-icons">star</i>
                 <div class="mdui-list-item-content">首页</div>
@@ -61,7 +61,7 @@
     <section id="main-container" class=" mdui-col-md-8 mdui-col-offset-md-2">
         <div class="" style="padding: 20px;margin-bottom: 30px;">
             <img class="mdui-center mdui-img-circle"
-                 src="{{ picAddress }}/upload/usericon/{{ currentUser }}.png">
+                 src="{{ picAddress }}/upload/usericon/{{ blogUID }}.png">
             <div class="mdui-valign">
                 <p class="mdui-center mdui-typo-display-2 mdui-text-color-theme"
                    style="margin-bottom:0;margin-top: 15px">{{ blogName }}</p>
