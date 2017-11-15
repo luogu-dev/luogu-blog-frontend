@@ -9,22 +9,33 @@
   {{>styles}}
 </head>
 <body class="hola-body-typography hola-grey-bg">
-<header class="hola-navbar hola-navbar-transparent hola-navbar-darkbg hola-navbar-with-hero">
+<header class="hola-navbar
+{{#if postID}}
+  hola-navbar-white hola-navbar-lightbg
+{{else}}
+  hola-navbar-transparent hola-navbar-darkbg hola-navbar-with-hero
+{{/if}}
+">
   <div class="hola-container">
     <nav class="hola-navbar-main">
-      <a href="/" class="hola-navbar-brand">{{ blogName }}</a>
+      <a href="." class="hola-navbar-brand">{{ blogName }}</a>
     </nav>
     <nav class="hola-navbar-sub">
-      <a href="">文章</a>
+      <a href=".">文章</a>
+      {{#if isBlogAdmin}}
+        <a href="">发布新文章</a>
+      {{/if}}
     </nav>
   </div>
 </header>
+{{#unless postID}}
 <div class="hola-hero hola-hero-height-extended">
   <div class="hola-container hola-hero-content">
     <h1>{{ blogName }}</h1>
     <p>{{ blogSubtitle }}</p>
   </div>
 </div>
+{{/unless}}
 {{>content}}
 <script>
   var BlogGlobals = {
