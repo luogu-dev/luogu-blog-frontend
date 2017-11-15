@@ -18,6 +18,7 @@
     "holakit": "^0.10.0",
     "jquery": "^3.2.1",
     "katex": "^0.9.0-alpha1",
+    "mdui": "^0.3.0",
     "moment": "^2.19.1",
     "moment-timezone": "^0.5.14",
     "semantic-ui": "^2.2.13",

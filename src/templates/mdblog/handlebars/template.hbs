@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/css/blog/mdblog.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {{>styles}}
     <title>{{ title }} - {{ blogName }}</title>
 </head>
 <body class="mdui-theme-primary-indigo mdui-theme-accent-pink">
@@ -82,8 +83,7 @@
     </div>
 </footer>
 
-<script src="/js/jquery-2.1.1.min.js"></script>
-<script src="//cdn.bootcss.com/mdui/0.3.0/js/mdui.min.js"></script>
+
 <script>
     window.BlogGlobals = {
         blogName: document.querySelector("meta[name=blog-name]").getAttribute("content"),
@@ -93,30 +93,7 @@
         luoguAddress: "{{ luoguAddress }}",
         picAddress: "{{ picAddress }}"
     };
-    console.log(BlogGlobals);
-    var scrollDelay;
-    function pageScroll() {
-        window.scrollBy(0, -50);
-        scrollDelay = setTimeout('pageScroll()', 10);
-        if ($(window).scrollTop() <= 10)
-            clearTimeout(scrollDelay);
-    }
-
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > 10) {
-            $("#topbar").addClass("mdui-color-theme ");
-            $("#small-header").removeClass("mdui-shadow-0");
-        } else {
-            $("#topbar").removeClass("mdui-color-theme ");
-            $("#small-header").addClass("mdui-shadow-0");
-        }
-    });
-
-    $(document).ready(function () {
-        $("#mdblog-scroll").click(pageScroll);
-    });
 </script>
-
 {{>scripts}}
 </body>
 </html>
