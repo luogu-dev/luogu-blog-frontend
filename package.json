@@ -6,8 +6,9 @@
   "license": "AGPL",
   "private": true,
   "scripts": {
+    "prepare" : "cd semantic && npx gulp build && cd ..",
     "build-dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
-    "build": "cd semantic && npx gulp build && cd .. && cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "lint": "eslint --ext .js,.vue src/",
     "lint-fix": "eslint --ext .js,.vue --fix src/",
     "dev": "npm run build && node src/devserver/index.js"
