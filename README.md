@@ -2,6 +2,22 @@
 
 这里是洛谷博客的主题仓库。洛谷博客主题以 AGPL 协议开源，并欢迎大家贡献。
 
+## 开始开发
+
+```shell
+git clone https://github.com/luogu-dev/luogu-blog-frontend
+cd luogu-blog-frontend
+npm i # 安装 npm 依赖、配置 debug 主题所用的 Semantic UI
+THEME=debug npm run build # 编译产生指定主题的 Javascript 归档
+npm run dev-server # 启动用于调试的 API Mock 服务器。可以通过指定 PORT 环境变量修改监听端口。
+npm run dev # npm run build && npm run dev-server 的简写。
+npm run lint # 使用 ESLint 检查 Javascript 代码风格。
+```
+
+API Mock 调试服务器使用时，访问 `http://localhost:<PORT>/<THEME>/` 来浏览该主题的预览。
+
+需要事先运行 `THEME=<theme> npm run build` 来产生对应的 JS 和 CSS 才能工作。
+
 ## 主题审核标准
 
 贡献的主题必须符合以下几条标准：
@@ -9,8 +25,8 @@
 1. 必须符合正常人的审美。
 2. 必须不侵犯他人的知识产权。
 3. 必须不包含任何的恶意代码，包括试图读取 Cookies 或 CSRF 等。
-4. 必须符合架构、代码规范，包括通过 ESLint 等。 
-5. 同时也不保证一定接受符合以上三条条件的主题。
+4. 必须符合架构、代码规范，包括通过 ESLint 等。
+5. 同时也不保证一定接受符合以上四条条件的主题。
 
 ## 架构
 
@@ -53,17 +69,4 @@ var blogContainer = document.getElementById("blog-container");
 BlogGlobals.blogID = parseInt(blogContainer.getAttribute("data-blogid"));
 BlogGlobals.vote = parseInt(blogContainer.getAttribute("data-vote"));
 BlogGlobals.thumbUp = parseInt(blogContainer.getAttribute("data-thumbUp"));
-```
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# run a simple debug server (note: without auto reload!)
-npm run dev
-
-# build for production
-npm run build
 ```
