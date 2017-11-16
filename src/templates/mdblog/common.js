@@ -1,14 +1,16 @@
-import 'mdui.css'
-import 'mdui'
+import 'mdui/dist/css/mdui.css'
+import 'mdui/dist/js/mdui'
 import './styles/style.css'
 import $ from 'jquery'
 
-var scrollDelay;
+var scrollDelay
+
 function pageScroll () {
   window.scrollBy(0, -50)
   scrollDelay = setTimeout(pageScroll, 10)
-  if ($(window).scrollTop() <= 10)
+  if ($(window).scrollTop() <= 10) {
     clearTimeout(scrollDelay)
+  }
 }
 
 $(window).scroll(function () {

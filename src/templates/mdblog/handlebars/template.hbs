@@ -8,10 +8,6 @@
     <meta name="blog-uid" content="{{ blogUID }}">
     <meta name="blog-name" content="{{ blogName }}">
     <meta name="current-user" content="{{ currentUser }}">
-    <link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.3.0/css/mdui.min.css">
-    <link rel="stylesheet" href="/css/blog/mdblog.css">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons">
     {{>styles}}
     <title>{{ title }} - {{ blogName }}</title>
 </head>
@@ -21,7 +17,7 @@
          style="position: fixed;z-index: 100;top:0;">
         <div id="topbar" class="mdui-toolbar ">
             <a id="md-menu" class="mdui-btn mdui-btn-icon"><i
-                        class="mdui-icon material-icons" mdui-drawer="{target: '#admin-drawer', swipe: true, overlay: true}">menu</i></a>
+                        class="mdui-icon material-icons" mdui-drawer="{target: '#mdblog-drawer', swipe: true, overlay: true}">menu</i></a>
             <span id="small-title" class="mdui-typo-title md-blog-title "
                   hidden></span>
             <div class="mdui-toolbar-spacer"></div>
