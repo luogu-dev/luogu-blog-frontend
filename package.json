@@ -6,12 +6,13 @@
   "license": "AGPL",
   "private": true,
   "scripts": {
-    "prepare" : "cd semantic && npx gulp build && cd ..",
+    "prepare": "cd semantic && npx gulp build && cd ..",
     "build-dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "lint": "eslint --ext .js,.vue src/",
     "lint-fix": "eslint --ext .js,.vue --fix src/",
-    "dev": "npm run build && node src/devserver/index.js"
+    "dev-server": "node src/devserver/index.js",
+    "dev": "npm run build && npm run dev-server"
   },
   "dependencies": {
     "axios": "^0.17.0",
@@ -50,6 +51,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.4",
     "handlebars": "^4.0.11",
+    "json-server": "^0.12.1",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
