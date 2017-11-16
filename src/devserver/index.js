@@ -3,15 +3,25 @@ const Handlebars = require('handlebars')
 const fs = require('fs')
 const path = require('path')
 
+const { apiRewrite, apiRouter } = require('./api')
+
 const Partials = {
   article: [
     { name: 'content', fpath: 'article/content.hbs' },
-    { name: 'scripts', fpath: 'article/scripts.hbs' }
+    { name: 'scripts', fpath: 'article/scripts.hbs' },
+    { name: 'styles', fpath: 'article/styles.hbs' }
   ],
   index: [
     { name: 'content', fpath: 'article_list/content.hbs' },
-    { name: 'scripts', fpath: 'article_list/scripts.hbs' }
+    { name: 'scripts', fpath: 'article_list/scripts.hbs' },
+    { name: 'styles', fpath: 'article_list/styles.hbs' }
   ]
+}
+
+const BlogMeta = {
+  blogUID: 256,
+  blogName: '卡速米之家',
+  blogSubtitle: '卡速米真好吃'
 }
 
 const getPartials = (theme, page) => {
@@ -34,18 +44,21 @@ const compileTmpl = theme => Handlebars.compile(fs.readFileSync(path.resolve(__d
 
 const app = express()
 
-app.use('/js/blog/', express.static(path.resolve(__dirname, '..', '..', 'dist')))
+app.use('/api/', apiRewrite)
+app.use('/api/', apiRouter)
+
+app.use('/static/blog/', express.static(path.resolve(__dirname, '..', '..', 'dist')))
 
 app.get('/favicon.ico', (req, res) => res.sendStatus(404))
 
 app.get('/:theme/', (req, res) => {
   registerPartials(req.params.theme, 'index')
-  res.send(compileTmpl(req.params.theme)({ isBlogAdmin: req.query.isAdmin }))
+  res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, { isBlogAdmin: req.query.isAdmin })))
 })
 
 app.get('/:theme/:articleId', (req, res) => {
   registerPartials(req.params.theme, 'article')
-  res.send(compileTmpl(req.params.theme)(Object.assign(require('./fakepost')(), { isBlogAdmin: req.query.isAdmin })))
+  res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, require('./fakepost')(), { isBlogAdmin: req.query.isAdmin })))
 })
 
 app.listen(process.env.PORT || 3000, () => console.log(`Preview server is running at http://localhost:${process.env.PORT || 3000}`))
