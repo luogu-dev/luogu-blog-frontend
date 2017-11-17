@@ -40,8 +40,12 @@ const registerPartials = (theme, page) => {
 const compileTmpl = theme => Handlebars.compile(fs.readFileSync(path.resolve(__dirname, '..', 'templates', theme, 'handlebars', 'template.hbs'), 'utf8'))
 
 module.exports.articleListHandler = (req, res) => {
-  registerPartials(req.params.theme, 'index')
-  res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, { isBlogAdmin: req.query.isAdmin })))
+  if (req.url[req.url.length - 1] !== '/') {
+    res.redirect(req.url + '/')
+  } else {
+    registerPartials(req.params.theme, 'index')
+    res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, { isBlogAdmin: req.query.isAdmin })))
+  }
 }
 
 module.exports.articleHandler = (req, res) => {
