@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import { initKatex } from 'scripts/article'
 import './common'
+import { initKatex } from 'scripts/article'
 import VoteButtons from './layouts/vote_buttons.vue'
 import BlogComments from './layouts/blog_comments.vue'
 import VoteCount from './layouts/vote_count.vue'
