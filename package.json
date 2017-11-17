@@ -13,7 +13,7 @@
     "lint-fix": "eslint --ext .js,.vue --fix src/",
     "dev-server": "node src/devserver/index.js",
     "dev": "npm run build-dev && npm run dev-server",
-    "analyze": "cross-env NODE_ENV=development BUNDLE_ANALYZE=true webpack --progress --hide-modules",
+    "analyze": "cross-env NODE_ENV=development BUNDLE_ANALYZE=true webpack --progress --hide-modules"
   },
   "dependencies": {
     "axios": "^0.17.1",
