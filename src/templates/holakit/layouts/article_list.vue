@@ -1,5 +1,8 @@
 <template>
   <div id="article-list" class="hola-container hola-columns hola-card-stack">
+    <div class="hola-columns-item" v-if="posts.length === 0">
+      <p style="margin: 5rem 0; text-align: center;">还没有文章 Orz</p>
+    </div>
     <div class="hola-columns-item" v-for="post in posts">
       <a :href="post.Identifier" style="text-decoration: none; color: var(--hola-text-dark-color);">
         <div class="hola-card">
