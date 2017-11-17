@@ -1,0 +1,19 @@
+<article id="a_{{ postID }}" data-blogid="{{ postID }}" data-vote="{{ userVote }}" data-thumbUp="{{ postThumbUp }}">
+	<header>
+		<h1>
+			<a title="{{ postTitle }}">{{ postTitle }}</a>
+		</h1>
+		<br />
+		<small>
+			<time datetime="YYYY-MM-DD">04 April 2017</time>
+			{{#if isBlogAdmin}}
+				&emsp;
+				<a href="/blog/post_edit/{{ postID }}">编辑</a>
+			{{/if}}
+		</small>
+	</header>
+	<div class="kg-card-markdown">
+		{{{ postContent }}}
+	</div>
+	<div id="article-comments"></div>
+</article>
