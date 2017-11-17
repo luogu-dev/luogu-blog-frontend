@@ -8,9 +8,10 @@
 git clone https://github.com/luogu-dev/luogu-blog-frontend
 cd luogu-blog-frontend
 npm i # 安装 npm 依赖、配置 debug 主题所用的 Semantic UI
-THEME=debug npm run build # 编译产生指定主题的 Javascript 归档
+THEME=debug npm run build # 编译产生指定主题的 Javascript 生产环境归档
+THEME=debug npm run build-dev # 编译产生指定主题的 Javascript 测试环境归档（无压缩、优化）
 npm run dev-server # 启动用于调试的 API Mock 服务器。可以通过指定 PORT 环境变量修改监听端口。
-npm run dev # npm run build && npm run dev-server 的简写。
+npm run dev # npm run build-dev && npm run dev-server 的简写。
 npm run lint # 使用 ESLint 检查 Javascript 代码风格。
 ```
 
