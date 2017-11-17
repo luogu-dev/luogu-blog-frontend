@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+Theme: So Clean
+Description: A clean and simple theme for Ghost blogging platform
+URI: http://github.com/hashable/so-clean/
+Author: Darryl Dias
+Author URI: http://darryldias.me
+
+Luogu Blog Theme
+	So Clean
+Adapted by Soha Jin(uid=401,url=https://sohaj.in/)
+-->
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>{{ title }} - {{ blogName }}</title>
+		<meta charset="utf-8">
+		<meta name="HandheldFriendly" content="True" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="blog-uid" content="{{ blogUID }}">
+		<meta name="blog-name" content="{{ blogName }}">
+		<meta name="current-user" content="{{ currentUser }}">
+		{{>styles}}
+	</head>
+	<body class="paged" style="background-color:#fffaf2;">
+		<main>
+			<header>
+				<a class="logo" href="" title="{{ blogName }}">{{ blogSubtitle }}</a>
+				<nav role="main">
+					<a href="." class="hola-navbar-brand">{{ blogName }}</a>
+					{{#if isBlogAdmin}}
+						<a href="">发布新文章</a>
+					{{/if}}
+				</nav>
+			</header>
+			{{>content}}
+		</main>
+		<script>
+			var BlogGlobals = {
+				blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+				blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+				currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+				luoguAddress: '{{ luoguAddress }}',
+				picAddress: '{{ picAddress }}'
+			}
+		</script>
+		{{>scripts}}
+		<footer>
+			<hr />
+			<small class="credit">Powered by Luogu Blog. The Theme So Clean is designed by <a href="http://darryldias.me" title="Darryl Dias: Designer">Darryl Dias</a> and adapted by <a href="https://sohaj.in/" title="Soha Jin: Luogu UserID 401">Soha Jin</a></small>
+		</footer>
+	</body>
+</html>

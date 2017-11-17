@@ -1,0 +1,294 @@
+/*
+Theme: So Clean
+Description: A clean and simple theme for Ghost blogging platform
+URI: http://github.com/hashable/so-clean/
+Author: Darryl Dias
+Author URI: http://darryldias.me
+
+Luogu Blog Theme
+	So Clean
+Adapted by Soha Jin(uid=401,url=https://sohaj.in/)
+*/
+
+/* Structure */
+html, body {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+}
+body {
+	color: #7a776e;
+	font-family: Georgia, serif;
+	font-size: 14px;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	-webkit-text-size-adjust: none;
+}
+main {
+	max-width: 520px;
+	margin: 3em auto;
+	padding: 2.2em 3.5em;
+	background: #ffffff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #fff0d9;
+}
+
+/* Header */
+header {
+	text-align: center;
+}
+
+header .logo {
+	display: inline-block;
+	font-size: 3.2em;
+	padding-bottom: .64em;
+}
+
+header hr {
+	margin-bottom: 2.8em;
+}
+
+nav {
+	text-align: center;
+	padding-bottom: 2.3em;
+}
+
+nav a {
+	padding: 0 2em;
+}
+
+/* Articles */
+article {
+	padding-bottom: 1em;
+}
+article header {
+	text-align: left;
+	padding-bottom: 0;
+}
+
+article h1 {
+	display: inline-block;
+	float: left;
+	padding-bottom: 0;
+}
+
+header small {
+	padding-top: 1.65em;
+	display: block;
+	float: right;
+}
+
+.tags {
+	float: left;
+	display: block;
+	padding-bottom: 4px;
+}
+
+
+/* Typography */
+
+/* Typography reset */
+h1, h2, h3, h4, h5, h6, p, a, small, ul, li, blockquote, code, strong, input, textarea {
+	margin: 0;
+	padding: 0;
+	font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, .logo {
+	font-family: 'Julius Sans One', sans-serif;
+	font-weight: 400;
+	color: #615e57;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .logo {
+	font-weight: inherit;
+	color: #40a1c8;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .logo:hover {
+	color: #3483a3;
+}
+h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active, .logo:active {
+	color: #40a1c8;
+}
+
+h1 {
+	color: #40a1c8;
+	font-size: 2.4em;
+	line-height: 1.3em;
+	padding-bottom: .4em;
+}
+
+h2 {
+	font-size: 1.8em;
+	line-height: 1.3em;
+	padding-bottom: 0.2em;
+}
+
+h3 {
+	font-family: Georgia, serif;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	padding-bottom: .4em;
+}
+
+h4 {
+	font-family: Georgia, serif;
+	font-size: 1em;
+	line-height: 1.5em;
+	padding-bottom: .5em;
+}
+
+h5 {
+	font-family: Georgia, serif;
+	font-size: .8em;
+	line-height: 1.8em;
+	padding-bottom: 1em;
+}
+
+h6 {
+	font-family: Georgia, serif;
+	color: #939088;
+	font-style: italic;
+	font-size: .7em;
+	line-height: 1.8em;
+	padding-bottom: 1em;
+}
+
+
+p {
+	clear: both;
+	font-size: 1.1em;
+	line-height: 1.8em;
+	padding-bottom: 1.4em;
+	font-family: "Open Sans";
+}
+
+a {
+	color: #e86b23;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+	text-decoration: none;
+}
+a:hover {
+	color: #ff5c00;
+}
+a:active {
+	color: #e86b23;
+}
+
+small, .pagination {
+	font-size: .9em;
+	line-height: 1em;
+	color: #aca9a2;
+}
+
+small a, .pagination a {
+	font-weight: inherit;
+	color: #7a776e;
+}
+
+small a:hover, .pagination a:hover {
+	color: #44433e;
+}
+
+ul {
+	padding: 0 0 1em 1.3em;
+	list-style: disc;
+}
+
+ul li {
+	color: #7a776e;
+	padding-bottom: .2em;
+	line-height: 1.7em;
+}
+
+blockquote {
+	margin: 0;
+	padding: 1em;
+	font-weight: 300;
+	font-size: 2em;
+	color: #aca9a2;
+}
+
+blockquote p {
+	padding: 0;
+	line-height: 1.2em;
+}
+
+pre {
+	font-family: Monaco, "Source Code Pro", Courier New, Courier, monospace;
+	background-color: #ffffff; 
+	color: #000000;
+	padding: 7px 7px 7px 10px;
+	border: 1px solid #ddd;
+	-moz-box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 3px 3px rgba(0, 0, 0, 0.1); 
+	box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+	margin: 20px 0 20px 0;
+	overflow: auto;
+}
+
+code {
+	font-family: Monaco, "Source Code Pro", Courier New, Courier, monospace;
+	background: #ffffff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	border-radius: 2px;
+	padding: .2em .4em;
+}
+
+strong {
+	font-weight: 500;
+}
+
+
+/* Footer */
+footer {
+	padding-top: 2em;
+	padding-bottom: 1em;
+}
+
+footer nav {
+	padding-bottom: 2.8em;
+}
+
+.credit {
+	padding-top: 2em;
+	display: block;
+	text-align: center;
+}
+
+
+/* Other */
+
+::selection {
+	background: #e86b23;
+	color: #ffffff;
+}
+::-moz-selection {
+	background: #e86b23;
+	color: #ffffff;
+}
+
+hr {
+	height: 1px;
+	border: 0;
+	background: #fbfaf7;
+	margin: 0 0 1em;
+}
+
+img {
+	max-width: 100%;
+}
+
+iframe {
+	max-width: 100%;
+}
