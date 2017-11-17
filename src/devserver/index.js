@@ -53,12 +53,12 @@ app.get('/favicon.ico', (req, res) => res.sendStatus(404))
 
 app.get('/:theme/', (req, res) => {
   registerPartials(req.params.theme, 'index')
-  res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, { isBlogAdmin: req.query.isAdmin })))
+  res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, { isBlogAdmin: req.query.isAdmin, currentUser: req.query.currentUser })))
 })
 
 app.get('/:theme/:articleId', (req, res) => {
   registerPartials(req.params.theme, 'article')
-  res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, require('./fakepost')(), { isBlogAdmin: req.query.isAdmin })))
+  res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, require('./fakepost')(), { isBlogAdmin: req.query.isAdmin, currentUser: req.query.currentUser })))
 })
 
 app.listen(process.env.PORT || 3000, () => console.log(`Preview server is running at http://localhost:${process.env.PORT || 3000}`))
