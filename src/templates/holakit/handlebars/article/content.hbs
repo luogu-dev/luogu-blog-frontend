@@ -10,7 +10,7 @@
       <br>
       <p><i>发表于 {{ postTime }}</i></p>
       {{#if isBlogAdmin}}
-        &emsp;<p><a href="/blog/post_edit/{{ postID }}">编辑</a></p>
+        &emsp;<p><a href="{{ luoguAddress }}/blogAdmin/article/edit/{{ postID }}">编辑</a></p>
       {{/if}}
       <div id="article-vote"></div>
     </div>
