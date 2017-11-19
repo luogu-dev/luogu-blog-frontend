@@ -1,7 +1,9 @@
 import axios from 'axios'
+import katex from 'katex'
 import katexAutoRender from 'plugins/katex'
 
 export function initKatex () {
+  window.katex = katex
   katexAutoRender(document.getElementById('article-content'), {
     delimiters: [
       {
@@ -25,7 +27,7 @@ export function initKatex () {
         display: false
       }
     ],
-    throwOnError: false
+    throwOnError: true
   })
 }
 

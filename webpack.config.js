@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 var themeName = process.env.THEME || 'debug'
 
@@ -54,7 +55,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
-    })
+    }),
   ],
   resolve: {
     alias: {
@@ -76,6 +77,12 @@ module.exports = {
     hints: false
   },
   devtool: '#eval-source-map'
+}
+
+if (process.env.BUNDLE_ANALYZE === 'true') {
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new BundleAnalyzerPlugin()
+  ])
 }
 
 if (process.env.NODE_ENV === 'production') {

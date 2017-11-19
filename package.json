@@ -12,7 +12,8 @@
     "lint": "eslint --ext .js,.vue src/",
     "lint-fix": "eslint --ext .js,.vue --fix src/",
     "dev-server": "node src/devserver/index.js",
-    "dev": "npm run build && npm run dev-server"
+    "dev": "npm run build-dev && npm run dev-server",
+    "analyze": "cross-env NODE_ENV=development BUNDLE_ANALYZE=true webpack --progress --hide-modules"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -57,6 +58,7 @@
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-server": "^2.9.1"
   }
 }

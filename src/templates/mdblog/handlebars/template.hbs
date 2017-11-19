@@ -42,10 +42,10 @@
                 <div class="mdui-list-item-content">首页</div>
             </li>
             {{#isBlogAdmin}}
-                <li onclick="window.location.href='/blog/post_new';"
+                <li onclick="window.location.href='{{ luoguAddress }}/blogAdmin';"
                     class="mdui-list-item mdui-ripple">
                     <i class="mdui-list-item-icon mdui-icon material-icons">error</i>
-                    <div class="mdui-list-item-content">新建文章</div>
+                    <div class="mdui-list-item-content">管理后台</div>
                 </li>
             {{/isBlogAdmin}}
         </ul>
