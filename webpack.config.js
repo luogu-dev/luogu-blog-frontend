@@ -8,7 +8,8 @@ var themeName = process.env.THEME || 'debug'
 module.exports = {
   entry: {
     article_list: ['babel-polyfill', path.resolve(__dirname, './src/templates', themeName, './article_list.js')],
-    article: ['babel-polyfill', path.resolve(__dirname, './src/templates', themeName, './article.js')]
+    article: ['babel-polyfill', path.resolve(__dirname, './src/templates', themeName, './article.js')],
+    katex: path.resolve(__dirname, './src/katex_import.js')
   },
   output: {
     path: path.resolve(__dirname, './dist', themeName),
@@ -43,8 +44,9 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$/,
-        loader: 'file-loader',
+        loader: 'url-loader',
         options: {
+          limit: 20480,
           name: '[name].[ext]?[hash]'
         }
       }
