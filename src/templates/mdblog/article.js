@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import './common'
-import { initKatex } from 'scripts/article'
+import { initKatex, initHighlight } from 'scripts/article'
 import VoteButtons from './layouts/vote_buttons.vue'
 import BlogComments from './layouts/blog_comments.vue'
 import VoteCount from './layouts/vote_count.vue'
+import 'highlight.js/styles/tomorrow.css'
 
 initKatex()
+initHighlight()
 
 window.VoteCount = new Vue({
   el: '#vote-count',

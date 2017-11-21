@@ -2,6 +2,13 @@ import axios from 'axios'
 import katex from 'katex'
 import katexAutoRender from 'plugins/katex'
 
+import hljs from 'plugins/hljs'
+import $ from 'jquery'
+
+export function initHighlight () {
+  $('pre code').each((i, block) => hljs.highlightBlock(block))
+}
+
 export function initKatex () {
   window.katex = katex
   katexAutoRender(document.getElementById('article-content'), {

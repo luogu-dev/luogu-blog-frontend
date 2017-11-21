@@ -56,3 +56,7 @@ body {
 #article-content img {
   max-width: 100%;
 }
+
+pre code {
+  font-family: Monaco, Menlo, Consolas, "Courier New", FontAwesome, monospace;
+}
