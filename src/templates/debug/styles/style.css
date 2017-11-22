@@ -57,6 +57,6 @@ body {
   max-width: 100%;
 }
 
-pre code {
+code {
   font-family: Monaco, Menlo, Consolas, "Courier New", FontAwesome, monospace;
 }
