@@ -1,0 +1,23 @@
+<article id="blog-container" data-blogid="{{ postID }}" data-vote="{{ userVote }}" data-thumbUp="{{ postThumbUp }}">
+	<header>
+		<h1>
+			<a title="{{ postTitle }}">{{ postTitle }}</a>
+		</h1>
+		<br />
+		<small>
+			<time>{{ postTime }}</time>
+			{{#if isBlogAdmin}}
+				&emsp;
+				<a href="/blog/post_edit/{{ postID }}">编辑</a>
+			{{/if}}
+		</small>
+	</header>
+	<div class="kg-card-markdown" id="article-content">
+		{{{ postContent }}}
+	</div>
+	<br />
+	<br />
+	<div id="article-vote"></div>
+	<hr>
+	<div id="article-comments"></div>
+</article>
