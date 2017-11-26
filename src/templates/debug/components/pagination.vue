@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  export default {
-    props: ['callback', 'page', 'totalPages']
-  }
+export default {
+  props: ['callback', 'page', 'totalPages']
+}
 </script>

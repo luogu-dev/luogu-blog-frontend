@@ -17,31 +17,31 @@
 </template>
 
 <script>
-  import { defaultData, getPosts, getWaterfallPosts } from 'scripts/article_list'
-  import formatDate from 'plugins/format_date'
-  export default {
-    data () {
-      let data = defaultData()
-      data.lastScroll = 0
-      return data
-    },
-    mounted () {
-      this.$nextTick(function () {
-        this.getPosts(this.page)
+import { defaultData, getPosts, getWaterfallPosts } from 'scripts/article_list'
+import formatDate from 'plugins/format_date'
+export default {
+  data () {
+    let data = defaultData()
+    data.lastScroll = 0
+    return data
+  },
+  mounted () {
+    this.$nextTick(function () {
+      this.getPosts(this.page)
 
-        window.addEventListener('scroll', () => {
-          const maxHeight = window.document.body.offsetHeight - window.innerHeight
+      window.addEventListener('scroll', () => {
+        const maxHeight = window.document.body.offsetHeight - window.innerHeight
 
-          if (maxHeight - 230 <= window.scrollY && window.scrollY > this.lastScroll && this.ready && this.page !== this.totalPages) {
-            this.getWaterfallPosts(this.page + 1)
-          }
+        if (maxHeight - 230 <= window.scrollY && window.scrollY > this.lastScroll && this.ready && this.page !== this.totalPages) {
+          this.getWaterfallPosts(this.page + 1)
+        }
 
-          this.lastScroll = window.scrollY
-        })
+        this.lastScroll = window.scrollY
       })
-    },
-    methods: { getPosts, getWaterfallPosts },
-    filters: { formatDate },
-    components: { }
-  }
+    })
+  },
+  methods: { getPosts, getWaterfallPosts },
+  filters: { formatDate },
+  components: { }
+}
 </script>

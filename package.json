@@ -9,8 +9,8 @@
     "prepare": "cd semantic && npx gulp build && cd ..",
     "build-dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "lint": "eslint --ext .js,.vue src/",
-    "lint-fix": "eslint --ext .js,.vue --fix src/",
+    "lint": "eslint --ext .js,.vue,.hbs src/",
+    "lint-fix": "eslint --ext .js,.vue,.hbs --fix src/",
     "dev-server": "node src/devserver/index.js",
     "dev": "npm run build-dev && npm run dev-server",
     "analyze": "cross-env NODE_ENV=development BUNDLE_ANALYZE=true webpack --progress --hide-modules"
