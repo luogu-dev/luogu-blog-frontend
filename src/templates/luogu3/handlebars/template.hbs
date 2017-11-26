@@ -1,79 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head lang="en">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="renderer" content="webkit" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <meta name="blog-uid" content="{{ blogUID }}" />
-    <meta name="blog-name" content="{{ blogName }}" />
-    <meta name="current-user" content="{{ currentUser }}" />
-	{{>styles}}
-    <title>{{ title }} - {{ blogName }}</title>
-  </head>
-  
-  <body>
-    <header class="am-topbar am-topbar-inverse">
-      <div class="blog-g-fixed am-g">
-        <h1 class="am-topbar-brand">
-          <a href="#">Luogu Blog</a></h1>
-        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}">
-          <span class="am-sr-only">导航切换</span>
-          <span class="am-icon-bars"></span>
-        </button>
-        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
-          <ul class="am-nav am-nav-pills am-topbar-nav">
-            <li class="am-active">
-              <a href="#">首页</a></li>
-            <li>
-              <a href="#">文章</a></li>{{#isBlogAdmin}}
-            <li>
-              <a href="{{ luoguAddress }}/blogAdmin">管理后台</a></li>{{/isBlogAdmin}}</ul>
-          <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right" role="search">
-            <div class="am-form-group">
-              <input type="text" class="am-form-field am-input-sm" placeholder="搜索文章" /></div>
-            <button type="submit" class="am-btn am-btn-default am-btn-sm">搜索</button></form>
-        </div>
-      </div>
-    </header>
-    <div class="am-g am-g-fixed blog-g-fixed" id="bodymain">
-      <div class="am-u-md-4 blog-sidebar" style="float:right">
-        <div class="am-panel-group">
-          <section class=" lg-summary am-panel">
-            <img class="am-circle am-center" src="{{ picAddress }}/upload/usericon/{{ blogUID }}.png" width="80" height="80" />
-            <h1 class="ui header">{{ blogName }}</h1>
-            <p>{{ blogSubtitle }}</p>
-          </section>
-        </div>
-      </div>
-      <div class="am-u-md-8" style="float:right">{{>content}}</div>
-	</div>
-    <div class="lg-footer">
-      <div class="lg-footer-top"></div>
-      <div class="blog-g-fixed am-g">
-        <div class="am-u-md-3 am-hide-sm">
-          <img src="//cdn.luogu.org/images/logo_white_3.png" width="175" class="lg-inline-up" />
-		</div>
-        <div class="am-u-md-4 am-hide-sm">
-          <h2 style="color: #999;margin: 0">在洛谷，
-            <br />享受Coding的欢乐</h2>
-		</div>
-        <div class="am-u-md-5 am-md-text-right">2013-2017 , 洛谷 &copy; Developed by the
-          <a href="https://github.com/luogu-dev" target="_blank">Luogu Dev Team</a>
-          <br />Blog theme 'Luogu3' By @kkksc03
-		</div>
-	  </div>
+<head lang="en">
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="renderer" content="webkit"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <meta name="blog-uid" content="{{ blogUID }}"/>
+  <meta name="blog-name" content="{{ blogName }}"/>
+  <meta name="current-user" content="{{ currentUser }}"/>
+  {{>styles}}
+  <title>{{ title }} - {{ blogName }}</title>
+</head>
+
+<body>
+<header class="am-topbar am-topbar-inverse">
+  <div class="blog-g-fixed am-g">
+    <h1 class="am-topbar-brand">
+      <a href="#">Luogu Blog</a></h1>
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
+            data-am-collapse="{target: '#doc-topbar-collapse'}">
+      <span class="am-sr-only">导航切换</span>
+      <span class="am-icon-bars"></span>
+    </button>
+    <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+      <ul class="am-nav am-nav-pills am-topbar-nav">
+        <li class="am-active">
+          <a href="#">首页</a></li>
+        <li>
+          <a href="#">文章</a></li>{{#isBlogAdmin}}
+        <li>
+          <a href="{{ luoguAddress }}/blogAdmin">管理后台</a></li>{{/isBlogAdmin}}</ul>
+      <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right" role="search">
+        <div class="am-form-group">
+          <input type="text" class="am-form-field am-input-sm" placeholder="搜索文章"/></div>
+        <button type="submit" class="am-btn am-btn-default am-btn-sm">搜索</button>
+      </form>
     </div>
-    <script>var BlogGlobals = {
-        blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
-        blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
-        currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
-        luoguAddress: '{{ luoguAddress }}',
-        picAddress: '{{ picAddress }}'
-      }
-	</script>
-	{{>scripts}}
-	</body>
+  </div>
+</header>
+<div class="am-g am-g-fixed blog-g-fixed" id="bodymain">
+  <div class="am-u-md-4 blog-sidebar" style="float:right">
+    <div class="am-panel-group">
+      <section class=" lg-summary am-panel">
+        <img class="am-circle am-center" src="{{ picAddress }}/upload/usericon/{{ blogUID }}.png" width="80"
+             height="80"/>
+        <h1 class="ui header">{{ blogName }}</h1>
+        <p>{{ blogSubtitle }}</p>
+      </section>
+    </div>
+  </div>
+  <div class="am-u-md-8" style="float:right">
+    {{>content}}
+  </div>
+</div>
+<div class="lg-footer">
+  <div class="lg-footer-top"></div>
+  <div class="blog-g-fixed am-g">
+    <div class="am-u-md-3 am-hide-sm">
+      <img src="//cdn.luogu.org/images/logo_white_3.png" width="175" class="lg-inline-up"/>
+    </div>
+    <div class="am-u-md-4 am-hide-sm">
+      <h2 style="color: #999;margin: 0">在洛谷，<br/>享受Coding的欢乐</h2>
+    </div>
+    <div class="am-u-md-5 am-md-text-right">2013-2017 , 洛谷 &copy; Developed by the
+      <a href="https://github.com/luogu-dev" target="_blank">Luogu Dev Team</a>
+      <br/>Blog theme 'Luogu3' By @kkksc03
+    </div>
+  </div>
+</div>
+<script>
+var BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
+</script>
+{{>scripts}}
+</body>
 </html>
