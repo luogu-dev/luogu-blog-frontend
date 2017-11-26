@@ -25,35 +25,35 @@
 </template>
 
 <script>
-  import { defaultData, performVote } from 'scripts/article'
-  export default {
-    data: defaultData,
-    computed: {
-      canVoteUp () {
-        return this.checkCanVote(1)
-      },
-      canVoteDown () {
-        return this.checkCanVote(-1)
-      }
+import { defaultData, performVote } from 'scripts/article'
+export default {
+  data: defaultData,
+  computed: {
+    canVoteUp () {
+      return this.checkCanVote(1)
     },
-    watch: {
-      thumbUp: function (newthumbUp) {
-        BlogGlobals.thumbUp = newthumbUp
-        BlogGlobals.vote = this.vote
-      },
-      vote: function (newVote) {
-        BlogGlobals.vote = newVote
-        BlogGlobals.thumbUp = this.thumbUp
-      }
+    canVoteDown () {
+      return this.checkCanVote(-1)
+    }
+  },
+  watch: {
+    thumbUp: function (newthumbUp) {
+      BlogGlobals.thumbUp = newthumbUp
+      BlogGlobals.vote = this.vote
     },
-    methods: {
-      performVote,
-      checkCanVote (voteType) {
-        // Must be logged in, and either not voted,
-        // or voted the same voteType,
-        // (in which case triggers un-vote)
-        return this.uid && (this.vote === 0 || this.vote === voteType)
-      }
+    vote: function (newVote) {
+      BlogGlobals.vote = newVote
+      BlogGlobals.thumbUp = this.thumbUp
+    }
+  },
+  methods: {
+    performVote,
+    checkCanVote (voteType) {
+      // Must be logged in, and either not voted,
+      // or voted the same voteType,
+      // (in which case triggers un-vote)
+      return this.uid && (this.vote === 0 || this.vote === voteType)
     }
   }
+}
 </script>

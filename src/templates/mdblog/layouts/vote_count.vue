@@ -6,10 +6,10 @@
 </template>
 
 <script>
-  import { defaultData } from 'scripts/article'
-  export default {
-    data: defaultData,
-    computed: {},
-    methods: {}
-  }
+import { defaultData } from 'scripts/article'
+export default {
+  data: defaultData,
+  computed: {},
+  methods: {}
+}
 </script>

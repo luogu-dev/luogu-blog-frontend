@@ -20,14 +20,14 @@
 </template>
 
 <script>
-  import pagination from '../components/pagination.vue'
-  import { defaultData, defaultMounted, getPosts } from 'scripts/article_list'
-  import formatDate from 'plugins/format_date'
-  export default {
-    data: defaultData,
-    mounted: defaultMounted,
-    methods: { getPosts },
-    filters: { formatDate },
-    components: { pagination }
-  }
+import pagination from '../components/pagination.vue'
+import { defaultData, defaultMounted, getPosts } from 'scripts/article_list'
+import formatDate from 'plugins/format_date'
+export default {
+  data: defaultData,
+  mounted: defaultMounted,
+  methods: { getPosts },
+  filters: { formatDate },
+  components: { pagination }
+}
 </script>

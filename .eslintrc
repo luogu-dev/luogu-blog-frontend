@@ -2,9 +2,15 @@
   "extends": ["standard"],
   "plugins": ["html"],
   "rules": {
+    "no-unused-vars": [
+      2,
+      {
+        "varsIgnorePattern": "^BlogGlobals$"
+      }
+    ]
   },
   "settings": {
-    "html/indent": "+2",
+    "html/indent": "0",
     "html/report-bad-indent": "error"
   },
   "globals": {

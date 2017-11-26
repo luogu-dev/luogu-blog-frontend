@@ -50,15 +50,15 @@
 </template>
 
 <script>
-  import pagination from '../components/pagination.vue'
-  import loader from '../components/loader.vue'
-  import { defaultData, defaultMounted, getComments, postComment } from 'scripts/article_comments'
-  import formatDate from 'plugins/format_date'
-  export default {
-    data: defaultData,
-    mounted: defaultMounted,
-    methods: { getComments, postComment },
-    filters: { formatDate },
-    components: { pagination, loader }
-  }
+import pagination from '../components/pagination.vue'
+import loader from '../components/loader.vue'
+import { defaultData, defaultMounted, getComments, postComment } from 'scripts/article_comments'
+import formatDate from 'plugins/format_date'
+export default {
+  data: defaultData,
+  mounted: defaultMounted,
+  methods: { getComments, postComment },
+  filters: { formatDate },
+  components: { pagination, loader }
+}
 </script>

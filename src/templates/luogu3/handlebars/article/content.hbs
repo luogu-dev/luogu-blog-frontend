@@ -1,22 +1,22 @@
 <div id="blog-container"
-  data-blogid="{{ postID }}"
-  data-vote="{{ userVote }}"
-  data-thumbUp="{{ postThumbUp }}">
-  <article class="lg-article am-g" >
-	<h3 class="am-article-title blog-title">
-	  <a :href="post.Identifier">{{ postTitle }}</a>
-	</h3>
-	<b> posted on {{ postTime }} | under <a href="#">分类</a>
-	  {{#if isBlogAdmin}}|
-		<a href="{{ luoguAddress }}/blogAdmin/article/edit/{{ postID }}">编辑</a>
-	  {{/if}}| 
-	</b>
-	<span id="article-vote"></span>
-	<hr>
-	<div id="article-content">
-	  {{{ postContent }}}
-	  <br>
-	</div>
+     data-blogid="{{ postID }}"
+     data-vote="{{ userVote }}"
+     data-thumbUp="{{ postThumbUp }}">
+  <article class="lg-article am-g">
+    <h3 class="am-article-title blog-title">
+      <a :href="post.Identifier">{{ postTitle }}</a>
+    </h3>
+    <b> posted on {{ postTime }} | under <a href="#">分类</a>
+      {{#if isBlogAdmin}}|
+        <a href="{{ luoguAddress }}/blogAdmin/article/edit/{{ postID }}">编辑</a>
+      {{/if}}|
+    </b>
+    <span id="article-vote"></span>
+    <hr>
+    <div id="article-content">
+      {{{ postContent }}}
+      <br>
+    </div>
   </article>
   <div id="article-comments"></div>
 </div>

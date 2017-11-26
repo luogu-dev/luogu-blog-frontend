@@ -38,13 +38,13 @@
 {{/unless}}
 {{>content}}
 <script>
-  var BlogGlobals = {
-    blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
-    blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
-    currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
-    luoguAddress: '{{ luoguAddress }}',
-    picAddress: '{{ picAddress }}'
-  }
+var BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
 </script>
 {{>scripts}}
 <footer class="hola-footer">

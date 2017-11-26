@@ -37,13 +37,13 @@ Adapted by Soha Jin(uid=401,url=https://sohaj.in/)
 			{{>content}}
 		</main>
 		<script>
-			var BlogGlobals = {
-				blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
-				blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
-				currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
-				luoguAddress: '{{ luoguAddress }}',
-				picAddress: '{{ picAddress }}'
-			}
+var BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
 		</script>
 		{{>scripts}}
 		<footer>

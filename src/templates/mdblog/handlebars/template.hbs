@@ -81,14 +81,14 @@
 
 
 <script>
-    window.BlogGlobals = {
-        blogName: document.querySelector("meta[name=blog-name]").getAttribute("content"),
-        blogUID: parseInt(document.querySelector("meta[name=blog-uid]").getAttribute("content")),
-        currentUser: parseInt(document.querySelector("meta[name=current-user]").getAttribute("content")),
-        isAuthor: (this.blogUID == this.currentUser),
-        luoguAddress: "{{ luoguAddress }}",
-        picAddress: "{{ picAddress }}"
-    };
+window.BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  isAuthor: (this.blogUID === this.currentUser),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
 </script>
 {{>scripts}}
 </body>
