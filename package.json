@@ -16,6 +16,7 @@
     "analyze": "cross-env NODE_ENV=development BUNDLE_ANALYZE=true webpack --progress --hide-modules"
   },
   "dependencies": {
+    "amazeui": "^2.7.2",
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
     "highlight.js": "^9.12.0",
