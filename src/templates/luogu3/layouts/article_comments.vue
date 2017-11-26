@@ -23,10 +23,8 @@
         <div class="lg-left">
           <a class="avatar" :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
           target="_blank">
-            <img src="https://cdn.luogu.org/upload/usericon/46173.png" class="am-comment-avatar">
+            <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'" class="am-comment-avatar">
           </a>
-          <!-- :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID
-          + '.png'" -->
         </div>
         <div class="am-comment-main">
           <header class="am-comment-hd">
