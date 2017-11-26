@@ -1,8 +1,8 @@
 <template>
   <span id="article-vote" class="am-comment-actions">
-	  <a href="#" @click="performVote(1)"><i class="am-icon-thumbs-up" :class="{ voteactive: vote === 1}"></i></a> {{ thumbUp }}
-	  <a href="#" @click="performVote(-1)"><i class="am-icon-thumbs-down" :class="{ disabled: !canVoteDown, voteactive: vote === -1 }"></i></a> 
-	  <a href="#"><i class="am-icon-reply"></i></a>
+	<a href="#" @click="performVote(1)"><i class="am-icon-thumbs-up" :class="{ voteactive: vote === 1}"></i></a> {{ thumbUp }}
+	<a href="#" @click="performVote(-1)"><i class="am-icon-thumbs-down" :class="{ disabled: !canVoteDown, voteactive: vote === -1 }"></i></a> 
+	<a href="#"><i class="am-icon-reply"></i></a>
   </span>
 </template>
 
