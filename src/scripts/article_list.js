@@ -5,6 +5,8 @@ export function defaultData () {
     postCount: 0,
     posts: [],
     page: 1,
+    keyword: '',
+    type: '',
     totalPages: 1,
     ready: false,
     uid: BlogGlobals.currentUser
@@ -17,12 +19,20 @@ export function defaultMounted () {
   })
 }
 
+export const defaultWatch = {
+  type () {
+    this.getPosts(1)
+  }
+}
+
 export async function getPosts (page) {
   this.page = page
   this.ready = false
   const response = await axios.get('/api/blog/lists', {
     params: {
       uid: BlogGlobals.blogUID,
+      keyword: this.keyword,
+      type: this.type,
       page
     }
   })
