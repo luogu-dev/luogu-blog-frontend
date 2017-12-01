@@ -23,32 +23,20 @@
                       <div class="mdui-typo-caption-opacity mdui-float-right">At {{ comment.ReplyTime | formatDate }}</div>
                   </div>
               </div>
-              <div class="mdui-valign" style="margin: 30px;" v-if="ready">
-                  <div class="mdui-center">
-                      <div class="mdui-btn-group" v-if="totalPages > 1">
-                          <a @click="getComments(1)" :class="{ disabled: page == 1 }" class="mdui-btn"><i class="mdui-icon material-icons">first_page</i></a>
-                          <a @click="getComments(page - 1)" :class="{ disabled: page == 1 }" class="mdui-btn"><i class="mdui-icon material-icons">keyboard_arrow_left</i></a>
-                          <a @click="getComments(page - 2)" v-if="page - 2 >= 1" class="mdui-btn">{{ page - 2 }}</a>
-                          <a @click="getComments(page - 1)" v-if="page - 1 >= 1" class="mdui-btn">{{ page - 1 }}</a>
-                          <a class="mdui-btn-active mdui-btn">{{ page }}</a>
-                          <a @click="getComments(page + 1)" v-if="page + 1 <= totalPages" class="mdui-btn">{{ page + 1 }}</a>
-                          <a @click="getComments(page + 2)" v-if="page + 2 <= totalPages" class="mdui-btn">{{ page + 2 }}</a>
-                          <a @click="getComments(page + 1)" :class="{ disabled: page == totalPages }" class="mdui-btn"><i class="mdui-icon material-icons">keyboard_arrow_right</i></a>
-                          <a @click="getComments(totalPages)" :class="{ disabled: page == totalPages }"  class="mdui-btn"><i class="mdui-icon material-icons">last_page</i></a>
-                      </div>
-                  </div>
-              </div>
+              <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getComments"></pagination>
           </div>
       </div>
 </template>
 
 <script>
+import pagination from '../components/pagination.vue'
 import { defaultData, defaultMounted, getComments, postComment } from 'scripts/article_comments'
 import formatDate from 'plugins/format_date'
 export default {
   data: defaultData,
   mounted: defaultMounted,
   methods: { getComments, postComment },
-  filters: { formatDate }
+  filters: { formatDate },
+  components: { pagination }
 }
 </script>

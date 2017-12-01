@@ -6,8 +6,15 @@
                   <div class="mdui-card mdblog-article-card mdui-hoverable">
                       <div style="margin: 20px;">
                           <div class="mdui-card-primary">
-                              <a class="mdblog-list-title mdui-card-primary-title" :href="post.Identifier">{{ post.Title }}</a>
+                            <div class="mdui-row">
+                                <a class="mdui-float-left mdblog-list-title mdui-card-primary-title" :href="post.Identifier">{{ post.Title }}</a>
+                                <div class="mdui-chip mdui-float-right">
+                                  <span class=" mdui-chip-title" @click="type = post.Type">{{ post.Type }}</span>
+                                </div>
+                            </div>
+
                               <div class="mdui-card-primary-subtitle">{{ post.PostTime | formatDate }}</div>
+
                           </div>
                           <div class="mdui-card-content mdui-typo-body-1">{{ post.ContentDescription }}</div>
                       </div>
@@ -21,11 +28,12 @@
 
 <script>
 import pagination from '../components/pagination.vue'
-import { defaultData, defaultMounted, getPosts } from 'scripts/article_list'
+import { defaultData, defaultMounted, defaultWatch, getPosts } from 'scripts/article_list'
 import formatDate from 'plugins/format_date'
 export default {
   data: defaultData,
   mounted: defaultMounted,
+  watch: defaultWatch,
   methods: { getPosts },
   filters: { formatDate },
   components: { pagination }

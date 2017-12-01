@@ -1,5 +1,5 @@
 <template>
-<div class="mdui-valign" style="margin: 30px;" v-if="ready">
+<div class="mdui-valign" style="margin: 30px;">
     <div class="mdui-center">
         <div class="mdui-btn-group" v-if="totalPages > 1">
             <a @click="callback(1)" :class="{ disabled: page == 1 }" class="mdui-btn"><i class="mdui-icon material-icons">first_page</i></a>
