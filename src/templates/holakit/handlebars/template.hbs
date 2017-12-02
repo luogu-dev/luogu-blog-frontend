@@ -30,10 +30,10 @@
   </div>
 </header>
 {{#unless postID}}
-{{#if themeSettings.ui.background_image}}
+{{#if themeSettings.config.ui.background_image}}
   <style>
     .hola-hero {
-      background-image: url({{ themeSettings.ui.background_image }});
+      background-image: url({{ themeSettings.config.ui.background_image }});
       background-size: cover;
     }
     .hola-hero h1, .hola-hero p {

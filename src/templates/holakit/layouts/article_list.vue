@@ -1,6 +1,6 @@
 <template>
   <div id="article-list" class="hola-container hola-columns hola-card-stack">
-    <div class="hola-columns-item" v-if="config.ui.enable_search === 'true'">
+    <div class="hola-columns-item" v-if="config.config.ui.enable_search === 'true'">
       <div class="hola-card">
         <h2 class="hola-card-title">搜索</h2>
         <p>
