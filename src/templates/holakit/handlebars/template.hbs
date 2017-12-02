@@ -44,7 +44,8 @@ var BlogGlobals = {
   blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
   currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
   luoguAddress: '{{ luoguAddress }}',
-  picAddress: '{{ picAddress }}'
+  picAddress: '{{ picAddress }}',
+  config: {{{ themeSettingsJson }}}
 }
 </script>
 <script src="/static/blog/holakit/common.js"></script>

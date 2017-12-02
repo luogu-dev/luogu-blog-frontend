@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf8' ?>
+<section id="config">
+  <section id="ui" name="界面设定">
+    <property id="enable_search" name="首页搜索框" type="choice">
+      <option id="true" name="启用" default="true" />
+      <option id="false" name="禁用" />
+    </property>
+  </section>
+</section>

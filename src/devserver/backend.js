@@ -18,7 +18,8 @@ const Partials = {
 const BlogMeta = {
   blogUID: 256,
   blogName: '卡速米之家',
-  blogSubtitle: '卡速米真好吃'
+  blogSubtitle: '卡速米真好吃',
+  themeSettingsJson: '{}'
 }
 
 const getPartials = (theme, page) => {

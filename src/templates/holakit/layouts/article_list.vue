@@ -1,13 +1,27 @@
 <template>
   <div id="article-list" class="hola-container hola-columns hola-card-stack">
+    <div class="hola-columns-item" v-if="config.ui.enable_search === 'true'">
+      <div class="hola-card">
+        <h2 class="hola-card-title">搜索</h2>
+        <p>
+          <input class="hola-form-ctrl hola-input-singleline" type="text" placeholder="输入一些关键字" v-model="keyword">
+          <button class="hola-button hola-button-primary" @click="getPosts(1)">搜索</button>
+        </p>
+        <p v-if="type">
+          分类: {{ type }} <button class="hola-button" @click="type = ''">清除</button>
+        </p>
+      </div>
+    </div>
     <div class="hola-columns-item" v-if="posts.length === 0">
-      <p style="margin: 5rem 0; text-align: center;">还没有文章 Orz</p>
+      <div class="hola-card">
+        <p style="margin: 5rem 0; text-align: center;">还没有文章 Orz</p>
+      </div>
     </div>
     <div class="hola-columns-item" v-for="post in posts">
       <a :href="post.Identifier" style="text-decoration: none; color: var(--hola-text-dark-color);">
         <div class="hola-card">
           <h2 class="hola-card-title">
-            {{ post.Title }}
+            {{ post.Title }} <button class="hola-button hola-button-primary" @click.stop.prevent="type = post.Type">{{ post.Type }}</button>
           </h2>
           <p>{{ post.ContentDescription }}</p>
         </div>
@@ -17,7 +31,7 @@
 </template>
 
 <script>
-import { defaultData, getPosts, getWaterfallPosts } from 'scripts/article_list'
+import { defaultData, defaultWatch, getPosts, getWaterfallPosts } from 'scripts/article_list'
 import formatDate from 'plugins/format_date'
 export default {
   data () {
@@ -40,6 +54,7 @@ export default {
       })
     })
   },
+  watch: defaultWatch,
   methods: { getPosts, getWaterfallPosts },
   filters: { formatDate },
   components: { }

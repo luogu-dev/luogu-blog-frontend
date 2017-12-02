@@ -11,7 +11,8 @@ export function defaultData () {
     type: _.get(queryParams, 'type', ''),
     totalPages: 1,
     ready: false,
-    uid: BlogGlobals.currentUser
+    uid: BlogGlobals.currentUser,
+    config: BlogGlobals.config
   }
 }
 
