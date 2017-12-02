@@ -32,16 +32,16 @@
 {{#unless postID}}
 {{#if themeSettings.ui.background_image}}
   <style>
-    #top-hero {
+    .hola-hero {
       background-image: url({{ themeSettings.ui.background_image }});
       background-size: cover;
     }
-    #top-hero h1, p {
+    .hola-hero h1, .hola-hero p {
       text-shadow: 1px 1px 1px var(--hola-text-dark-color);
     }
   </style>
 {{/if}}
-<div class="hola-hero hola-hero-height-extended" id="top-hero">
+<div class="hola-hero hola-hero-height-extended">
   <div class="hola-container hola-hero-content">
     <h1>{{ blogName }}</h1>
     <p>{{ blogSubtitle }}</p>
