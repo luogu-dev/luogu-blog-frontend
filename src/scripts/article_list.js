@@ -1,12 +1,14 @@
 import axios from 'axios'
+import queryParams from 'plugins/query_string'
+import _ from 'lodash'
 
 export function defaultData () {
   return {
     postCount: 0,
     posts: [],
     page: 1,
-    keyword: '',
-    type: '',
+    keyword: _.get(queryParams, 'keyword', ''),
+    type: _.get(queryParams, 'type', ''),
     totalPages: 1,
     ready: false,
     uid: BlogGlobals.currentUser

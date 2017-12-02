@@ -1,9 +1,10 @@
-var path = require('path')
-var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
-var themeName = process.env.THEME || 'debug'
+const themeName = process.env.THEME || 'debug'
 
 module.exports = {
   entry: {
@@ -53,15 +54,22 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('[name].css'),
+    new LodashModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "common",
+      filename: "common.js",
+      chunks: ["article", "article_list"]
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new ExtractTextPlugin('[name].css'),
   ],
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.runtime.esm.js'
     },
     extensions: ['*', '.js', '.vue', '.json'],
     modules: [
