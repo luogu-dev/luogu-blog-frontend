@@ -8,6 +8,7 @@
     <meta name="blog-uid" content="{{ blogUID }}">
     <meta name="blog-name" content="{{ blogName }}">
     <meta name="current-user" content="{{ currentUser }}">
+    <link rel="stylesheet" href="/static/blog/mdblog/common.css">
     {{>styles}}
     <title>{{ title }} - {{ blogName }}</title>
 </head>
@@ -72,6 +73,7 @@ window.BlogGlobals = {
   picAddress: '{{ picAddress }}'
 }
 </script>
+<script src="/static/blog/mdblog/common.js"></script>
 {{>scripts}}
 </body>
 </html>
