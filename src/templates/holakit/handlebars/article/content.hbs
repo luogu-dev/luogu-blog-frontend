@@ -16,7 +16,7 @@
         {{{ postContent }}}
       </div>
       <br>
-      <p><i>发表于 {{ postTime }}</i></p>
+      <p><i>发表于 {{ postTime }} in <a href=".#type={{ postType }}">{{ postType }}</a></i></p>
       {{#if isBlogAdmin}}
         &emsp;<p><a href="{{ luoguAddress }}/blogAdmin/article/edit/{{ postID }}">编辑</a></p>
       {{/if}}
