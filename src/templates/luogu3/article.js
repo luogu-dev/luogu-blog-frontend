@@ -4,7 +4,7 @@ import { initKatex, initHighlight } from 'scripts/article'
 import ArticleVote from './layouts/article_vote.vue'
 import ArticleComments from './layouts/article_comments.vue'
 import SearchBar from './layouts/search_bar.vue'
-import { defaultData, defaultMounted, redirectSearch } from 'scripts/search_bar'
+import { redirectSearch } from 'scripts/search_bar'
 import 'highlight.js/styles/tomorrow.css'
 
 initKatex()
@@ -20,12 +20,8 @@ window.articleComments = new Vue({
   render: h => h(ArticleComments)
 })
 
+SearchBar.methods.search = redirectSearch
 window.searchBar = new Vue({
   el: '#search',
-  data: defaultData,
-  mounted: defaultMounted,
-  render: h => h(SearchBar),
-  methods: {
-    search: redirectSearch
-  }
+  render: h => h(SearchBar)
 })
