@@ -6,7 +6,7 @@
         <i class="mdui-icon material-icons" mdui-drawer="{target: '#mdblog-drawer', swipe: true, overlay: true}">menu</i>
       </a>
       <div class="mdui-toolbar-spacer"></div>
-      <button class="mdui-btn mdui-btn-icon mdui-ripple" @click="getPosts(1)">
+      <button class="mdui-btn mdui-btn-icon mdui-ripple" @click.prevent="search()">
         <i class="mdui-icon material-icons">search</i>
       </button>
       <input style="max-width: 20%;" class="mdui-textfield-input" type="text" placeholder="Search" v-model="keyword"/>
@@ -15,16 +15,13 @@
 </template>
 
 <script>
-import pagination from '../components/pagination.vue'
-import { defaultData, defaultMounted, defaultWatch, getPosts } from 'scripts/article_list'
-import formatDate from 'plugins/format_date'
+import { defaultData, defaultMounted } from 'scripts/search_bar'
 
 export default {
   data: defaultData,
   mounted: defaultMounted,
-  watch: defaultWatch,
-  methods: { getPosts },
-  filters: { formatDate },
-  components: { pagination }
+  methods: {
+    search: undefined
+  }
 }
 </script>

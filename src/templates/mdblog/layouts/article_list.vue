@@ -9,7 +9,7 @@
                             <div class="mdui-row">
                                 <a class="mdui-float-left mdblog-list-title mdui-card-primary-title" :href="post.Identifier">{{ post.Title }}</a>
                                 <div class="mdui-chip mdui-float-right">
-                                  <span class=" mdui-chip-title" @click="type = post.Type">{{ post.Type }}</span>
+                                  <span class="mdui-chip-title" @click="type = post.Type" style="cursor: pointer">{{ post.Type }}</span>
                                 </div>
                             </div>
 
@@ -28,11 +28,11 @@
 
 <script>
 import pagination from '../components/pagination.vue'
-import { defaultData, defaultMounted, defaultWatch, getPosts } from 'scripts/article_list'
+import { defaultData, defaultWatch, defaultMountedWithSearchEvent, getPosts } from 'scripts/article_list'
 import formatDate from 'plugins/format_date'
 export default {
   data: defaultData,
-  mounted: defaultMounted,
+  mounted: defaultMountedWithSearchEvent,
   watch: defaultWatch,
   methods: { getPosts },
   filters: { formatDate },

@@ -1,9 +1,8 @@
 import 'mdui/dist/css/mdui.css'
 import 'mdui/dist/js/mdui'
 import './styles/style.css'
+import 'plugins/event_bus'
 import $ from 'jquery'
-import Vue from 'vue'
-import Header from './layouts/header.vue'
 
 var scrollDelay
 
@@ -27,9 +26,4 @@ $(window).scroll(function () {
 
 $(document).ready(function () {
   $('#mdblog-scroll').click(pageScroll)
-})
-
-window.header = new Vue({
-  el: '#small-header',
-  render: h => h(Header)
 })
