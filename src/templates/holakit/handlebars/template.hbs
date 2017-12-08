@@ -6,6 +6,7 @@
   <meta name="blog-uid" content="{{ blogUID }}">
   <meta name="blog-name" content="{{ blogName }}">
   <meta name="current-user" content="{{ currentUser }}">
+  <meta name="theme-settings" content="{{ themeSettingsJson }}">
   <link rel="stylesheet" href="/static/blog/holakit/common.css">
   {{>styles}}
 </head>
@@ -55,8 +56,7 @@ var BlogGlobals = {
   blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
   currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
   luoguAddress: '{{ luoguAddress }}',
-  picAddress: '{{ picAddress }}',
-  config: {{{ themeSettingsJson }}}
+  config: JSON.parse(document.querySelector('meta[name=theme-settings]').getAttribute('content'))
 }
 </script>
 <script src="/static/blog/holakit/common.js"></script>

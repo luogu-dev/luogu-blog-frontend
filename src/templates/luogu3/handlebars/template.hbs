@@ -10,6 +10,7 @@
   <meta name="blog-uid" content="{{ blogUID }}"/>
   <meta name="blog-name" content="{{ blogName }}"/>
   <meta name="current-user" content="{{ currentUser }}"/>
+  <link rel="stylesheet" href="/static/blog/luogu3/common.css">
   {{>styles}}
   <title>{{ title }} - {{ blogName }}</title>
 </head>
@@ -26,17 +27,17 @@
     </button>
     <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
       <ul class="am-nav am-nav-pills am-topbar-nav">
-        <li class="am-active">
-          <a href="#">首页</a></li>
         <li>
-          <a href="#">文章</a></li>{{#isBlogAdmin}}
+          <a href=".">首页</a></li>
         <li>
-          <a href="{{ luoguAddress }}/blogAdmin">管理后台</a></li>{{/isBlogAdmin}}</ul>
-      <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right" role="search">
-        <div class="am-form-group">
-          <input type="text" class="am-form-field am-input-sm" placeholder="搜索文章"/></div>
-        <button type="submit" class="am-btn am-btn-default am-btn-sm">搜索</button>
-      </form>
+          <a href=".">文章</a></li>
+        {{#isBlogAdmin}}
+          <li>
+            <a href="{{ luoguAddress }}/blogAdmin">管理后台</a>
+          </li>
+        {{/isBlogAdmin}}
+      </ul>
+      <div id="search"></div>
     </div>
   </div>
 </header>
@@ -79,6 +80,7 @@ var BlogGlobals = {
   picAddress: '{{ picAddress }}'
 }
 </script>
+<script src="/static/blog/luogu3/common.js"></script>
 {{>scripts}}
 </body>
 </html>

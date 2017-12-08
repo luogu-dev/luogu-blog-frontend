@@ -1,5 +1,6 @@
 import axios from 'axios'
 import queryParams from 'plugins/query_string'
+import queryString from 'query-string'
 import _ from 'lodash'
 
 export function defaultData () {
@@ -22,6 +23,16 @@ export function defaultMounted () {
   })
 }
 
+export function defaultMountedWithSearchEvent () {
+  this.$nextTick(function () {
+    window.eventBus.$on('search', keyword => {
+      this.keyword = keyword
+      this.getPosts(1)
+    })
+    this.getPosts(this.page)
+  })
+}
+
 export const defaultWatch = {
   type () {
     this.getPosts(1)
@@ -31,6 +42,10 @@ export const defaultWatch = {
 export async function getPosts (page) {
   this.page = page
   this.ready = false
+  window.location.hash = queryString.stringify(_.pickBy({
+    type: this.type,
+    keyword: this.keyword
+  }, _.identity))
   const response = await axios.get('/api/blog/lists', {
     params: {
       uid: BlogGlobals.blogUID,
