@@ -21,7 +21,7 @@
       <a :href="post.Identifier" style="text-decoration: none; color: var(--hola-text-dark-color);">
         <div class="hola-card">
           <h2 class="hola-card-title">
-            {{ post.Title }} <button class="hola-button hola-button-primary" @click.stop.prevent="type = post.Type">{{ post.Type }}</button>
+            {{ post.Title }} <span class="hola-badge" @click.stop.prevent="type = post.Type">{{ post.Type }}</span>
           </h2>
           <p>{{ post.ContentDescription }}</p>
         </div>
