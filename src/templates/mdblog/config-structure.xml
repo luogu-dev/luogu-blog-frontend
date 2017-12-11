@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf8' ?>
+<section id="config">
+  <section id="background" name="背景设置">
+    <property id="header" name="顶部背景" type="url"/>
+  </section>
+  <section id="color" name="颜色设定">
+    <property id="primary" name="主色" type="color-choice" default="indigo">
+      <option id="deep-purple" name="基佬紫" color="#673AB7" />
+      <option id="indigo" name="洛谷蓝" color="#3F51B5" />
+      <option id="teal" name="帽子绿" color="#009688" />
+    </property>
+    <property id="accent" name="强调色" type="color-choice" default="pink">
+      <option id="pink" name="调教粉" color="#FF4081" />
+      <option id="red" name="姨妈红" color="#FF5252" />
+      <option id="orange" name="奇迹橙" color="#FFAB40" />
+    </property>
+  </section>
+</section>
