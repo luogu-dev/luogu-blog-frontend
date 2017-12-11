@@ -14,7 +14,14 @@
   {{>styles}}
   <title>{{ title }} - {{ blogName }}</title>
 </head>
-
+{{#if themeSettings.config.ui.background_image}}
+  <style>
+    body {
+      background: url({{ themeSettings.config.ui.background_image }}) fixed center;
+      background-size: cover;
+    }
+  </style>
+{{/if}}
 <body>
 <header class="am-topbar am-topbar-inverse">
   <div class="blog-g-fixed am-g">

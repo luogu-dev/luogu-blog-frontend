@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf8' ?>
+<section id="config">
+  <section id="ui" name="界面设定">
+    <property id="background_image" name="背景图片地址" type="url" />
+  </section>
+</section>

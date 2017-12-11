@@ -3,7 +3,7 @@
   <section id="ui" name="界面设定">
     <property id="enable_search" name="首页搜索框" type="boolean" required="true" default="true" />
     <property id="background_image" name="背景图片地址" type="url" />
-    <property id="primary_color" name="主题色" type="color" default="#3498db" />
-    <property id="focus_color" name="焦点高亮色（建议为主题色 + Alpha 0.5）" type="color" default="rgba(52, 152, 219, .5)" />
+    <property id="primary_color" name="主题色"  required="true" type="text" default="#3498db" />
+    <property id="focus_color" name="焦点高亮色（建议为主题色 + Alpha 0.5）" required="true" type="text" default="rgba(52, 152, 219, .5)" />
   </section>
 </section>

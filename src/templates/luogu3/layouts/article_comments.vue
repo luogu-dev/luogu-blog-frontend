@@ -15,10 +15,7 @@
         </button>
       </div>
     </div>
-    <h3 class="ui dividing header">
-      评论
-    </h3>
-    <ul class="am-comments-list am-comments-list-flip" v-if="ready">
+    <ul class="am-comments-list am-comments-list-flip lg-article" v-if="ready">
       <li class="am-comment am-comment-primary" v-for="comment in comments">
         <div class="lg-left">
           <a class="avatar" :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
