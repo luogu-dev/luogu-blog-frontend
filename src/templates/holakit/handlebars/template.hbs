@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="hola-html-reset hola-var">
+<html class="hola-html-reset hola-var lgblog-var">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>{{ title }} - {{ blogName }}</title>
@@ -42,6 +42,12 @@
     }
   </style>
 {{/if}}
+<style>
+  .lgblog-var {
+    --hola-primary-color: {{ themeSettings.config.ui.primary_color }};
+    --hola-focus-color: {{ themeSettings.config.ui.focus_color }};
+  }
+</style>
 <div class="hola-hero hola-hero-height-extended">
   <div class="hola-container hola-hero-content">
     <h1>{{ blogName }}</h1>
