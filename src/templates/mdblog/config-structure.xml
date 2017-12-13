@@ -15,4 +15,5 @@
       <option id="orange" name="奇迹橙" color="#FFAB40" />
     </property>
   </section>
+  <property id="show_icon" name="显示头像" type="boolean" required="true" default="true" />
 </section>

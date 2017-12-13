@@ -26,14 +26,31 @@
   </nav>
   <div style="padding-top: 90px;padding-bottom: 40px">
     <img class="mdui-center mdui-img-circle"
-         src="{{ picAddress }}/upload/usericon/{{ blogUID }}.png">
+         src="{{ picAddress }}/upload/usericon/{{ blogUID }}.png"
+         {{#unless themeSettings.config.show_icon}}
+           style="visibility: hidden"
+         {{/unless}}
+    >
     <div class="mdui-valign">
       <a href="/blog/{{ blogUID }}" class="mdui-center mdui-typo-display-2 mdui-text-color-theme"
-         style="margin-bottom:0;margin-top: 15px;text-decoration: none;">{{ blogName }}</a>
+         style="
+         margin-bottom: 0;
+         margin-top: 15px;
+         text-decoration: none;
+         {{#if themeSettings.config.background.header}}
+         color: white !important;
+         {{/if}}
+      ">
+        {{ blogName }}
+      </a>
 
     </div>
     <div class="mdui-valign">
-      <p class="mdui-center mdui-typo-subheading-opacity mdui-text-color-theme">{{ blogSubtitle }} </p>
+      <p class="mdui-center mdui-typo-subheading-opacity mdui-text-color-theme"
+        {{#if themeSettings.config.background.header}}
+         style="color: white !important;"
+        {{/if}}
+      >{{ blogSubtitle }} </p>
     </div>
   </div>
 </div>
