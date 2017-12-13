@@ -22,5 +22,6 @@ int main() {
 }
 </code>
 </pre>
+<img src="http://blend-s.jp/assets/img/story/11/img1.jpg">
   `
 })

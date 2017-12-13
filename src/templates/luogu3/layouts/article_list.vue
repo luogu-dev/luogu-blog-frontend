@@ -6,7 +6,7 @@
           <a :href="post.Identifier">{{ post.Title }}</a>
         </h3>
         <h4 class="am-article-meta blog-meta">
-          <span class="am-icon-thumbs-up">{{ post.ThumbUp }} </span>
+          <span class="am-icon-thumbs-up">&nbsp;{{ post.ThumbUp }} </span>
           | posted on {{ post.PostTime | formatDate }} | under
           <a @click="type = post.Type" style="cursor: pointer">{{ post.Type }}</a>
         </h4>

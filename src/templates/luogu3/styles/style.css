@@ -102,3 +102,7 @@ body{
 .voteactive{
 	color:#0e90d2;
 }
+
+#blog-container img {
+  max-width: 100%;
+}
