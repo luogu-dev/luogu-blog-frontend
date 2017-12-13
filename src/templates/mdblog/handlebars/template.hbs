@@ -13,6 +13,7 @@
     <style>
       .mdblog-background {
         background-image: url({{ themeSettings.config.background.header}});
+        max-height: 350px;
       }
     </style>
     {{>styles}}
@@ -32,24 +33,28 @@
          {{/unless}}
     >
     <div class="mdui-valign">
-      <a href="/blog/{{ blogUID }}" class="mdui-center mdui-typo-display-2 mdui-text-color-theme"
+      <a href="." class="mdui-center mdui-typo-display-2
+        {{#if themeSettings.config.background.header}}
+          mdui-text-color-white-text
+        {{else}}
+           mdui-text-color-theme
+        {{/if}}"
          style="
          margin-bottom: 0;
          margin-top: 15px;
          text-decoration: none;
-         {{#if themeSettings.config.background.header}}
-         color: white !important;
-         {{/if}}
       ">
         {{ blogName }}
       </a>
 
     </div>
     <div class="mdui-valign">
-      <p class="mdui-center mdui-typo-subheading-opacity mdui-text-color-theme"
+      <p class="mdui-center mdui-typo-subheading-opacity
         {{#if themeSettings.config.background.header}}
-         style="color: white !important;"
-        {{/if}}
+          mdui-text-color-white-text
+        {{else}}
+           mdui-text-color-theme
+        {{/if}}"
       >{{ blogSubtitle }} </p>
     </div>
   </div>
@@ -65,7 +70,7 @@
 <section>
   <div class="mdui-drawer mdui-drawer-close" id="mdblog-drawer">
     <ul class="mdui-list">
-      <li onclick="window.location.href='/blog/{{ blogUID }}';"
+      <li onclick="window.location.href='.';"
           class="mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons">star</i>
         <div class="mdui-list-item-content">首页</div>
@@ -83,7 +88,10 @@
 <br>
 <footer class="mdui-color-theme">
     <div class="mdui-valign">
-      <p class="mdui-center">自豪地采用<a href="{{ luoguAddress }}">洛谷博客</a></p>
+      <p class="mdui-center">
+        自豪地采用<a href="{{ luoguAddress }}" style="color: white;">洛谷</a>博客&nbsp;
+        Theme mdblog by <a href="https://darkflames.blog.luogu.org/" style="color: white;">darkflames</a>
+      </p>
     </div>
 </footer>
 
