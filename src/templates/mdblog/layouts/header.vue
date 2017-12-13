@@ -10,7 +10,7 @@
         <i class="mdui-icon material-icons">search</i>
       </button>
       <div class="mdui-textfield" style="margin-left: 0;">
-      <input class="mdui-textfield-input" type="text" placeholder="Search" v-model="keyword"/>
+        <input class="mdui-textfield-input" type="text" placeholder="Search" v-model="keyword"/>
       </div>
     </div>
   </div>
