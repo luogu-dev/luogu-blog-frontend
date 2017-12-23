@@ -18,8 +18,15 @@ const Partials = {
 const BlogMeta = {
   blogUID: 256,
   blogName: '卡速米之家',
-  blogSubtitle: '卡速米真好吃',
-  themeSettingsJson: '{}'
+  blogSubtitle: '卡速米真好吃'
+}
+
+const getThemeSettings = theme => {
+  const themeSettings = require(path.resolve(__dirname, '..', 'templates', theme, 'example-config.json'))
+  return {
+    themeSettings,
+    themeSettingsJson: JSON.stringify(themeSettings)
+  }
 }
 
 const getPartials = (theme, page) => {
@@ -45,11 +52,11 @@ module.exports.articleListHandler = (req, res) => {
     res.redirect(req.url + '/')
   } else {
     registerPartials(req.params.theme, 'index')
-    res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, { isBlogAdmin: req.query.isAdmin })))
+    res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, getThemeSettings(req.params.theme), { isBlogAdmin: req.query.isAdmin })))
   }
 }
 
 module.exports.articleHandler = (req, res) => {
   registerPartials(req.params.theme, 'article')
-  res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, require('./fakepost')(), { isBlogAdmin: req.query.isAdmin })))
+  res.send(compileTmpl(req.params.theme)(Object.assign(BlogMeta, getThemeSettings(req.params.theme), require('./fakepost')(), { isBlogAdmin: req.query.isAdmin })))
 }

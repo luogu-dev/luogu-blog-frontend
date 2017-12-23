@@ -1,0 +1,9 @@
+{
+  "config": {
+    "ui": {
+      "enable_search": true,
+      "primary_color": "rgba(20, 20, 20, 0)",
+      "focus_color": "rgba(20, 20, 20, .5)"
+    }
+  }
+}
