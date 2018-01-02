@@ -21,7 +21,7 @@
     "babel-polyfill": "^6.26.0",
     "date-fns": "^1.29.0",
     "highlight.js": "^9.12.0",
-    "holakit": "^0.12.0",
+    "holakit": "^0.15.2",
     "jquery": "^3.2.1",
     "katex": "^0.9.0-alpha2",
     "lodash": "^4.17.4",
