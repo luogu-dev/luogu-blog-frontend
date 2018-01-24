@@ -2,7 +2,7 @@
 <html class="hola-html-reset hola-var lgblog-var">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>{{ title }} - {{ blogName }}</title>
+  <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
   <meta name="blog-uid" content="{{ blogUID }}">
   <meta name="blog-name" content="{{ blogName }}">
   <meta name="current-user" content="{{ currentUser }}">
@@ -22,6 +22,8 @@
     <nav class="hola-navbar-main">
       <a href="." class="hola-navbar-brand">{{ blogName }}</a>
     </nav>
+    <input type="checkbox" class="hola-navbar-toggle" id="navbar-toggle">
+    <label for="navbar-toggle" class="hola-navbar-toggle-label"></label>
     <nav class="hola-navbar-sub">
       <a href=".">文章</a>
       {{#if isBlogAdmin}}
@@ -79,8 +81,8 @@ var BlogGlobals = {
 {{>scripts}}
 <footer class="hola-footer">
   <div class="hola-container">
-    <p>自豪地采用基于 <a href="https://github.com/teamhola/holakit">HolaKit</a> 打造的洛谷博客主题。</p>
-    <p>HolaKit 由 <a href="https://ihola.one">¡Hola! 青少年</a>开发。</p>
+    <p>自豪地采用基于 <a href="https://github.com/teamhola/holakit">HolaKit</a> 打造的<a href="{{ luoguAddress }}">洛谷</a>博客主题。</p>
+    <p>HolaKit 由 <a href="https://ihola.one">¡Hola! 青少年</a>开发。</p> <a href="_sitemap">Site Map</a>
   </div>
 </footer>
 </body>
