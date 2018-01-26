@@ -26,6 +26,7 @@
     "katex": "^0.9.0-beta",
     "lodash": "^4.17.4",
     "mdui": "^0.4.0",
+    "normalize.css": "^7.0.0",
     "query-string": "^5.0.1",
     "semantic-ui": "^2.2.13",
     "vue": "^2.5.13"
@@ -47,7 +48,7 @@
     "eslint": "^4.16.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^4.0.1",
+    "eslint-plugin-html": "^4.0.2",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
