@@ -4,11 +4,9 @@
       <h2>发表评论</h2>
       <div style="margin-top: 10px;">
         <p>
-          <input v-model="commentContent"
-                 class="hola-form-ctrl hola-input-singleline"
-                 style="width: 90%;"
-                 type="text"
-                 placeholder="输入一些文字">
+          <textarea v-model="commentContent"
+                 class="hola-form-ctrl hola-input-multiline"
+                 placeholder="输入一些文字"></textarea>
         </p>
         <p>
           <input @click="postComment"
