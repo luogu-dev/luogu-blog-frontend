@@ -1,0 +1,40 @@
+<style>
+  code {
+    font-family: Monaco, Menlo, Consolas, "Courier New", FontAwesome, monospace;
+  }
+</style>
+
+<article id="blog-container" class="spl-article"
+  data-blogid="{{ postID }}"
+  data-vote="{{ userVote }}"
+  data-thumbUp="{{ postThumbUp }}"
+>
+  <header>
+    <div class="spl-header">
+      {{ postTitle }}
+    </div>
+    <i class="icon wait"></i>
+    <time>{{ postTime }}</time>
+    <a href=".#type={{ postType }}">
+      <i class="icon bookmark"></i>
+      {{ postType }}
+    </a>
+    {{#if isBlogAdmin}}
+      &emsp;
+      <a href="/blog/post_edit/{{ postID }}">编辑</a>
+    {{/if}}
+  </header>
+  <div id="article-content" class="spl-article-body">
+    {{{ postContent }}}
+  </div>
+  <section class="spl-section">
+    <div id="article-vote"></div>
+  </section>
+  <section class="spl-section">
+    <div class="spl-header">评论</div>
+    <hr>
+    <div id="article-comments"></div>
+  </section>
+</article>
+
+<link rel="stylesheet" href="/static/blog/simple/katex.css">

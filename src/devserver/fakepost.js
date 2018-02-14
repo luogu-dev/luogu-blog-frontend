@@ -1,6 +1,6 @@
 module.exports = () => ({
-  postId: 1234,
-  userVote: 233,
+  postID: 1234,
+  userVote: 1,
   postThumbUp: 666,
   postTitle: '中国人失掉自信力了吗',
   postTime: '1934 年 9 月 25 日',

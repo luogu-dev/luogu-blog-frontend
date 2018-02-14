@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="blog-uid" content="{{ blogUID }}">
+    <meta name="blog-name" content="{{ blogName }}">
+    <meta name="current-user" content="{{ currentUser }}">
+    <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
+    <link rel="stylesheet" href="/static/blog/simple/common.css">
+    {{>styles}}
+  </head>
+  <body>
+    <div class="spl-container">
+      <header class="spl-section clearfix">
+        <div class="spl-title">
+          <a href=".">{{ blogName }}</a>
+        </div>
+        <div class="spl-subtitle">
+          {{ blogSubtitle }}
+          {{#if isBlogAdmin}}
+            <div class="spl-manage">
+              <a href="{{ luoguAddress }}/blogAdmin">
+                管理后台
+              </a>
+            </div>
+          {{/if}}
+        </div>
+      </header>
+      <hr>
+      <main class="spl-section">
+        {{>content}}
+      </main>
+      <hr>
+      <footer class="spl-section">
+        <p>
+          Powered by <a href="{{ luoguAddress }}">Luogu</a> Blog.
+          <a href="_sitemap" class="underline">Site Map</a>
+        </p>
+        <p>
+          The Theme simple is designed by
+          <a
+            href="https://github.com/uHOOCCOOHu"
+            title="HOOCCOOH: Luogu id 9567"
+          >HOOCCOOH</a>.
+        </p>
+      </footer>
+    </div>
+    <script>
+var BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
+    </script>
+    <script src="/static/blog/simple/common.js"></script>
+    {{>scripts}}
+  </body>
+</html>
