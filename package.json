@@ -60,12 +60,12 @@
     "gulp-build": "^0.5.3",
     "handlebars": "^4.0.11",
     "json-server": "^0.12.2",
-    "lodash-webpack-plugin": "^0.11.5",
-    "url-loader": "^1.0.1",
-    "vue-loader": "^15.0.11",
-    "vue-template-compiler": "^2.5.16",
-    "webpack": "^4.8.3",
-    "webpack-bundle-analyzer": "^2.12.0",
-    "webpack-dev-server": "^3.1.4"
+    "lodash-webpack-plugin": "^0.11.4",
+    "url-loader": "^0.6.2",
+    "vue-loader": "^14.1.1",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.11.0",
+    "webpack-bundle-analyzer": "^2.10.0",
+    "webpack-dev-server": "^2.11.1"
   }
 }
