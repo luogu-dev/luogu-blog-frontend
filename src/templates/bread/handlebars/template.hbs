@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="blog-uid" content="{{ blogUID }}">
+  <meta name="blog-name" content="{{ blogName }}">
+  <meta name="current-user" content="{{ currentUser }}">
+  <link rel="stylesheet" href="/static/blog/debug/common.css">
+  {{>styles}}
+</head>
+<body>
+<div>
+
+  <!-- Navbar -->
+  <div id="bread-navbar">
+    <a class="bread-navbar-brand" href="/">{{ blogName }}</a>
+    <button type="button"
+            class="navbar-toggle">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href=".">文章</a>
+    {{#isBlogAdmin}}
+      <a href="{{ luoguAddress }}/blogAdmin">管理后台</a>
+    {{/isBlogAdmin}}
+    <div id="blog_navbar">
+      <ul>
+        <li>
+          <a href=".">文章</a>
+        </li>
+        <li>
+          <a href="{{ luoguAddress }}/blogAdmin">管理后台</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 高清大图 -->
+  <div class="intro-header" style="background-image: url({{ picAddress }})">
+    <div class="container">
+      <div class="site-heading">
+        <h1>{{ blogName }}</h1>
+        <div class="subheading">{{ blogSubtitle }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+
+  {{>content}}
+
+  <!-- Footer -->
+  <div id="bread-footer">
+    <div class="bread-container">
+      <div>
+        <a class="item" href="_sitemap">Site Map</a>
+        <a class="item" href="https://github.com/luogu-dev/luogu-blog-frontend">Github</a>
+        <a class="item" href="{{ luoguAddress }}">洛谷</a>
+      </div>
+      <p>Powered by Luogu Blog. Theme by Himself65. All rights reserved.</p>
+    </div>
+  </div>
+</div>
+<script>
+var BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
+</script>
+<script>
+// 检测Navbar浮动部分
+var $body = document.body;
+var $toggle = document.querySelector('.navbar-toggle');
+var $navbar = document.querySelector('#blog_navbar');
+var $collapse = document.querySelector('.navbar-collapse');
+var __navbar__ = {
+  close: function () {
+    $navbar.className = '';
+    setTimeout(function () {
+      if ($navbar.className.indexOf('in') < 0) {
+        $collapse.style.height = "0px"
+      }
+    }, 400)
+  },
+  open: function () {
+    $collapse.style.height = 'auto';
+    $navbar.className += ' in'
+  }
+};
+
+$toggle.addEventListener('click', function () {
+  if ($navbar.className.indexOf('in') > 0) {
+    __navbar__.close()
+  } else {
+    __navbar__.open()
+  }
+});
+
+document.addEventListener('click', function (e) {
+  if (e.target === $toggle) return;
+  if (e.target.className === 'icon-bar') return;
+  __navbar__.close();
+});
+</script>
+<script src="/static/blog/debug/common.js"></script>
+{{>scripts}}
+</body>
+</html>

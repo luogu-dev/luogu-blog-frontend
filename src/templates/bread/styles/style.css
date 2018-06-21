@@ -1,0 +1,43 @@
+body {
+  background-color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, WenQuanYi Micro Hei, SimSun, sans-serif;
+  line-height: 1.7;
+  font-size: 1pc;
+  color: #404040;
+  overflow-x: hidden;
+}
+
+.icon-bar + .icon-bar {
+  margin-top: 3px;
+}
+
+.icon-bar {
+  width: 18px;
+  border-radius: 0;
+  background-color: #FFFFFF;
+}
+
+.bread-navbar {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, WenQuanYi Micro Hei, SimSun, sans-serif;
+  line-height: 1.7;
+}
+
+.bread-button {
+
+}
+
+.intro-header {
+  background: no-repeat center center;
+  background-color: #CCC;
+  background-attachment: scroll;
+  background-size: cover;
+  margin-bottom: 0;
+}
+
