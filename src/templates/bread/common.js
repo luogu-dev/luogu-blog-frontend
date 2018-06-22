@@ -1,8 +1,11 @@
-import 'semanic.css'
-import 'semantic'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap-grid.min.css'
+import 'bootstrap/dist/js/bootstrap.min'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import BootstrapVue from 'bootstrap-vue'
+import 'font-awesome/css/font-awesome.min.css'
+import './styles/bread.css'
 import './styles/style.css'
-import $ from 'jquery'
+import Vue from 'vue'
 
-$('.main.menu').visibility({
-  type: 'fixed'
-})
+Vue.use(BootstrapVue)

@@ -8,7 +8,7 @@ import 'highlight.js/styles/tomorrow.css'
 initKatex()
 initHighlight()
 
-window.articleVode = new Vue({
+window.articleVote = new Vue({
   el: '#article-vote',
   render: h => h(ArticleVote)
 })

@@ -1,0 +1,263 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, WenQuanYi Micro Hei, SimSun, sans-serif;
+  line-height: 1.7;
+  font-size: 1pc;
+  color: #404040;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  outline: none;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+  height: 0;
+}
+
+.page-full {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* header */
+
+.bread-height-extended {
+  padding-bottom: 7rem;
+  margin-bottom: -7rem;
+}
+
+header.intro-header .site-heading {
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+.intro-header .site-heading {
+  text-align: center;
+}
+
+.intro-header .site-heading {
+  padding: 95px 0 70px;
+}
+
+.intro-header .site-heading > h1 {
+  font-style: inherit;
+}
+
+/* footer */
+#bread-footer {
+  font-size: 20px;
+  margin: 50px 0 65px;
+}
+
+footer .copyright a {
+  color: #337ab7;
+}
+
+/* post */
+
+.post-list {
+  color: #404040;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.post-list a {
+  color: #404040;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.post-list a:hover {
+  color: #337ab7;
+}
+
+.post-list h2 {
+  font-size: 26px;
+}
+
+.post-content-preview {
+  color: #a3a3a3;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.post-meta {
+  font-family: Lora, Times New Roman, serif;
+  color: #ccc;
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 0;
+}
+
+/* navbar */
+
+nav a {
+  color: #FFF !important;
+}
+
+header h1, .site-heading h1 {
+  font-style: normal;
+}
+
+footer .list-inline {
+  margin: 0;
+  padding: 0;
+}
+
+.list-inline li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.navbar-collapse {
+  max-height: 340px;
+}
+
+.navbar-collapse {
+  padding-right: 15px;
+  padding-left: 15px;
+  overflow-x: visible;
+  -webkit-overflow-scrolling: touch;
+  border-top: 1px solid transparent;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  padding: 19px 1pc;
+  margin-top: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  border-radius: 50%;
+}
+
+.navbar-toggle {
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.navbar-default, .bread-navbar-toggle {
+  border-color: transparent;
+  padding: 19px 1pc;
+  margin-top: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  border-radius: 50%;
+}
+
+.bread-navbar-toggle {
+  z-index: 5;
+  position: relative;
+  float: right;
+}
+
+.bread-navbar {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, WenQuanYi Micro Hei, SimSun, sans-serif;
+  line-height: 1.7;
+  min-height: 50px;
+  margin-bottom: 20px;
+}
+
+.bread-navbar-heading {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.bread-navbar-toggle {
+
+  border-color: transparent;
+  border-radius: 50%;
+}
+
+/* 透明 */
+.bread-navbar-custom {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+header.intro-header .site-heading {
+  color: white;
+}
+
+.intro-header .site-heading {
+  padding: 95px 0 70px;
+  text-align: center;
+}
+
+.intro-header,
+.post-heading,
+.bread-meta {
+  font-family: Lora, Times New Roman, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+@media (min-width: 576px) {
+  .navbar-toggle {
+    display: none;
+  }
+}
+
+.sm-hidden {
+  display: inline-flex;
+}
+
+@media (max-width: 576px) {
+  .sm-hidden {
+    display: none !important;
+  }
+
+  .bread-navbar-toggle {
+    display: inherit;
+  }
+}
+
+@media (min-width: 768px) {
+  .intro-header .post-heading .meta {
+    font-size: 20px;
+  }
+
+  .intro-header .page-heading h1, .intro-header .site-heading h1 {
+    font-size: 4pc;
+  }
+}

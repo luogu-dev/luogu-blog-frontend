@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf8' ?>
+<section id="config">
+  <section id="ui" name="界面设定">
+    <property id="enable_search" name="首页搜索框" type="boolean" required="true" default="true"/>
+    <property id="background_image" name="背景图片地址" type="url"
+              default="https://himself65.com/img/head_post/2018-4-5-01.jpg"/>
+  </section>
+  <section id="personal_setting" name="个性化设置">
+    <property id="about" name="个人简介" required="false" type="text" default="Hello,world"/>
+    <property id="github_url" name="GitHub地址" required="false" type="url" default="https://github.com/himself65"/>
+    <property id="zhihu_url" name="知乎地址" required="false" type="url" default="https://zhihu.com/people/himself65"/>
+  </section>
+</section>

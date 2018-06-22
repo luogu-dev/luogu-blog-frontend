@@ -8,64 +8,105 @@
   <meta name="blog-uid" content="{{ blogUID }}">
   <meta name="blog-name" content="{{ blogName }}">
   <meta name="current-user" content="{{ currentUser }}">
-  <link rel="stylesheet" href="/static/blog/debug/common.css">
+  <link rel="stylesheet" href="/static/blog/bread/common.css">
   {{>styles}}
 </head>
 <body>
-<div>
-
-  <!-- Navbar -->
-  <div id="bread-navbar">
-    <a class="bread-navbar-brand" href="/">{{ blogName }}</a>
-    <button type="button"
-            class="navbar-toggle">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a href=".">文章</a>
-    {{#isBlogAdmin}}
-      <a href="{{ luoguAddress }}/blogAdmin">管理后台</a>
-    {{/isBlogAdmin}}
-    <div id="blog_navbar">
-      <ul>
-        <li>
-          <a href=".">文章</a>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md bread-navbar bread-navbar-custom fixed-top">
+  <a class="navbar-brand" href="#">{{ blogName }}</a>
+  <button type="button"
+          id="navbar-toggle bread-navbar-toggle"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item" style="margin-right: 20px">
+        <a href=".">文章</a>
+      </li>
+      {{#isBlogAdmin}}
+        <li class="nav-item">
+          <a target="_blank" href="{{ luoguAddress }}/blogAdmin">管理后台</a>
         </li>
-        <li>
-          <a href="{{ luoguAddress }}/blogAdmin">管理后台</a>
-        </li>
-      </ul>
-    </div>
+      {{/isBlogAdmin}}
+    </ul>
   </div>
-
-  <!-- 高清大图 -->
-  <div class="intro-header" style="background-image: url({{ picAddress }})">
-    <div class="container">
-      <div class="site-heading">
-        <h1>{{ blogName }}</h1>
-        <div class="subheading">{{ blogSubtitle }}</div>
+  {{#if themeSettings.config.ui.enable_search}}
+    <form class="sm-hidden">
+      <input class="form-control mr-sm-2" type="search" placeholder="输入关键字..." aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0"
+              type="submit"
+              style="font-size:24px"
+              onclick="getPosts(1)">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </form>
+  {{/if}}
+</nav>
+<style>
+  .intro-header {
+    background-image: url({{ themeSettings.config.ui.background_image }});
+    background-size: cover;
+  }
+</style>
+<header class="footer bread-height-extended intro-header">
+  <div class="container" style="padding-top: 100px;">
+    <div class="row">
+      <div class="col">
+        <div class="site-heading">
+          <h1 style="font-style: normal;">{{ blogName }}</h1>
+          <div class="subheading">{{ blogSubtitle }}</div>
+        </div>
       </div>
     </div>
   </div>
+</header>
 
-  <!-- Main Content -->
+<!-- Main Content -->
+{{>content}}
 
-  {{>content}}
-
-  <!-- Footer -->
-  <div id="bread-footer">
-    <div class="bread-container">
-      <div>
-        <a class="item" href="_sitemap">Site Map</a>
-        <a class="item" href="https://github.com/luogu-dev/luogu-blog-frontend">Github</a>
-        <a class="item" href="{{ luoguAddress }}">洛谷</a>
+<!-- Footer -->
+<footer style="margin-top: 100px; margin-bottom: 100px;">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="list-inline text-center">
+          <li>
+            <a target="_blank" href="{{ luoguAddress }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">洛</i>
+                            </span>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/luogu-dev/luogu-blog-frontend">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+            </a>
+          </li>
+        </ul>
+        <p class="copyright text-muted">
+          <a class="item" href="_sitemap">Site Map</a>
+          <br/>
+          Powered by Luogu Blog. Theme by <a href="https://github.com/Himself65">Himself65</a>. All rights reserved.
+          <br>
+        </p>
       </div>
-      <p>Powered by Luogu Blog. Theme by Himself65. All rights reserved.</p>
     </div>
   </div>
-</div>
+</footer>
 <script>
 var BlogGlobals = {
   blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
@@ -75,42 +116,7 @@ var BlogGlobals = {
   picAddress: '{{ picAddress }}'
 }
 </script>
-<script>
-// 检测Navbar浮动部分
-var $body = document.body;
-var $toggle = document.querySelector('.navbar-toggle');
-var $navbar = document.querySelector('#blog_navbar');
-var $collapse = document.querySelector('.navbar-collapse');
-var __navbar__ = {
-  close: function () {
-    $navbar.className = '';
-    setTimeout(function () {
-      if ($navbar.className.indexOf('in') < 0) {
-        $collapse.style.height = "0px"
-      }
-    }, 400)
-  },
-  open: function () {
-    $collapse.style.height = 'auto';
-    $navbar.className += ' in'
-  }
-};
-
-$toggle.addEventListener('click', function () {
-  if ($navbar.className.indexOf('in') > 0) {
-    __navbar__.close()
-  } else {
-    __navbar__.open()
-  }
-});
-
-document.addEventListener('click', function (e) {
-  if (e.target === $toggle) return;
-  if (e.target.className === 'icon-bar') return;
-  __navbar__.close();
-});
-</script>
-<script src="/static/blog/debug/common.js"></script>
+<script src="/static/blog/bread/common.js"></script>
 {{>scripts}}
 </body>
 </html>

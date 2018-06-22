@@ -1,0 +1,27 @@
+<style>
+
+  code {
+    font-family: Monaco, Menlo, Consolas, "Courier New", FontAwesome, monospace;
+  }
+
+  #blog-container img {
+    max-width: 100%;
+  }
+</style>
+<div class="container"
+     id="bread-container"
+     data-blogid="{{ postID }}"
+     data-vote="{{ userVote }}"
+     data-thumbUp="{{ postThumbUp }}">
+  <h1 class="ui post-heading">
+    {{ postTitle }}
+  </h1>
+  <span class="meta bread-meta">
+    {{ postTime }} in <a href=".#type={{ postType }}">{{ postType }}</a>
+  </span>
+  <div class="ui divider"></div>
+  <div id="article-content">
+    {{{ postContent }}}
+  </div>
+  <div id="article-vote"></div>
+</div>

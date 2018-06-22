@@ -3,13 +3,13 @@
     <div>
       <button class="bread-button bread-button-primary"
               @click="performVote(1)"
-              :class=" active: vote === 1; thumbsUpClass; ">
+              :class="thumbsUpClass">
         <i style="font-size:24px" class="fa">&#xf0d8</i>
         {{ thumbUp }}
       </button>
       <button class="bread-button bread-button-normal"
               @click="performVote(-1)"
-              :class=" active: vote === -1; thumbsDownClass; ">
+              :class="thumbsDownClass ">
         <i style="font-size:24px" class="fa">&#xf0d7</i>
       </button>
     </div>
@@ -18,6 +18,8 @@
 
 <script>
 import { defaultData, performVote } from 'scripts/article'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default {
   data: {
@@ -38,9 +40,6 @@ export default {
   methods: {
     performVote,
     checkCanVote (voteType) {
-      // Must be logged in, and either not voted,
-      // or voted the same voteType,
-      // (in which case triggers un-vote)
       return this.uid && (this.vote === 0 || this.vote === voteType)
     }
   },
