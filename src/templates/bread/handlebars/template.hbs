@@ -12,12 +12,11 @@
   {{>styles}}
 </head>
 <body>
-<!-- Navbar -->
 <nav class="navbar navbar-expand-md bread-navbar bread-navbar-custom fixed-top">
   <a class="navbar-brand" href="#">{{ blogName }}</a>
   <button type="button"
           id="navbar-toggle bread-navbar-toggle"
-          class="navbar-toggle"
+          class="navbar-toggle btn-clear"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
@@ -28,8 +27,8 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav">
+  <div class="collapse navbar-collapse" style="box-shadow:none;" id="navbarSupportedContent">
+    <ul class="navbar-nav navbar-right ">
       <li class="nav-item" style="margin-right: 20px">
         <a href=".">文章</a>
       </li>
@@ -42,10 +41,13 @@
   </div>
   {{#if themeSettings.config.ui.enable_search}}
     <form class="sm-hidden">
-      <input class="form-control mr-sm-2" type="search" placeholder="输入关键字..." aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0"
+      <input class="mr-sm-2 bread-from-control"
+             type="search"
+             style="background-color:transparent;"
+             aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0 btn-clear bread-btn"
               type="submit"
-              style="font-size:24px"
+              style="font-size:24px;color: white;"
               onclick="getPosts(1)">
         <i class="fa fa-search" aria-hidden="true"></i>
       </button>
@@ -58,28 +60,35 @@
     background-size: cover;
   }
 </style>
-<header class="footer bread-height-extended intro-header">
+<header class="footer bread-height-extended intro-header main-head">
   <div class="container" style="padding-top: 100px;">
     <div class="row">
       <div class="col">
         <div class="site-heading">
-          <h1 style="font-style: normal;">{{ blogName }}</h1>
-          <div class="subheading">{{ blogSubtitle }}</div>
+          <h1 id="bread-blog-title" style="font-style: normal;">{{ blogName }}</h1>
+          <div id="bread-blog-subtitle" class="subheading">{{ blogSubtitle }}</div>
         </div>
       </div>
     </div>
   </div>
 </header>
-
-<!-- Main Content -->
 {{>content}}
-
-<!-- Footer -->
-<footer style="margin-top: 100px; margin-bottom: 100px;">
+<script>
+var BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
+</script>
+<script src="/static/blog/bread/common.js"></script>
+{{>scripts}}
+<footer style="margin-top: 50px; margin-bottom: 100px;">
   <div class="container">
     <div class="row">
       <div class="col">
-        <ul class="list-inline text-center">
+        <ul class="list-inline text-center" style="margin-bottom: 10px">
           <li>
             <a target="_blank" href="{{ luoguAddress }}">
                             <span class="fa-stack fa-lg">
@@ -107,16 +116,5 @@
     </div>
   </div>
 </footer>
-<script>
-var BlogGlobals = {
-  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
-  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
-  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
-  luoguAddress: '{{ luoguAddress }}',
-  picAddress: '{{ picAddress }}'
-}
-</script>
-<script src="/static/blog/bread/common.js"></script>
-{{>scripts}}
 </body>
 </html>

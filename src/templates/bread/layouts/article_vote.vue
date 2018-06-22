@@ -1,16 +1,17 @@
 <template>
   <div id="article-vote">
     <div>
-      <button class="bread-button bread-button-primary"
-              @click="performVote(1)"
-              :class="thumbsUpClass">
-        <i style="font-size:24px" class="fa">&#xf0d8</i>
-        {{ thumbUp }}
+      <button type="button"
+              class="btn btn-outline-primary"
+              :class="{ active: vote === 1 }"
+              @click="performVote(1)">
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
       </button>
-      <button class="bread-button bread-button-normal"
-              @click="performVote(-1)"
-              :class="thumbsDownClass ">
-        <i style="font-size:24px" class="fa">&#xf0d7</i>
+      <button type="button"
+              class="btn btn-outline-secondary"
+              :class="{ active: vote === -1 }"
+              @click="performVote(-1)">
+        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
       </button>
     </div>
   </div>
@@ -18,17 +19,9 @@
 
 <script>
 import { defaultData, performVote } from 'scripts/article'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default {
-  data: {
-    defaultData,
-    blueTheme: 'background-color: #0084ff; background-color: #0084ff; color: #fff;',
-    whiteTheme: 'color: #0084ff; background: rgba(0,132,255,.1);',
-    thumbsUpClass: this.blueTheme,
-    thumbsDownClass: this.whiteTheme
-  },
+  data: defaultData,
   computed: {
     canVoteUp () {
       return this.checkCanVote(1)
@@ -40,19 +33,10 @@ export default {
   methods: {
     performVote,
     checkCanVote (voteType) {
+      // Must be logged in, and either not voted,
+      // or voted the same voteType,
+      // (in which case triggers un-vote)
       return this.uid && (this.vote === 0 || this.vote === voteType)
-    }
-  },
-  watch: {
-    vote: function (val) {
-      // Listen to the vote and change the class
-      if (val === 1) {
-        this.thumbsUpClass = this.blueTheme
-        this.thumbsDownClass = this.whiteTheme
-      } else if (val === -1) {
-        this.thumbsUpClass = this.whiteTheme
-        this.thumbsDownClass = this.blueTheme
-      }
     }
   }
 }
