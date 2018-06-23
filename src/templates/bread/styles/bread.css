@@ -1,0 +1,326 @@
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, WenQuanYi Micro Hei, SimSun, sans-serif;
+  line-height: 1.7;
+  font-size: 1pc;
+  color: #2a2e2e;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+button:hover {
+  color: transparent;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+  height: 0;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border-color: transparent;
+}
+
+::-webkit-input-placeholder {
+  color: #FFF;
+}
+
+::-moz-placeholder {
+  color: #FFF;
+}
+
+:-ms-input-placeholder {
+  color: #FFF;
+}
+
+:-moz-placeholder {
+  color: #FFF;
+}
+
+.avatar .user {
+  position: relative;
+  z-index: 100;
+  background: #dbdfe4;
+  padding: 0;
+}
+
+.avatar .user, .avatar img {
+  border-radius: 3px;
+}
+
+#layout, .btn-default, .dropdown-menu .divider, .follow-btn, .post-content .post-body {
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 48px;
+  height: 48px;
+}
+
+.author a {
+  font-weight: 700;
+}
+
+.comment__header {
+  line-height: 1;
+  font-size: 13px;
+  padding-right: 46px;
+  margin-bottom: 3px;
+}
+
+.post .avatar {
+  margin-right: 12px;
+}
+
+.bread-search {
+  background-color: transparent;
+  color: #FFF;
+}
+
+.bread-blog-meta {
+  font-family: Lora, Times New Roman, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.bread-from-control {
+  border-width: 0 0 1px 0;
+  border-radius: 0;
+}
+
+.bread-navbar-toggle-default {
+  border: 0;
+  margin: 0;
+  outline: none;
+  padding: 19px 1pc;
+}
+
+.bread-btn {
+  color: white;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+}
+
+.page-full {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* header */
+
+.bread-height-extended {
+  padding-bottom: 7rem;
+  margin-bottom: -7rem;
+}
+
+header.intro-header .site-heading {
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+.intro-header .site-heading {
+  text-align: center;
+}
+
+.intro-header .site-heading {
+  padding: 95px 0 70px;
+}
+
+.intro-header .site-heading > h1 {
+  font-style: inherit;
+}
+
+/* footer */
+#bread-footer {
+  font-size: 20px;
+  margin: 50px 0 65px;
+}
+
+footer .copyright a {
+  color: #337ab7;
+}
+
+/* navbar */
+
+nav a {
+  color: #FFF;
+}
+
+header h1, .site-heading h1 {
+  font-style: normal;
+}
+
+footer .list-inline {
+  margin: 0;
+  padding: 0;
+}
+
+.list-inline li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-clear {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navbar-collapse {
+  max-height: 340px;
+}
+
+.navbar-right {
+  text-align: right;
+}
+
+.navbar-collapse {
+  padding-right: 15px;
+  padding-left: 15px;
+  overflow-x: visible;
+  -webkit-overflow-scrolling: touch;
+  border-top: 1px solid transparent;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  padding: 19px 1pc;
+  margin-top: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  border-radius: 50%;
+}
+
+.navbar-toggle {
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.bread-navbar-toggle {
+  z-index: 5;
+  position: relative;
+  float: right;
+}
+
+.bread-navbar a {
+  color: #FFF;
+}
+
+.bread-navbar {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, WenQuanYi Micro Hei, SimSun, sans-serif;
+  line-height: 1.7;
+  min-height: 50px;
+  margin-bottom: 20px;
+}
+
+.bread-navbar-heading {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.bread-navbar-toggle {
+
+  border-color: transparent;
+  border-radius: 50%;
+}
+
+/* 透明 */
+.bread-navbar-custom {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+header.intro-header .site-heading {
+  color: white;
+}
+
+.intro-header .site-heading {
+  padding: 95px 0 70px;
+  text-align: center;
+}
+
+.intro-header,
+.post-heading,
+.bread-meta {
+  font-family: Lora, Times New Roman, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.sm-hidden {
+  display: inline-flex;
+}
+
+@media (max-width: 768px) {
+  .sm-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-item {
+    margin-right: 30px;
+  }
+
+  .bread-navbar-toggle {
+    display: none;
+  }
+
+  .intro-header .post-heading .meta {
+    font-size: 20px;
+  }
+
+  .intro-header .page-heading h1, .intro-header .site-heading h1 {
+    font-size: 4pc;
+  }
+}

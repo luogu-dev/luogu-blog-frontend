@@ -1,0 +1,10 @@
+{
+  "config": {
+    "background": "",
+    "color": {
+      "primary": "indigo",
+      "accent": "pink"
+    },
+    "show_icon": false
+  }
+}

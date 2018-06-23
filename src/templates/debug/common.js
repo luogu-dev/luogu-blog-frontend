@@ -1,5 +1,5 @@
-import 'semantic.css'
-import 'semantic'
+import 'semantic-ui/dist/semantic.css'
+import 'semantic-ui/dist/semantic'
 import './styles/style.css'
 import $ from 'jquery'
 
