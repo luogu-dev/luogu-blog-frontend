@@ -24,6 +24,42 @@
   </div>
 </template>
 
+<style scoped>
+  .post-list {
+    color: #404040;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .post-list a {
+    color: #404040;
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .post-list a:hover {
+    color: #337ab7;
+  }
+
+  .post-list h2 {
+    font-size: 26px;
+  }
+
+  .post-content-preview {
+    color: #a3a3a3;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .post-meta {
+    font-family: Lora, Times New Roman, serif;
+    color: #ccc;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 0;
+  }
+</style>
+
 <script>
 import { defaultData, defaultWatch, getPosts, getWaterfallPosts } from 'scripts/article_list'
 import formatDate from 'plugins/format_date'

@@ -1,4 +1,4 @@
-body {
+html, body {
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, WenQuanYi Micro Hei, SimSun, sans-serif;
   line-height: 1.7;
   font-size: 1pc;
@@ -6,6 +6,28 @@ body {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
+}
+
+footer {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+button:hover {
+  color: transparent;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+  height: 0;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  color: #337ab7;
+  text-decoration: none;
 }
 
 *:focus {
@@ -16,21 +38,11 @@ body {
   border-color: transparent;
 }
 
-input, button, a {
-  outline: 0 none !important;
-  blr: expression(this.onFocus=this.blur());
-}
-
-a, a:link, a:visited, a:hover, a:active {
-  color: #337ab7;
-  text-decoration: none;
-}
-
-::-moz-placeholder {
+::-webkit-input-placeholder {
   color: #FFF;
 }
 
-::-webkit-input-placeholder {
+::-moz-placeholder {
   color: #FFF;
 }
 
@@ -38,16 +50,8 @@ a, a:link, a:visited, a:hover, a:active {
   color: #FFF;
 }
 
-input:-moz-placeholder {
+:-moz-placeholder {
   color: #FFF;
-}
-
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #eee;
-  height: 0;
 }
 
 .avatar .user {
@@ -85,24 +89,9 @@ hr {
   margin-right: 12px;
 }
 
-.bread-comment {
-  width: 100%;
-  display: inline-flex;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.post-meta {
-  display: inline-block;
-}
-
-.post-content .post-message p:last-child {
-  margin: 0;
-}
-
-.post-content .post-message p {
-  line-height: 21px;
-  margin: 0 0 15px;
+.bread-search {
+  background-color: transparent;
+  color: #FFF;
 }
 
 .bread-blog-meta {
@@ -113,17 +102,24 @@ hr {
 }
 
 .bread-from-control {
-  border-width: 0 0 1px 0 !important;
-  border-radius: 0 !important;
+  border-width: 0 0 1px 0;
+  border-radius: 0;
+}
+
+.bread-navbar-toggle-default {
+  border: 0;
+  margin: 0;
+  outline: none;
+  padding: 19px 1pc;
 }
 
 .bread-btn {
   color: white;
   border-radius: 50%;
-  border-color: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  border: 1px solid transparent !important;
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
 }
 
 .page-full {
@@ -168,46 +164,10 @@ footer .copyright a {
   color: #337ab7;
 }
 
-/* post */
-
-.post-list {
-  color: #404040;
-  line-height: 1.3;
-  margin-bottom: 10px;
-}
-
-.post-list a {
-  color: #404040;
-  text-decoration: none;
-  background-color: transparent;
-}
-
-.post-list a:hover {
-  color: #337ab7;
-}
-
-.post-list h2 {
-  font-size: 26px;
-}
-
-.post-content-preview {
-  color: #a3a3a3;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.post-meta {
-  font-family: Lora, Times New Roman, serif;
-  color: #ccc;
-  font-size: 13px;
-  font-style: italic;
-  margin-top: 0;
-}
-
 /* navbar */
 
 nav a {
-  color: #FFF !important;
+  color: #FFF;
 }
 
 header h1, .site-heading h1 {
@@ -278,19 +238,14 @@ footer .list-inline {
   border-radius: 4px;
 }
 
-.navbar-default, .bread-navbar-toggle {
-  border-color: transparent;
-  padding: 19px 1pc;
-  margin-top: 2px;
-  margin-right: 2px;
-  margin-bottom: 2px;
-  border-radius: 50%;
-}
-
 .bread-navbar-toggle {
   z-index: 5;
   position: relative;
   float: right;
+}
+
+.bread-navbar a {
+  color: #FFF;
 }
 
 .bread-navbar {
@@ -342,26 +297,23 @@ header.intro-header .site-heading {
   font-size: 18px;
 }
 
-@media (min-width: 576px) {
-  .navbar-toggle {
-    display: none;
-  }
-}
-
 .sm-hidden {
   display: inline-flex;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .sm-hidden {
-    display: none !important;
+    display: none;
   }
 }
 
 @media (min-width: 768px) {
+  .nav-item {
+    margin-right: 30px;
+  }
 
   .bread-navbar-toggle {
-    display: inherit;
+    display: none;
   }
 
   .intro-header .post-heading .meta {

@@ -31,6 +31,28 @@
   </div>
 </template>
 
+<style>
+  .bread-comment {
+    width: 100%;
+    display: inline-flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .post-meta {
+    display: inline-block;
+  }
+
+  .post-content .post-message p:last-child {
+    margin: 0;
+  }
+
+  .post-content .post-message p {
+    line-height: 21px;
+    margin: 0 0 15px;
+  }
+</style>
+
 <script>
 import pagination from '../components/pagination'
 import { defaultData, defaultMounted, getComments, postComment } from 'scripts/article_comments'
