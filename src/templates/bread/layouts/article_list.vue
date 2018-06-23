@@ -18,6 +18,7 @@
             </a>
             <hr/>
           </div>
+          <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getPosts"></pagination>
         </div>
       </div>
     </div>
@@ -61,29 +62,16 @@
 </style>
 
 <script>
-import { defaultData, defaultWatch, getPosts, getWaterfallPosts } from 'scripts/article_list'
+import pagination from '../components/pagination.vue'
+import { defaultData, defaultMounted, defaultWatch, getPosts } from 'scripts/article_list'
 import formatDate from 'plugins/format_date'
 
 export default {
-  data () {
-    let data = defaultData()
-    data.lastScroll = 0
-    return data
-  },
-  mounted () {
-    this.$nextTick(function () {
-      this.getPosts(this.page)
-      window.addEventListener('scroll', () => {
-        const maxHeight = window.document.body.offsetHeight - window.innerHeight
-        if (maxHeight - 230 <= window.scrollY && window.scrollY > this.lastScroll && this.ready && this.page !== this.totalPages) {
-          this.getWaterfallPosts(this.page + 1)
-        }
-        this.lastScroll = window.scrollY
-      })
-    })
-  },
+  data: defaultData,
+  mounted: defaultMounted,
   watch: defaultWatch,
-  methods: { getPosts, getWaterfallPosts },
-  filters: { formatDate }
+  methods: { getPosts },
+  filters: { formatDate },
+  components: { pagination }
 }
 </script>

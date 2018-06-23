@@ -1,8 +1,8 @@
 <template>
   <div id="article-comments" class="">
     <div class="form-group">
-      <label for="exampleFormControlTextarea1">回复文章</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <label for="comment-textArea">回复文章</label>
+      <textarea v-model="commentContent" class="form-control" id="comment-textArea" rows="3"></textarea>
     </div>
     <button @click="postComment"
             :class="{ active: commentPosting }"
@@ -27,11 +27,15 @@
         <div class="post-body-inner" style="margin: 0;">{{ comment.Content }}</div>
       </div>
     </div>
-    <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getComments"></pagination>
+    <pagination v-if="ready" class="away" :page="page" :totalPages="totalPages" :callback="getComments"></pagination>
   </div>
 </template>
 
-<style>
+<style scoped>
+  .away {
+    margin-top: 14px;
+  }
+
   .bread-comment {
     width: 100%;
     display: inline-flex;

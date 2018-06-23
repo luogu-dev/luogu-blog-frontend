@@ -1,14 +1,20 @@
 <template>
-  <ul class="pager" v-if="totalPages > 1">
-    <li @click="callback(page - 1)"
-        :class="{ disabled: page == totalPages }"
-        v-if="page - 1 > 0">
-      ← Newer Posts
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link"
+         v-if="page != 1"
+         @click="callback(page - 1)"
+         href="#">
+        Previous
+      </a>
     </li>
-    <li @click="callback(page + 1)"
-        :class="{ disabled: page == totalPages }"
-        v-if="page + 1 <= totalPages">
-      Older Posts →
+    <li class="page-item">
+      <a class="page-link"
+         v-if="page != totalPages"
+         @click="callback(page + 1)"
+         href="#">
+        Next
+      </a>
     </li>
   </ul>
 </template>
