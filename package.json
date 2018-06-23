@@ -34,6 +34,7 @@
     "npm": "^6.1.0",
     "query-string": "^6.1.0",
     "semantic-ui": "^2.3.2",
+    "uglifyjs-webpack-plugin": "^1.2.6",
     "vue": "^2.5.16",
     "vue-awesome": "^2.3.7"
   },
