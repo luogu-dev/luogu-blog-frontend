@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="blog-uid" content="{{ blogUID }}">
+  <meta name="blog-name" content="{{ blogName }}">
+  <meta name="current-user" content="{{ currentUser }}">
+  <link rel="stylesheet" href="/static/blog/bread/common.css">
+  {{>styles}}
+</head>
+<body>
+<nav class="navbar navbar-expand-md bread-navbar bread-navbar-custom fixed-top">
+  <a class="navbar-brand" href="#">{{ blogName }}</a>
+  <button type="button"
+          id="bread-navbar-toggle"
+          class="bread-navbar-toggle bread-navbar-toggle-default btn-clear hidden-md-up"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <div class="collapse navbar-collapse"
+       style="box-shadow:none;"
+       id="navbarSupportedContent">
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item">
+        <a href=".">文章</a>
+      </li>
+      {{#isBlogAdmin}}
+        <li class="nav-item">
+          <a target="_blank" href="{{ luoguAddress }}/blogAdmin">管理后台</a>
+        </li>
+      {{/isBlogAdmin}}
+    </ul>
+  </div>
+  {{#if themeSettings.config.ui.enable_search}}
+    <form class="sm-hidden">
+      <input class="mr-sm-2 bread-from-control"
+             type="search"
+             style="background-color:transparent;"
+             aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0 btn-clear bread-btn"
+              type="submit"
+              style="font-size:24px;color: white;"
+              onclick="getPosts(1)">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </form>
+  {{/if}}
+</nav>
+<style>
+  .intro-header {
+    background-image: url({{ themeSettings.config.ui.background_image }});
+    background-size: cover;
+  }
+</style>
+<header class="footer bread-height-extended intro-header main-head">
+  <div class="container" style="padding-top: 100px;">
+    <div class="row">
+      <div class="col">
+        <div class="site-heading">
+          <h1 id="bread-blog-title" style="font-style: normal;">{{ blogName }}</h1>
+          <div id="bread-blog-subtitle" class="subheading">{{ blogSubtitle }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{{>content}}
+<script>
+var BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
+</script>
+<footer class="bread-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="list-inline text-center" style="margin-bottom: 10px">
+          <li>
+            <a target="_blank" href="{{ luoguAddress }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">洛</i>
+                            </span>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/luogu-dev/luogu-blog-frontend">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+            </a>
+          </li>
+        </ul>
+        <p class="copyright text-muted">
+          <a class="item" href="_sitemap">Site Map </a>
+          {{#isBlogAdmin}}
+            <a target="_blank" href="{{ luoguAddress }}/blogAdmin">| 管理后台</a>
+          {{/isBlogAdmin}}
+          <br/>
+          Powered by Luogu Blog. Theme by <a href="https://github.com/Himself65">Himself65</a>. All rights reserved.
+          <br>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+<script src="/static/blog/bread/common.js"></script>
+{{>scripts}}
+</html>

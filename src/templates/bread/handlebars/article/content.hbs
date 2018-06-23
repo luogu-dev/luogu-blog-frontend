@@ -1,0 +1,46 @@
+<style>
+  .main-head {
+    visibility: hidden;
+    display: none;
+  }
+
+  pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 3px;
+  }
+</style>
+<header class="footer bread-height-extended intro-header">
+  <div class="container" style="padding-top: 100px;">
+    <div class="row">
+      <div class="col">
+        <div class="site-heading">
+          <h1 id="bread-blog-title" style="font-style: normal;text-align: left;">{{ postTitle }}</h1>
+          <div class="bread-blog-meta" style="text-align: left;">on {{ postTime }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container"
+     id="blog-container"
+     style="margin-top: 30px;"
+     data-blogid="{{ postID }}"
+     data-vote="{{ userVote }}"
+     data-thumbUp="{{ postThumbUp }}">
+  <div class="row">
+    <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+      <div id="article-content" style="margin-top: 30px; margin-bottom: 30px;">
+        {{{ postContent }}}
+      </div>
+      <hr/>
+      <div id="article-vote"></div>
+      <hr/>
+      <div id="article-comments"></div>
+    </div>
+  </div>
+</div>
