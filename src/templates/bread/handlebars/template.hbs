@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <meta name="blog-uid" content="{{ blogUID }}">
@@ -9,7 +10,6 @@
   <meta name="current-user" content="{{ currentUser }}">
   <link rel="stylesheet" href="/static/blog/bread/common.css">
   {{>styles}}
-  <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-md bread-navbar bread-navbar-custom fixed-top">
@@ -43,13 +43,13 @@
   </div>
   {{#if themeSettings.config.ui.enable_search}}
     <form class="sm-hidden">
-      <input class="mr-sm-2 bread-from-control"
+      <input class="mr-sm-2 bread-from-control bread-search"
              type="search"
-             style="background-color:transparent;"
+             style=""
              aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0 btn-clear bread-btn"
+      <button class="btn  my-2 my-sm-0 bread-btn btn-clear"
               type="submit"
-              style="font-size:24px;color: white;"
+              style="font-size:24px;color:white;"
               onclick="getPosts(1)">
         <i class="fa fa-search" aria-hidden="true"></i>
       </button>
@@ -75,6 +75,15 @@
   </div>
 </header>
 {{>content}}
+<script>
+var BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
+</script>
 <footer class="bread-footer">
   <div class="container">
     <div class="row">
@@ -111,15 +120,6 @@
   </div>
 </footer>
 </body>
-<script>
-var BlogGlobals = {
-  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
-  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
-  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
-  luoguAddress: '{{ luoguAddress }}',
-  picAddress: '{{ picAddress }}'
-}
-</script>
 <script src="/static/blog/bread/common.js"></script>
 {{>scripts}}
 </html>

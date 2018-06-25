@@ -4,7 +4,7 @@
     display: none;
   }
 
-  .code {
+  pre {
     background-color: #f8f8f8;
     border: 1px solid #ccc;
     padding: 6px 10px;
@@ -17,7 +17,7 @@
       <div class="col">
         <div class="site-heading">
           <h1 id="bread-blog-title" style="font-style: normal;text-align: left;">{{ postTitle }}</h1>
-          <div class="bread-blog-meta" style="text-align: left;">on {{ postTime }}</div>
+          <div class="bread-blog-meta" style="text-align: left;">on {{ postTime }} in  <a class="tag" href=".#type={{ postType }}">{{ postType }}</a></div>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
-      <div id="article-content">
+      <div id="article-content" style="margin-top: 30px; margin-bottom: 30px;">
         {{{ postContent }}}
       </div>
       <hr/>

@@ -5,6 +5,9 @@ import ArticleVote from './layouts/article_vote'
 import ArticleComments from './layouts/article_comments'
 import 'highlight.js/styles/tomorrow.css'
 
+initKatex()
+initHighlight()
+
 window.articleVote = new Vue({
   el: '#article-vote',
   render: h => h(ArticleVote)
@@ -14,6 +17,3 @@ window.articleComments = new Vue({
   el: '#article-comments',
   render: h => h(ArticleComments)
 })
-
-initKatex()
-initHighlight()
