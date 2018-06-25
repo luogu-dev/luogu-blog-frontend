@@ -1,8 +1,5 @@
 html, body {
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, WenQuanYi Micro Hei, SimSun, sans-serif;
   line-height: 1.7;
-  font-size: 1pc;
-  color: #2a2e2e;
   overflow-x: hidden;
   height: 100%;
   width: 100%;
@@ -32,26 +29,6 @@ a, a:link, a:visited, a:hover, a:active {
 
 *:focus {
   outline: none;
-}
-
-::-moz-focus-inner {
-  border-color: transparent;
-}
-
-::-webkit-input-placeholder {
-  color: #FFF;
-}
-
-::-moz-placeholder {
-  color: #FFF;
-}
-
-:-ms-input-placeholder {
-  color: #FFF;
-}
-
-:-moz-placeholder {
-  color: #FFF;
 }
 
 .avatar .user {
@@ -102,8 +79,10 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .bread-from-control {
+  background-color: transparent;
   border-width: 0 0 1px 0;
   border-radius: 0;
+  color: white;
 }
 
 .bread-navbar-toggle-default {
@@ -130,11 +109,16 @@ a, a:link, a:visited, a:hover, a:active {
   width: 100%;
 }
 
-/* header */
+nav a {
+  color: #FFF;
+}
 
-.bread-height-extended {
-  padding-bottom: 7rem;
-  margin-bottom: -7rem;
+header.intro-header .site-heading {
+  color: white;
+}
+
+header h1, .site-heading h1 {
+  font-style: normal;
 }
 
 header.intro-header .site-heading {
@@ -154,24 +138,18 @@ header.intro-header .site-heading {
   font-style: inherit;
 }
 
-/* footer */
 #bread-footer {
   font-size: 20px;
   margin: 50px 0 65px;
 }
 
+.bread-height-extended {
+  padding-bottom: 7rem;
+  margin-bottom: -7rem;
+}
+
 footer .copyright a {
   color: #337ab7;
-}
-
-/* navbar */
-
-nav a {
-  color: #FFF;
-}
-
-header h1, .site-heading h1 {
-  font-style: normal;
 }
 
 footer .list-inline {
@@ -256,7 +234,6 @@ footer .list-inline {
   left: 0;
   width: 100%;
   z-index: 3;
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, WenQuanYi Micro Hei, SimSun, sans-serif;
   line-height: 1.7;
   min-height: 50px;
   margin-bottom: 20px;
@@ -268,19 +245,13 @@ footer .list-inline {
 }
 
 .bread-navbar-toggle {
-
   border-color: transparent;
   border-radius: 50%;
 }
 
-/* 透明 */
 .bread-navbar-custom {
   background: transparent;
   border-bottom: 1px solid transparent;
-}
-
-header.intro-header .site-heading {
-  color: white;
 }
 
 .intro-header .site-heading {
@@ -291,10 +262,15 @@ header.intro-header .site-heading {
 .intro-header,
 .post-heading,
 .bread-meta {
-  font-family: Lora, Times New Roman, serif;
   font-style: italic;
   font-weight: 300;
   font-size: 18px;
+}
+
+.tag {
+  color: #4183C4;
+  line-height: 24px;
+  font-size: 18pt;
 }
 
 .sm-hidden {
