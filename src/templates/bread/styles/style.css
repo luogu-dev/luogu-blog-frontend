@@ -1,3 +1,9 @@
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

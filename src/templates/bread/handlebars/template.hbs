@@ -12,49 +12,46 @@
   {{>styles}}
 </head>
 <body>
-<nav class="navbar navbar-expand-md bread-navbar bread-navbar-custom fixed-top">
-  <a class="navbar-brand" href=".">{{ blogName }}</a>
-  <button type="button"
-          id="bread-navbar-toggle"
-          class="bread-navbar-toggle bread-navbar-toggle-default btn-clear hidden-md-up"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-  <div class="collapse navbar-collapse"
-       style="box-shadow:none;"
-       id="navbarSupportedContent">
-    <ul class="navbar-nav navbar-right">
-      <li class="nav-item">
-        <a href=".">文章</a>
-      </li>
-      {{#isBlogAdmin}}
-        <li class="nav-item">
-          <a target="_blank" href="{{ luoguAddress }}/blogAdmin">管理后台</a>
-        </li>
-      {{/isBlogAdmin}}
-    </ul>
-  </div>
-  {{#if themeSettings.config.ui.enable_search}}
-    <form class="sm-hidden">
-      <input class="mr-sm-2 bread-from-control bread-search"
-             type="search"
-             style=""
-             aria-label="Search">
-      <button class="btn  my-2 my-sm-0 bread-btn btn-clear"
-              type="submit"
-              style="font-size:24px;color:white;"
-              onclick="getPosts(1)">
-        <i class="fa fa-search" aria-hidden="true"></i>
+<nav class="bread-navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header page-scroll">
+      <button class="btn navbar-toggle" type="button" style="float:right;">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
-    </form>
-  {{/if}}
+      <a class="navbar-brand" href=".">{{ blogName }}</a>
+    </div>
+    {{#if themeSettings.config.ui.enable_search}}
+      <form class="sm-hidden">
+        <input class="mr-sm-2 bread-from-control bread-search"
+               type="search"
+               style=""
+               aria-label="Search">
+        <button class="btn  my-2 my-sm-0 bread-btn btn-clear"
+                type="submit"
+                style="font-size:24px;color:white;"
+                onclick="getPosts(1)">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </form>
+    {{/if}}
+    <div id="bread-navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item">
+            <a href=".">文章</a>
+          </li>
+          {{#isBlogAdmin}}
+            <li class="nav-item">
+              <a target="_blank" href="{{ luoguAddress }}/blogAdmin">管理后台</a>
+            </li>
+          {{/isBlogAdmin}}
+        </ul>
+      </div>
+    </div>
+  </div>
 </nav>
 <style>
   .intro-header {
@@ -75,15 +72,6 @@
   </div>
 </header>
 {{>content}}
-<script>
-var BlogGlobals = {
-  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
-  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
-  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
-  luoguAddress: '{{ luoguAddress }}',
-  picAddress: '{{ picAddress }}'
-}
-</script>
 <footer class="bread-footer">
   <div class="container">
     <div class="row">
@@ -120,6 +108,50 @@ var BlogGlobals = {
   </div>
 </footer>
 </body>
+<script>
+var BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
+</script>
+<script>
+var $body = document.body;
+var $toggle = document.querySelector('.navbar-toggle');
+var $navbar = document.querySelector('#bread-navbar');
+var $collapse = document.querySelector('.navbar-collapse');
+
+var __BreadNav__ = {
+  close: function () {
+    $navbar.className = " ";
+    setTimeout(function () {
+      if ($navbar.className.indexOf('in') < 0) {
+        $collapse.style.height = "0px";
+      }
+    }, 400)
+  },
+  open: function () {
+    $collapse.style.height = "auto";
+    $navbar.className += " in";
+  }
+}
+
+$body.addEventListener('click', function (e) {
+  if ($navbar.className.indexOf('in') > 0) {
+    __BreadNav__.close()
+  } else {
+    __BreadNav__.open()
+  }
+})
+
+$body.addEventListener('click', function (e) {
+  if (e.target == $toggle) return;
+  if (e.target.className == 'icon-bar') return;
+  __BreadNav__.close();
+})
+</script>
 <script src="/static/blog/bread/common.js"></script>
 {{>scripts}}
 </html>
