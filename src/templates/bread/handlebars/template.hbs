@@ -120,6 +120,7 @@ var BlogGlobals = {
 </script>
 <script>
 var $body = document.body;
+var $nav = document.querySelector('nav');
 var $toggle = document.querySelector('.navbar-toggle');
 var $navbar = document.querySelector('#bread-navbar');
 var $collapse = document.querySelector('.navbar-collapse');
@@ -142,6 +143,21 @@ var __BreadNav__ = {
 
 $search_input.addEventListener('input', function (e) {
   location.hash = 'keyword=' + e.target.value;
+  if (e.target.value === '') {
+    location.hash = ''
+  }
+})
+
+let defaultClassName = $nav.className;
+$body.addEventListener('scroll', function (e) {
+  let scrollTop = document.body.scrollTop;
+  if (scrollTop !== 0) {
+    if ($nav.className.indexOf('navbar-white') < 0) {
+      $nav.className += " navbar-white"
+    }
+  } else {
+    $nav.className = defaultClassName
+  }
 })
 
 $body.addEventListener('click', function (e) {
@@ -153,8 +169,8 @@ $body.addEventListener('click', function (e) {
 })
 
 $body.addEventListener('click', function (e) {
-  if (e.target == $toggle) return;
-  if (e.target.className == 'icon-bar') return;
+  if (e.target === $toggle) return;
+  if (e.target.className === 'icon-bar') return;
   __BreadNav__.close();
 })
 </script>

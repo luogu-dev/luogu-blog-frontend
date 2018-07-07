@@ -274,6 +274,10 @@ nav a {
   color: #777;
 }
 
+.navbar-white {
+  background: #FFF;
+}
+
 @media only screen and (max-width: 767px) {
   #bread-navbar .navbar-nav {
     margin: 7.5px -15px;
