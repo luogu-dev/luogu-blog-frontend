@@ -10,10 +10,6 @@ footer {
   margin-bottom: 100px;
 }
 
-button:hover {
-  color: transparent;
-}
-
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -29,6 +25,12 @@ a, a:link, a:visited, a:hover, a:active {
 
 *:focus {
   outline: none;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .avatar .user {
@@ -64,6 +66,10 @@ a, a:link, a:visited, a:hover, a:active {
 
 .post .avatar {
   margin-right: 12px;
+}
+
+.bread-form {
+  margin-top: 2px;
 }
 
 .bread-search {
@@ -263,10 +269,28 @@ nav a {
   margin-left: -15px;
 }
 
-@media only screen and (max-width: 767px) {
+.nav-item > a {
+  font-weight: 800;
+  color: #777;
+}
 
-  #bread-navbar.in {
-    margin-top: 56px;
+@media only screen and (max-width: 767px) {
+  #bread-navbar .navbar-nav {
+    margin: 7.5px -15px;
+  }
+
+  .nav-item {
+    color: #777;
+    padding: 10px 15px;
+  }
+
+  #bread-navbar a {
+    font-size: 13px;
+    line-height: 28px;
+  }
+
+  .sm-hidden {
+    display: none;
   }
 
   /* 动画部分 */
@@ -285,6 +309,7 @@ nav a {
 
   .navbar-default .navbar-collapse {
     position: absolute;
+    margin-top: 56px;
     right: 0;
     border: none;
     background: white;
@@ -298,11 +323,6 @@ nav a {
     transform: scaleX(0);
     transform-origin: top right;
     transition: all 200ms cubic-bezier(0.47, 0, 0.4, 0.99) 0ms;
-  }
-
-  #bread-navbar a {
-    font-size: 13px;
-    line-height: 28px;
   }
 
   #bread-navbar .navbar-collapse {
@@ -334,13 +354,29 @@ nav a {
   }
 }
 
-@media (max-width: 768px) {
-  .sm-hidden {
+@media (min-width: 768px) {
+  .navbar-toggle {
     display: none;
   }
-}
 
-@media (min-width: 768px) {
+  .nav-item {
+    float: left;
+    padding: 15px;
+  }
+
+  .navbar-right {
+    float: right;
+  }
+
+  .navbar-custom .nav li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12pt;
+    line-height: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+
   .intro-header .post-heading .meta {
     font-size: 20px;
   }
