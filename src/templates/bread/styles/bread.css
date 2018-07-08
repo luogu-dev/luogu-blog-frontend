@@ -10,10 +10,6 @@ footer {
   margin-bottom: 100px;
 }
 
-button:hover {
-  color: transparent;
-}
-
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -29,6 +25,12 @@ a, a:link, a:visited, a:hover, a:active {
 
 *:focus {
   outline: none;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .avatar .user {
@@ -66,6 +68,10 @@ a, a:link, a:visited, a:hover, a:active {
   margin-right: 12px;
 }
 
+.bread-form {
+  margin-top: 2px;
+}
+
 .bread-search {
   background-color: transparent;
   color: #FFF;
@@ -85,13 +91,6 @@ a, a:link, a:visited, a:hover, a:active {
   color: white;
 }
 
-.bread-navbar-toggle-default {
-  border: 0;
-  margin: 0;
-  outline: none;
-  padding: 19px 1pc;
-}
-
 .bread-btn {
   color: white;
   border-radius: 50%;
@@ -107,10 +106,6 @@ a, a:link, a:visited, a:hover, a:active {
   top: 0;
   height: 100%;
   width: 100%;
-}
-
-nav a {
-  color: #FFF;
 }
 
 header.intro-header .site-heading {
@@ -178,82 +173,6 @@ footer .list-inline {
   border-color: transparent;
 }
 
-.navbar-collapse {
-  max-height: 340px;
-}
-
-.navbar-right {
-  text-align: right;
-}
-
-.navbar-collapse {
-  padding-right: 15px;
-  padding-left: 15px;
-  overflow-x: visible;
-  -webkit-overflow-scrolling: touch;
-  border-top: 1px solid transparent;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
-}
-
-.navbar-default .navbar-toggle {
-  border-color: transparent;
-  padding: 19px 1pc;
-  margin-top: 2px;
-  margin-right: 2px;
-  margin-bottom: 2px;
-  border-radius: 50%;
-}
-
-.navbar-toggle {
-  float: right;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-right: 15px;
-  margin-bottom: 8px;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-
-.bread-navbar-toggle {
-  z-index: 5;
-  position: relative;
-  float: right;
-}
-
-.bread-navbar a {
-  color: #FFF;
-}
-
-.bread-navbar {
-  background: none;
-  border: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 3;
-  line-height: 1.7;
-  min-height: 50px;
-  margin-bottom: 20px;
-}
-
-.bread-navbar-heading {
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-.bread-navbar-toggle {
-  border-color: transparent;
-  border-radius: 50%;
-}
-
-.bread-navbar-custom {
-  background: transparent;
-  border-bottom: 1px solid transparent;
-}
-
 .intro-header .site-heading {
   padding: 95px 0 70px;
   text-align: center;
@@ -273,23 +192,189 @@ footer .list-inline {
   font-size: 18pt;
 }
 
+nav a {
+  color: #FFF;
+}
+
 .sm-hidden {
   display: inline-flex;
 }
 
-@media (max-width: 768px) {
+.bread-navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar-custom {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, WenQuanYi Micro Hei, SimSun, sans-serif;
+  line-height: 1.7;
+}
+
+.navbar-fixed-bottom, .navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.navbar-collapse {
+  padding-right: 15px;
+  padding-left: 15px;
+  overflow-x: visible;
+}
+
+.navbar-custom .navbar-brand {
+  font-weight: 800;
+  color: #fff;
+  height: 56px;
+  line-height: 25px;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  background: transparent;
+  padding: 19px 1pc;
+  margin-top: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  border-radius: 50%;
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.nav-item > a {
+  font-weight: 800;
+  color: #777;
+}
+
+@media only screen and (max-width: 767px) {
+  #bread-navbar .navbar-nav {
+    margin: 7.5px -15px;
+  }
+
+  .nav-item {
+    color: #777;
+    padding: 10px 15px;
+  }
+
+  #bread-navbar a {
+    font-size: 13px;
+    line-height: 28px;
+  }
+
   .sm-hidden {
     display: none;
+  }
+
+  /* 动画部分 */
+  #bread-navbar {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: top right;
+    transition: all .2s cubic-bezier(0.47, 0, 0.4, 0.99) 0ms;
+  }
+
+  #bread-navbar.in {
+    transform: scaleX(1);
+    opacity: 1;
+    transition: all .25s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  }
+
+  .navbar-default .navbar-collapse {
+    position: absolute;
+    margin-top: 56px;
+    right: 0;
+    border: none;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.239216) 0px 1px 4px;
+    border-radius: 2px;
+    width: 170px;
+  }
+
+  #bread-navbar {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: top right;
+    transition: all 200ms cubic-bezier(0.47, 0, 0.4, 0.99) 0ms;
+  }
+
+  #bread-navbar .navbar-collapse {
+    height: 0px;
+    transform: scaleY(0);
+    transform-origin: top right;
+    transition: transform 400ms cubic-bezier(0.32, 1, 0.23, 1) 0ms;
+  }
+
+  #bread-navbar li {
+    opacity: 0;
+    transition: opacity 100ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  }
+
+  #bread-navbar.in {
+    transform: scaleX(1);
+    opacity: 1;
+    transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  }
+
+  #bread-navbar.in .navbar-collapse {
+    transform: scaleY(1);
+    transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #bread-navbar.in li {
+    opacity: 1;
+    transition: opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 205ms;
   }
 }
 
 @media (min-width: 768px) {
-  .nav-item {
-    margin-right: 30px;
+  .navbar-toggle {
+    display: none;
   }
 
-  .bread-navbar-toggle {
-    display: none;
+  .nav-item {
+    float: left;
+    padding: 15px;
+  }
+
+  .navbar-right {
+    float: right;
+  }
+
+  .navbar-custom .nav li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12pt;
+    line-height: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
   }
 
   .intro-header .post-heading .meta {

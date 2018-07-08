@@ -62,7 +62,33 @@ footer .copyright {
   font-family: normal;
 }
 
+.navbar-white {
+  background: #FFF;
+}
+
+.navbar-white * {
+  color: #777 !important;
+}
+
+.navbar-white .icon-bar {
+  background-color: #777;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .navbar-white {
+    opacity: 1;
+    border-bottom: 1px solid #f2f2f2;
+  }
+}
+
 @media only screen and (min-width: 768px) {
+
+  .navbar-white {
+    opacity: 0.8;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
   .intro-header .page-heading h1, .intro-header .site-heading h1 {
     font-size: 4.5pc;
   }
