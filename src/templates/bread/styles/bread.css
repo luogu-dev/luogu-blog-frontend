@@ -118,7 +118,6 @@ header h1, .site-heading h1 {
 
 header.intro-header .site-heading {
   color: white;
-  text-shadow: 2px 2px 4px black;
 }
 
 .intro-header .site-heading {
@@ -187,9 +186,8 @@ footer .list-inline {
 }
 
 .tag {
-  color: #4183C4;
+  color: #FFF;
   line-height: 24px;
-  font-size: 18pt;
 }
 
 nav a {
