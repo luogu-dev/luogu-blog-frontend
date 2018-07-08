@@ -59,6 +59,11 @@
     background-image: url({{ themeSettings.config.ui.background_image }});
     background-size: cover;
   }
+    {{#if themeSettings.config.ui.title_shadow}}
+    header.intro-header .site-heading {
+      text-shadow: 2px 2px 4px black;
+    }
+    {{/if}}
 </style>
 <header class="footer bread-height-extended intro-header main-head">
   <div class="container" style="padding-top: 100px;">

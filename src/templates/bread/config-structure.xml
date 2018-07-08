@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='utf8' ?>
 <section id="config">
   <section id="ui" name="界面设定">
-    <property id="enable_search" name="首页搜索框" type="boolean" required="true" default="true"/>
-    <property id="background_image" name="背景图片地址" type="url" default=""/>
+    <property id="enable_search" name="首页搜索框" type="boolean" default="true"/>
+    <property id="title_shadow" name="标题阴影" type="boolean" default="false"/>
+    <property id="background_image" name="背景图片地址" type="url"/>
   </section>
 </section>
