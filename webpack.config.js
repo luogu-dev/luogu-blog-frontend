@@ -60,14 +60,21 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "common",
-      filename: "common.js",
-      chunks: ["article", "article_list"]
-    }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('[name].css')
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        commons: {
+          test: /article|article_list/,
+          name: 'common',
+          chunks: 'all'
+        }
+      }
+    }
+  },
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.runtime.esm.js'
