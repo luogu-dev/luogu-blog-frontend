@@ -1,7 +1,6 @@
 {
   "config": {
     "ui": {
-      "enable_search": true,
       "title_shadow": false,
       "background_image": ""
     }
