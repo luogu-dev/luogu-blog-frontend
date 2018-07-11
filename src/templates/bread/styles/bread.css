@@ -272,7 +272,11 @@ nav a {
   color: #777;
 }
 
-@media only screen and (max-width: 767px) {
+.bread-navbar-nav {
+  flex-direction: row;
+}
+
+@media (max-width: 767px) {
   #bread-navbar .navbar-nav {
     margin: 7.5px -15px;
   }
@@ -353,6 +357,10 @@ nav a {
 }
 
 @media (min-width: 768px) {
+  .bread-navbar-nav {
+    flex-direction: column;
+  }
+
   .navbar-toggle {
     display: none;
   }

@@ -7,8 +7,8 @@
   "private": true,
   "scripts": {
     "prepare": "cd semantic && npx gulp build && cd ..",
-    "build-dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --mode production",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --mode development",
+    "build-dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --mode development",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules  --mode production",
     "lint": "eslint --ext .js,.vue,.hbs src/",
     "lint-fix": "eslint --ext .js,.vue,.hbs --fix src/",
     "dev-server": "node src/devserver/index.js",
