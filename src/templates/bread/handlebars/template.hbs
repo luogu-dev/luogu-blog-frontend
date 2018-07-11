@@ -44,9 +44,6 @@
           <li class="nav-item">
             <a href=".">文章</a>
           </li>
-          <li class="nav-item">
-            <a href=".">文章</a>
-          </li>
           {{#isBlogAdmin}}
             <li class="nav-item">
               <a target="_blank" href="{{ luoguAddress }}/blogAdmin">管理后台</a>
@@ -149,12 +146,14 @@ var __BreadNav__ = {
   }
 }
 
-$search_input.addEventListener('input', function (e) {
-  location.hash = 'keyword=' + e.target.value;
-  if (e.target.value === '') {
-    location.hash = ''
-  }
-})
+if ($search_input !== null) {
+  $search_input.addEventListener('input', function (e) {
+    location.hash = 'keyword=' + e.target.value;
+    if (e.target.value === '') {
+      location.hash = ''
+    }
+  })
+}
 
 let defaultClassName = $nav.className;
 $body.addEventListener('scroll', function (e) {
