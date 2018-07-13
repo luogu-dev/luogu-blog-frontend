@@ -1,1 +1,1 @@
-import 'holakit/assets/holakit.css'
+import 'holakit/dist/holakit.css'
