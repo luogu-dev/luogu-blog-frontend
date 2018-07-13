@@ -5,8 +5,10 @@ import ArticleVote from './layouts/article_vote'
 import ArticleComments from './layouts/article_comments'
 import 'highlight.js/styles/tomorrow.css'
 
-initKatex()
-initHighlight()
+document.addEventListener('DOMContentLoaded', () => {
+  initKatex()
+  initHighlight()
+})
 
 window.articleVote = new Vue({
   el: '#article-vote',

@@ -1,9 +1,11 @@
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const devMode = process.env.NODE_ENV !== 'production'
 
 const themeName = process.env.THEME || 'debug'
 
@@ -20,17 +22,16 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: 'pre',
-        test: /\.vue$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/
+        test: /\.css$/,
+        use: [
+          devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          extractCSS: true
-        }
+        options: {}
       },
       {
         test: /\.js$/,
@@ -38,19 +39,16 @@ module.exports = {
         exclude: /(node_modules|semantic)/
       },
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: 'css-loader',
-          fallback: 'vue-style-loader'
-        })
-      },
-      {
-        test: /\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$/,
-        loader: 'url-loader',
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
         options: {
-          limit: 20480,
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+        // Font Awesome
+        test: /\.(ttf|eot|svg|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader'
       }
     ]
   },
@@ -60,14 +58,21 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "common",
-      filename: "common.js",
-      chunks: ["article", "article_list"]
-    }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new ExtractTextPlugin('[name].css'),
+    new MiniCssExtractPlugin({ filename: '[name].css' })
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          name: 'common',
+          filename: 'common.js',
+          chunks: 'all',
+          test: /article|article_list/
+        }
+      }
+    }
+  },
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.runtime.esm.js'
@@ -98,6 +103,25 @@ if (process.env.BUNDLE_ANALYZE === 'true') {
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
+  module.exports.mode = 'production'
+  module.exports.optimization.minimizer = [
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        beautify: false,
+        compress: true,
+        comments: false,
+        mangle: false,
+        toplevel: false
+      }
+    }),
+    new OptimizeCSSAssetsPlugin({
+      cssProcessor: require('cssnano')({ zindex: false }),
+      cssProcessorOptions: {
+        safe: false,
+        discardComments: { removeAll: true }
+      }
+    })
+  ]
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -105,6 +129,8 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    new UglifyJsPlugin()
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
   ])
 }

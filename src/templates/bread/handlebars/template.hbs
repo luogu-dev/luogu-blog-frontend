@@ -23,24 +23,9 @@
       </button>
       <a class="navbar-brand" href=".">{{ blogName }}</a>
     </div>
-    {{#if themeSettings.config.ui.enable_search}}
-      <form class="bread-form sm-hidden" style="float: right">
-        <input id="keyword-input"
-               class="mr-sm-2 bread-from-control bread-search"
-               type="search"
-               data-value="keyword"
-               aria-label="Search">
-        <button id="search-btn"
-                class="btn  my-2 my-sm-0 bread-btn btn-clear"
-                type="submit"
-                style="font-size:24px;color:white;">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-      </form>
-    {{/if}}
     <div id="bread-navbar">
       <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav bread-navbar-nav navbar-right">
           <li class="nav-item">
             <a href=".">文章</a>
           </li>
@@ -129,7 +114,6 @@ var $nav = document.querySelector('nav');
 var $toggle = document.querySelector('.navbar-toggle');
 var $navbar = document.querySelector('#bread-navbar');
 var $collapse = document.querySelector('.navbar-collapse');
-var $search_input = document.querySelector('#keyword-input');
 
 var __BreadNav__ = {
   close: function () {
@@ -145,13 +129,6 @@ var __BreadNav__ = {
     $navbar.className += " in";
   }
 }
-
-$search_input.addEventListener('input', function (e) {
-  location.hash = 'keyword=' + e.target.value;
-  if (e.target.value === '') {
-    location.hash = ''
-  }
-})
 
 let defaultClassName = $nav.className;
 $body.addEventListener('scroll', function (e) {
