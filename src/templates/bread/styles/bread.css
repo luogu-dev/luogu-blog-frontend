@@ -3,6 +3,7 @@ html, body {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 footer {
