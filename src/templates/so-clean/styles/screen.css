@@ -68,11 +68,12 @@ article {
 }
 article header {
 	text-align: left;
-	padding-bottom: 0;
+	padding-bottom: 3.6em;
 }
 
-article h1 {
+article header h1 {
 	display: inline-block;
+	color: #40a1c8;
 	float: left;
 	padding-bottom: 0;
 }
@@ -117,7 +118,6 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active, .l
 }
 
 h1 {
-	color: #40a1c8;
 	font-size: 2.4em;
 	line-height: 1.3em;
 	padding-bottom: .4em;
