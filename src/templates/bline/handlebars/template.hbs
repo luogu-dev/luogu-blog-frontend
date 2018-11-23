@@ -8,7 +8,7 @@
   <meta name="blog-uid" content="{{ blogUID }}">
   <meta name="blog-name" content="{{ blogName }}">
   <meta name="current-user" content="{{ currentUser }}">
-  <link rel="stylesheet" href="/static/blog/mkhata/common.css">
+  <link rel="stylesheet" href="/static/blog/bline/common.css">
   {{>styles}}
   <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
 </head>
@@ -20,7 +20,7 @@
       <li class="rightli"><a href=".">文章</a></li>
       <li class="rightli"><a href=".">关于</a></li>
       {{#isBlogAdmin}}
-      <li class="rightli"><a href=".">管理后台</a></li>
+      <li class="rightli"><a href="{{ luoguAddress }}/blogAdmin">管理后台</a></li>
       {{/isBlogAdmin}}
     </ul>
   </div>
@@ -43,7 +43,7 @@
       picAddress: '{{ picAddress }}'
     }
   </script>
-  <script src="/static/blog/mkhata/common.js"></script>
+  <script src="/static/blog/bline/common.js"></script>
   {{>scripts}}
 </body>
 
