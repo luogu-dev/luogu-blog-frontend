@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="blog-uid" content="{{ blogUID }}">
+  <meta name="blog-name" content="{{ blogName }}">
+  <meta name="current-user" content="{{ currentUser }}">
+  <link rel="stylesheet" href="/static/blog/mkhata/common.css">
+  {{>styles}}
+  <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
+</head>
+
+<body>
+  <div>
+    <ul class="menu">
+      <li><a href=".">{{ blogName }}</a></li>
+      <li class="rightli"><a href=".">文章</a></li>
+      <li class="rightli"><a href=".">关于</a></li>
+      {{#isBlogAdmin}}
+      <li class="rightli"><a href=".">管理后台</a></li>
+      {{/isBlogAdmin}}
+    </ul>
+  </div>
+<br><br><br><br>
+  {{>content}}
+
+<br><br>
+  <div class="bm">
+    <a class="item" href="_sitemap">Site Map</a>
+    <a class="item" href="https://github.com/luogu-dev/luogu-blog-frontend">GitHub</a>
+    <a class="item" href="{{ luoguAddress }}">洛谷</a>
+    <p>自豪的采用洛谷博客，主题由Yemaster设计</p>
+  </div>
+  <script>
+    var BlogGlobals = {
+      blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+      blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+      currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+      luoguAddress: '{{ luoguAddress }}',
+      picAddress: '{{ picAddress }}'
+    }
+  </script>
+  <script src="/static/blog/mkhata/common.js"></script>
+  {{>scripts}}
+</body>
+
+</html>
