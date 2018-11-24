@@ -2,6 +2,32 @@ body {
     background-color: #FFFFFF;
 }
 
+a,a:link,a:visited,a:focus{
+    text-decoration: none;
+    color: #000000;
+}
+
+a {
+    position: relative;
+}
+
+a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    background: #000;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
 .menu {
     position: fixed;
     top: 0px;
