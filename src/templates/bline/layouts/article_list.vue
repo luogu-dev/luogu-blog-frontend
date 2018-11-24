@@ -7,7 +7,7 @@
             {{ type }}
           </div>
           <input type="text" placeholder="搜索" v-model="keyword">
-          <i class="inverted circular search link icon" v-if="ready" @click="getPosts(1)"></i>
+          <i class="search link icon" v-if="ready" @click="getPosts(1)"></i>
           <i class="spinner icon" v-if="!ready"></i>
         </div>
       </div>

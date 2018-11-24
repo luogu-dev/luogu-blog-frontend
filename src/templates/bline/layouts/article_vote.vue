@@ -1,14 +1,14 @@
 <template>
   <div id="article-vote">
-    <a v-show="canVoteUp"
-         :class="{ active: vote === 1 }"
-         @click="performVote(1)">
-      <span :hidden="vote !== 1">取消</span>赞
-    </a>
-    <a v-show="canVoteDown"
+    有{{ thumbUp }}位小朋友觉得很赞。我<a v-show="canVoteUp"
             :class="{ active: vote === -1 }"
             @click="performVote(-1)">
-      <span :hidden="vote !== -1">取消</span>踩
+      <span :hidden="vote !== -1">不</span>要顶
+    </a>/
+    我<a v-show="canVoteDown"
+            :class="{ active: vote === -1 }"
+            @click="performVote(-1)">
+      <span :hidden="vote !== -1">不</span>要踩
     </a>
   </div>
 </template>
