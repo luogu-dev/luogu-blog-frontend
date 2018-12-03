@@ -13,7 +13,7 @@
                 {{ post.ContentDescription }}
               </div>
               <div class="post-meta">
-                {{ post.Type }} on {{ post.PostTime }}
+                {{ post.Type }} on {{ post.PostTime | formatDate }}
               </div>
             </a>
             <hr/>
