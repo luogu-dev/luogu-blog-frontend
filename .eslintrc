@@ -1,13 +1,33 @@
 {
-  "extends": ["standard"],
-  "plugins": ["html"],
+  "root": true,
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:vue/recommended"
+  ],
+  "plugins": [
+    "html"
+  ],
   "rules": {
     "no-unused-vars": [
       2,
       {
         "varsIgnorePattern": "^BlogGlobals$"
       }
-    ]
+    ],
+    "eqeqeq": [
+      "error",
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
+    "no-console": "off",
+    "vue/name-property-casing": "off",
+    "vue/component-name-in-template-casing": "off"
   },
   "settings": {
     "html/indent": "0",
@@ -18,6 +38,5 @@
   },
   "env": {
     "browser": true
-  },
-  "parser": "babel-eslint"
+  }
 }

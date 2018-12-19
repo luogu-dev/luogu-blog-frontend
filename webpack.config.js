@@ -5,14 +5,22 @@ const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const devMode = process.env.NODE_ENV !== 'production'
+
+const isProd = process.env.NODE_ENV === 'production'
+const extractCSS = isProd || process.env.TARGET === 'development'
 
 const themeName = process.env.THEME || 'debug'
 
+const cssLoader = [
+  extractCSS ? MiniCssExtractPlugin.loader : 'vue-style-loader',
+  { loader: 'css-loader', options: { sourceMap: !isProd, importLoaders: 1 } },
+  { loader: 'postcss-loader', options: { sourceMap: !isProd } }
+]
+
 module.exports = {
   entry: {
-    article_list: ['babel-polyfill', path.resolve(__dirname, './src/templates', themeName, './article_list.js')],
-    article: ['babel-polyfill', path.resolve(__dirname, './src/templates', themeName, './article.js')],
+    article_list: path.resolve(__dirname, './src/templates', themeName, './article_list.js'),
+    article: path.resolve(__dirname, './src/templates', themeName, './article.js'),
     katex: path.resolve(__dirname, './src/katex_import.js')
   },
   output: {
@@ -23,10 +31,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
+        use: cssLoader
       },
       {
         test: /\.vue$/,
