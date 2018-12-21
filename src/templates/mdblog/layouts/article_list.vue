@@ -4,7 +4,7 @@
       <div v-if="ready">
         <div
           v-for="post in posts"
-          :key="post.PostTime"
+          :key="post.postID"
         >
           <div class="mdui-card mdblog-article-card mdui-hoverable">
             <div style="margin: 20px;">

@@ -2,7 +2,7 @@
   <div id="article-list">
     <article
       v-for="post in posts"
-      :key="post.PostTime"
+      :key="post.postID"
     >
       <header>
         <h1>

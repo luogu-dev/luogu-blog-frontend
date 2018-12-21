@@ -35,7 +35,7 @@
       <div v-if="ready">
         <div
           v-for="post in posts"
-          :key="post.PostTime"
+          :key="post.postID"
           class="ui vertical segment"
         >
           <h2 class="ui header">

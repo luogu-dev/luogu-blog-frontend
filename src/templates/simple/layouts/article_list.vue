@@ -2,7 +2,7 @@
   <div id="article-list">
     <article
       v-for="post in posts"
-      :key="post.Identifier"
+      :key="post.postID"
       class="spl-article"
     >
       <header>

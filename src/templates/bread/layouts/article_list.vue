@@ -8,7 +8,7 @@
         >
           <div
             v-for="post in posts"
-            :key="post.PostTime"
+            :key="post.postID"
             class="post-list"
           >
             <a :href="post.Identifier">

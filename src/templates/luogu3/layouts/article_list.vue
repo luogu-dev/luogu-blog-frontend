@@ -3,7 +3,7 @@
     <div v-if="ready">
       <article
         v-for="post in posts"
-        :key="post.PostTime"
+        :key="post.postID"
         class="lg-article am-g"
       >
         <h3 class="am-article-title blog-title">
