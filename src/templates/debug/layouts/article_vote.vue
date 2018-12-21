@@ -1,21 +1,34 @@
 <template>
-  <div class="ui mini right floated buttons" id="article-vote">
-    <div class="ui left labeled button"
-         :class="{ disabled: !canVoteUp }"
-         @click="performVote(1)">
+  <div
+    id="article-vote"
+    class="ui mini right floated buttons"
+  >
+    <div
+      class="ui left labeled button"
+      :class="{ disabled: !canVoteUp }"
+      @click="performVote(1)"
+    >
       <a class="ui basic blue right pointing label">
         {{ thumbUp }}
       </a>
-      <div class="ui blue button"
-           :class="{ active: vote === 1}">
-        <i class="thumbs up icon"></i> <span :hidden="vote !== 1">取消</span>赞
+      <div
+        class="ui blue button"
+        :class="{ active: vote === 1}"
+      >
+        <i class="thumbs up icon" /> <span :hidden="vote !== 1">
+          取消
+        </span>赞
       </div>
     </div>
-    <div class="or"></div>
-    <button class="ui button"
-            :class="{ disabled: !canVoteDown, active: vote === -1 }"
-            @click="performVote(-1)">
-      <i class="thumbs down icon"></i> <span :hidden="vote !== -1">取消</span>踩
+    <div class="or" />
+    <button
+      class="ui button"
+      :class="{ disabled: !canVoteDown, active: vote === -1 }"
+      @click="performVote(-1)"
+    >
+      <i class="thumbs down icon" /> <span :hidden="vote !== -1">
+        取消
+      </span>踩
     </button>
   </div>
 </template>

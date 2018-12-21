@@ -2,9 +2,15 @@
   <div id="article-list">
     <div class="container">
       <div class="row">
-        <div class="col post-list-container"
-             style="margin-top: 30px;">
-          <div class="post-list" v-for="post in posts">
+        <div
+          class="col post-list-container"
+          style="margin-top: 30px;"
+        >
+          <div
+            v-for="post in posts"
+            :key="post.PostTime"
+            class="post-list"
+          >
             <a :href="post.Identifier">
               <h2 class="post-title">
                 {{ post.Title }}
@@ -16,9 +22,14 @@
                 {{ post.Type }} on {{ post.PostTime | formatDate }}
               </div>
             </a>
-            <hr/>
+            <hr>
           </div>
-          <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getPosts"></pagination>
+          <pagination
+            v-if="ready"
+            :page="page"
+            :total-pages="totalPages"
+            :callback="getPosts"
+          />
         </div>
       </div>
     </div>
@@ -67,11 +78,11 @@ import { defaultData, defaultMounted, defaultWatch, getPosts } from 'scripts/art
 import formatDate from 'plugins/format_date'
 
 export default {
-  data: defaultData,
-  mounted: defaultMounted,
-  watch: defaultWatch,
-  methods: { getPosts },
   filters: { formatDate },
-  components: { pagination }
+  components: { pagination },
+  data: defaultData,
+  watch: defaultWatch,
+  mounted: defaultMounted,
+  methods: { getPosts }
 }
 </script>

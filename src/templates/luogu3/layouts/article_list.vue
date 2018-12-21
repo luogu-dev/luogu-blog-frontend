@@ -1,21 +1,38 @@
 <template>
   <div id="article-list">
     <div v-if="ready">
-      <article v-for="post in posts" class="lg-article am-g">
+      <article
+        v-for="post in posts"
+        :key="post.PostTime"
+        class="lg-article am-g"
+      >
         <h3 class="am-article-title blog-title">
-          <a :href="post.Identifier">{{ post.Title }}</a>
+          <a :href="post.Identifier">
+            {{ post.Title }}
+          </a>
         </h3>
         <h4 class="am-article-meta blog-meta">
-          <span class="am-icon-thumbs-up">&nbsp;{{ post.ThumbUp }} </span>
+          <span class="am-icon-thumbs-up">
+            &nbsp;{{ post.ThumbUp }}
+          </span>
           | posted on {{ post.PostTime | formatDate }} | under
-          <a @click="type = post.Type" style="cursor: pointer">{{ post.Type }}</a>
+          <a
+            style="cursor: pointer"
+            @click="type = post.Type"
+          >
+            {{ post.Type }}
+          </a>
         </h4>
         <p>{{ post.ContentDescription }}</p>
       </article>
     </div>
-    <loader v-else>
-    </loader>
-    <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getPosts"></pagination>
+    <loader v-else />
+    <pagination
+      v-if="ready"
+      :page="page"
+      :total-pages="totalPages"
+      :callback="getPosts"
+    />
   </div>
 </template>
 
@@ -25,11 +42,11 @@ import loader from '../components/loader.vue'
 import { defaultData, defaultWatch, defaultMountedWithSearchEvent, getPosts } from 'scripts/article_list'
 import formatDate from 'plugins/format_date'
 export default {
-  data: defaultData,
-  mounted: defaultMountedWithSearchEvent,
-  watch: defaultWatch,
-  methods: { getPosts },
   filters: { formatDate },
-  components: { pagination, loader }
+  components: { pagination, loader },
+  data: defaultData,
+  watch: defaultWatch,
+  mounted: defaultMountedWithSearchEvent,
+  methods: { getPosts }
 }
 </script>

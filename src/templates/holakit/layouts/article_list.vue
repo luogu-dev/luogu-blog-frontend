@@ -1,29 +1,71 @@
 <template>
-  <div id="article-list" class="hola-container hola-columns hola-card-stack">
-    <div class="hola-columns-item" v-if="config.config.ui.enable_search">
+  <div
+    id="article-list"
+    class="hola-container hola-columns hola-card-stack"
+  >
+    <div
+      v-if="config.config.ui.enable_search"
+      class="hola-columns-item"
+    >
       <div class="hola-card">
-        <h2 class="hola-card-title">搜索</h2>
+        <h2 class="hola-card-title">
+          搜索
+        </h2>
         <p>
-          <input class="hola-form-ctrl hola-input-singleline" type="text" placeholder="输入一些关键字" v-model="keyword">
-          <button class="hola-button hola-button-primary" @click="getPosts(1)">搜索</button>
+          <input
+            v-model="keyword"
+            class="hola-form-ctrl hola-input-singleline"
+            type="text"
+            placeholder="输入一些关键字"
+          >
+          <button
+            class="hola-button hola-button-primary"
+            @click="getPosts(1)"
+          >
+            搜索
+          </button>
         </p>
         <p v-if="type">
-          分类: {{ type }} <button class="hola-button" @click="type = ''">清除</button>
+          分类: {{ type }} <button
+            class="hola-button"
+            @click="type = ''"
+          >
+            清除
+          </button>
         </p>
       </div>
     </div>
-    <div class="hola-columns-item" v-if="posts.length === 0">
+    <div
+      v-if="posts.length === 0"
+      class="hola-columns-item"
+    >
       <div class="hola-card">
-        <p style="margin: 5rem 0; text-align: center;">还没有文章 Orz</p>
+        <p style="margin: 5rem 0; text-align: center;">
+          还没有文章 Orz
+        </p>
       </div>
     </div>
-    <div class="hola-columns-item" v-for="post in posts">
-      <a :href="post.Identifier" style="text-decoration: none; color: var(--hola-text-dark-color);">
+    <div
+      v-for="post in posts"
+      :key="post.PostTime"
+      class="hola-columns-item"
+    >
+      <a
+        :href="post.Identifier"
+        style="text-decoration: none; color: var(--hola-text-dark-color);"
+      >
         <div class="hola-card">
           <h2 class="hola-card-title">
             {{ post.Title }}
           </h2>
-          <p style="word-wrap: break-all; line-height: 2em;"><span class="hola-badge" @click.stop.prevent="type = post.Type">{{ post.Type }}</span> {{ post.ContentDescription }}</p>
+          <p style="word-wrap: break-all; line-height: 2em;">
+            <span
+              class="hola-badge"
+              @click.stop.prevent="type = post.Type"
+            >
+              {{ post.Type }}
+            </span> {{ post.ContentDescription }}
+          </p>
         </div>
       </a>
     </div>
@@ -34,11 +76,14 @@
 import { defaultData, defaultWatch, getPosts, getWaterfallPosts } from 'scripts/article_list'
 import formatDate from 'plugins/format_date'
 export default {
+  filters: { formatDate },
+  components: { },
   data () {
     let data = defaultData()
     data.lastScroll = 0
     return data
   },
+  watch: defaultWatch,
   mounted () {
     this.$nextTick(function () {
       this.getPosts(this.page)
@@ -54,9 +99,6 @@ export default {
       })
     })
   },
-  watch: defaultWatch,
-  methods: { getPosts, getWaterfallPosts },
-  filters: { formatDate },
-  components: { }
+  methods: { getPosts, getWaterfallPosts }
 }
 </script>

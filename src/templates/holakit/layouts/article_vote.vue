@@ -1,18 +1,26 @@
 <template>
   <div id="article-vote">
-    <button class="hola-button hola-button-primary"
-         v-show="canVoteUp"
-         :class="{ active: vote === 1 }"
-         @click="performVote(1)">
-      <span :hidden="vote !== 1">取消</span>赞
+    <button
+      v-show="canVoteUp"
+      class="hola-button hola-button-primary"
+      :class="{ active: vote === 1 }"
+      @click="performVote(1)"
+    >
+      <span :hidden="vote !== 1">
+        取消
+      </span>赞
     </button>
-    <button class="hola-button hola-button-normal"
-            v-show="canVoteDown"
-            :class="{ active: vote === -1 }"
-            @click="performVote(-1)">
-      <span :hidden="vote !== -1">取消</span>踩
+    <button
+      v-show="canVoteDown"
+      class="hola-button hola-button-normal"
+      :class="{ active: vote === -1 }"
+      @click="performVote(-1)"
+    >
+      <span :hidden="vote !== -1">
+        取消
+      </span>踩
     </button>
-    <p></p>
+    <p />
     <p><b>本文共得到 {{ thumbUp }} 赞</b></p>
   </div>
 </template>

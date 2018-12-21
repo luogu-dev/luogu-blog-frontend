@@ -1,17 +1,28 @@
 <template>
   <div id="article-comments">
-    <form v-if="uid" @submit.prevent="postComment" class="clearfix">
-      <textarea v-model="commentContent"
+    <form
+      v-if="uid"
+      class="clearfix"
+      @submit.prevent="postComment"
+    >
+      <textarea
+        v-model="commentContent"
         class="spl-comment-editor spl-border"
-      ></textarea>
-      <button type="submit" class="spl-comment-submit spl-border"
+      />
+      <button
+        type="submit"
+        class="spl-comment-submit spl-border"
         :class="{ disabled: commentPosting }"
       >
-        <i class="icon edit"></i> 评论
+        <i class="icon edit" /> 评论
       </button>
     </form>
     <div v-if="ready">
-      <div class="spl-comment clearfix" v-for="comment in comments">
+      <div
+        v-for="comment in comments"
+        :key="comment.ReplyTime"
+        class="spl-comment clearfix"
+      >
         <div class="avator">
           <a
             :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
@@ -23,17 +34,22 @@
         <div class="content">
           <div class="poster">
             {{ comment.Author.Username }}
-            <i class="icon wait"></i>
+            <i class="icon wait" />
             <time>{{ comment.ReplyTime | formatDate }}</time>
           </div>
           {{ comment.Content }}&nbsp;
         </div>
       </div>
-      <pagination v-if="ready"
-        :page="page" :totalPages="totalPages" :callback="getComments"
-      ></pagination>
+      <pagination
+        v-if="ready"
+        :page="page"
+        :total-pages="totalPages"
+        :callback="getComments"
+      />
     </div>
-    <p v-else>正在加载...</p>
+    <p v-else>
+      正在加载...
+    </p>
   </div>
 </template>
 
@@ -42,11 +58,11 @@ import pagination from '../components/pagination.vue'
 import { defaultData, defaultMounted, getComments, postComment } from 'scripts/article_comments'
 import formatDate from 'plugins/format_date'
 export default {
+  filters: { formatDate },
+  components: { pagination },
   data: defaultData,
   mounted: defaultMounted,
-  methods: { getComments, postComment },
-  filters: { formatDate },
-  components: { pagination }
+  methods: { getComments, postComment }
 }
 </script>
 

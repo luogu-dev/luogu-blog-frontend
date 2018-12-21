@@ -131,7 +131,7 @@ var __BreadNav__ = {
 }
 
 let defaultClassName = $nav.className;
-$body.addEventListener('scroll', function (e) {
+$body.addEventListener('scroll', function () {
   let scrollTop = document.body.scrollTop;
   if (scrollTop !== 0) {
     if ($nav.className.indexOf('navbar-white') < 0) {
@@ -142,7 +142,7 @@ $body.addEventListener('scroll', function (e) {
   }
 })
 
-$body.addEventListener('click', function (e) {
+$body.addEventListener('click', function () {
   if ($navbar.className.indexOf('in') > 0) {
     __BreadNav__.close()
   } else {

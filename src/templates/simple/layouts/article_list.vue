@@ -1,14 +1,23 @@
 <template>
   <div id="article-list">
-    <article v-for="post in posts" :key="post.Identifier" class="spl-article">
+    <article
+      v-for="post in posts"
+      :key="post.Identifier"
+      class="spl-article"
+    >
       <header>
         <div class="spl-header">
-          <a :href="post.Identifier">{{ post.Title }}</a>
+          <a :href="post.Identifier">
+            {{ post.Title }}
+          </a>
         </div>
-        <i class="icon wait"></i>
+        <i class="icon wait" />
         <time>{{ post.PostTime | formatDate }}</time>
-        <a href="javascript:void 0" @click="type = post.Type">
-          <i class="icon bookmark"></i>
+        <a
+          href="javascript:void 0"
+          @click="type = post.Type"
+        >
+          <i class="icon bookmark" />
           {{ post.Type }}
         </a>
       </header>
@@ -16,9 +25,12 @@
         {{ post.ContentDescription }}
       </div>
     </article>
-    <pagination v-if="ready"
-      :page="page" :totalPages="totalPages" :callback="getPosts"
-    ></pagination>
+    <pagination
+      v-if="ready"
+      :page="page"
+      :total-pages="totalPages"
+      :callback="getPosts"
+    />
   </div>
 </template>
 
@@ -27,11 +39,11 @@ import pagination from '../components/pagination.vue'
 import { defaultData, defaultMounted, defaultWatch, getPosts } from 'scripts/article_list'
 import formatDate from 'plugins/format_date'
 export default {
-  data: defaultData,
-  mounted: defaultMounted,
-  watch: defaultWatch,
-  methods: { getPosts },
   filters: { formatDate },
-  components: { pagination }
+  components: { pagination },
+  data: defaultData,
+  watch: defaultWatch,
+  mounted: defaultMounted,
+  methods: { getPosts }
 }
 </script>

@@ -1,17 +1,26 @@
 <template>
   <div id="article-vote">
-    <span :is="checkCanVote(-1) ? 'a' : 'span'"
-      href="javascript:void 0" @click="performVote(-1)"
+    <span
+      :is="checkCanVote(-1) ? 'a' : 'span'"
+      href="javascript:void 0"
+      @click="performVote(-1)"
     >
-      <i class="icon thumbs down" :class="{ 'outline': vote !== -1 }"
+      <i
+        class="icon thumbs down"
+        :class="{ 'outline': vote !== -1 }"
         style="transform: scale(-1,1);"
-      ></i>
+      />
     </span>
     赞：{{ thumbUp }}
-    <span :is="checkCanVote(1) ? 'a' : 'span'"
-      href="javascript:void 0" @click="performVote(1)"
+    <span
+      :is="checkCanVote(1) ? 'a' : 'span'"
+      href="javascript:void 0"
+      @click="performVote(1)"
     >
-      <i class="icon thumbs up" :class="{ 'outline': vote !== 1 }"></i>
+      <i
+        class="icon thumbs up"
+        :class="{ 'outline': vote !== 1 }"
+      />
     </span>
   </div>
 </template>

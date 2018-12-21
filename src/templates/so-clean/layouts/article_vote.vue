@@ -1,16 +1,26 @@
 <template>
   <div id="article-vote">
-		<div v-if="uid">
-			<div v-if="vote===0">
-				<a @click="performVote(1)">赞 <span>{{ thumbUp }}</span></a> | <a @click="performVote(-1)">踩</a>
-			</div>
-			<div v-else>
-				<a @click="performVote(vote)">取消<span v-if="vote==1">赞</span><span v-if="vote==-1">踩</span> <span>{{ thumbUp }}</span></a>
-			</div>
-		</div>
-		<div v-else>
-			本文目前已有 {{ thumbUp }} 个赞。
-		</div>
+    <div v-if="uid">
+      <div v-if="vote===0">
+        <a @click="performVote(1)">
+          赞 <span>{{ thumbUp }}</span>
+        </a> | <a @click="performVote(-1)">
+          踩
+        </a>
+      </div>
+      <div v-else>
+        <a @click="performVote(vote)">
+          取消<span v-if="vote==1">
+            赞
+          </span><span v-if="vote==-1">
+            踩
+          </span> <span>{{ thumbUp }}</span>
+        </a>
+      </div>
+    </div>
+    <div v-else>
+      本文目前已有 {{ thumbUp }} 个赞。
+    </div>
   </div>
 </template>
 
