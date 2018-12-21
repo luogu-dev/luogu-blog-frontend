@@ -1,15 +1,16 @@
 const path = require('path')
 const webpack = require('webpack')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 const extractCSS = isProd || process.env.TARGET === 'development'
 
-const themeName = process.env.THEME || 'debug'
+const themeName = process.env.THEME || 'bread'
 
 const cssLoader = [
   extractCSS ? MiniCssExtractPlugin.loader : 'vue-style-loader',
@@ -19,14 +20,15 @@ const cssLoader = [
 
 module.exports = {
   entry: {
-    article_list: path.resolve(__dirname, './src/templates', themeName, './article_list.js'),
-    article: path.resolve(__dirname, './src/templates', themeName, './article.js'),
-    katex: path.resolve(__dirname, './src/katex_import.js')
+    article_list: path.resolve(__dirname, 'src/templates', themeName, 'article_list.js'),
+    article: path.resolve(__dirname, 'src/templates', themeName, 'article.js'),
+    katex: path.resolve(__dirname, 'src/katex_import.js')
   },
   output: {
-    path: path.resolve(__dirname, './dist', themeName),
+    path: path.resolve(__dirname, 'dist', themeName),
     filename: '[name].js'
   },
+  mode: isProd ? "production" : 'development',
   module: {
     rules: [
       {
@@ -58,6 +60,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new LodashModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -76,7 +79,25 @@ module.exports = {
           test: /article|article_list/
         }
       }
-    }
+    },
+    minimize: isProd,
+    minimizer: [
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCssAssetsPlugin({
+        assetNameRegExp: /\.css$/g,
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: {
+          discardComments: { removeAll: true },
+          postcssZindex: false,
+          reduceIdents: false
+        },
+        canPrint: false
+      })
+    ]
   },
   resolve: {
     alias: {
@@ -89,53 +110,14 @@ module.exports = {
       path.resolve('./semantic/dist')
     ]
   },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true,
-    overlay: true
-  },
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: isProd ? '#source-map' : '#eval-source-map'
 }
 
 if (process.env.BUNDLE_ANALYZE === 'true') {
   module.exports.plugins = (module.exports.plugins || []).concat([
     new BundleAnalyzerPlugin()
-  ])
-}
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  module.exports.mode = 'production'
-  module.exports.optimization.minimizer = [
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        beautify: false,
-        compress: true,
-        comments: false,
-        mangle: false,
-        toplevel: false
-      }
-    }),
-    new OptimizeCSSAssetsPlugin({
-      cssProcessor: require('cssnano')({ zindex: false }),
-      cssProcessorOptions: {
-        safe: false,
-        discardComments: { removeAll: true }
-      }
-    })
-  ]
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
   ])
 }
