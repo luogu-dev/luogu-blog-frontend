@@ -1,0 +1,58 @@
+.spl-border {
+  border: solid .1em #333;
+  border-radius: .2em;
+}
+
+.spl-article-body {
+  border: solid .1em #333;
+  border-radius: .2em;
+}
+
+.spl-article-body img {
+  max-width: 100%;
+}
+
+#article-vote {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.spl-comment-editor {
+  width: 100%;
+  resize: none;
+}
+
+.spl-comment-submit {
+  padding: .5em;
+  float: right;
+  margin-top: .5em;
+}
+
+.spl-comment {
+  margin: 1.5em 0;
+}
+
+.spl-comment > .avator {
+  float: left;
+  width: 3em;
+  margin-right: .5em;
+}
+
+.spl-comment > .avator img {
+  width: 100%;
+}
+
+.spl-comment > .content {
+  padding: 0 .5em;
+  border-left: solid .15em #333;
+  overflow: hidden;
+}
+
+.spl-comment .poster {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+.spl-comment .poster time {
+  font-size: 1rem;
+}
