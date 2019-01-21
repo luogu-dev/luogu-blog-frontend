@@ -1,16 +1,16 @@
 {
-  "base": "semantic/",
+  "base": "semantic\\",
   "paths": {
     "source": {
       "config": "src/theme.config",
       "definitions": "src/definitions/",
-      "site": "src/site/",
+      "site": "src\\site\\",
       "themes": "src/themes/"
     },
     "output": {
-      "packaged": "dist/",
-      "uncompressed": "dist/components/",
-      "compressed": "dist/components/",
+      "packaged": "dist\\",
+      "uncompressed": "dist\\components\\",
+      "compressed": "dist\\components\\",
       "themes": "dist/themes/"
     },
     "clean": "dist/"
@@ -18,5 +18,6 @@
   "permission": false,
   "autoInstall": false,
   "rtl": false,
-  "version": "2.3.2"
+  "version": "2.4.2",
+  "components": ["reset", "site", "button", "container", "divider", "flag", "header", "icon", "image", "input", "label", "list", "loader", "placeholder", "rail", "reveal", "segment", "step", "breadcrumb", "form", "grid", "menu", "message", "table", "ad", "card", "comment", "feed", "item", "statistic", "accordion", "checkbox", "dimmer", "dropdown", "embed", "modal", "nag", "popup", "progress", "rating", "search", "shape", "sidebar", "sticky", "tab", "transition", "api", "form", "state", "visibility"]
 }
