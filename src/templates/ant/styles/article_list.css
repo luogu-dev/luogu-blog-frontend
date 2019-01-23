@@ -1,14 +1,19 @@
-
-.card-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.card-top{
-  
+.article-content {
+    margin: 16px 0;
 }
 
-.card-bottom{
+.article-actions {
+    margin-top: 16px;
+}
 
+.inline-padding{
+  padding:0 8px;
+}
+
+.inline-padding-right{
+  padding-right:8px;
+}
+
+.text-grey{
+  color:#bfbfbf;
 }
