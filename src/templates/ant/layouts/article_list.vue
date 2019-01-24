@@ -6,29 +6,29 @@
       :activeTabKey="noTitleKey"
       @tabChange="key => onTabChange(key, 'noTitleKey')"
     >
-      <p v-if="noTitleKey === 'article'">
-        <a-list itemLayout="horizontal" :dataSource="listData">
-          <a-list-item slot="renderItem" slot-scope="item">
+          <p>
+            <a-list itemLayout="horizontal" :dataSource="posts">
+              <a-list-item slot="renderItem" slot-scope="post">
             <a-col>
               <a-row>
-                <a-list-item-meta title="text 1"></a-list-item-meta>
+                    <a-list-item-meta :title="post.Title"></a-list-item-meta>
               </a-row>
               <a-row>
                 <a-list-item-meta>
                   <a-tooltip slot="description">
-                    <a-tag>test</a-tag>
-                    <a-tag>test2</a-tag>
+                        <a-tag>{{post.Type}}</a-tag>
                   </a-tooltip>
                 </a-list-item-meta>
               </a-row>
-              <a-row
-                class="article-content"
-              >段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。</a-row>
+                  <a-row class="article-content">{{ post.ContentDescription }}</a-row>
               <a-row>
-                <a href="">某用户</a>
+                    <a href>{{ post.Author.Username }}</a>
                 <span class="inline-padding">发布了</span>
-                <a class="inline-padding-right" href="https://vuecomponent.github.io/ant-design-vue/">{{item.title}}</a>
-                <span class="text-grey">2019-01-23 02:44</span>
+                    <a
+                      class="inline-padding-right"
+                      href="https://vuecomponent.github.io/ant-design-vue/"
+                    >{{post.Title}}</a>
+                    <span class="text-grey">{{ post.PostTime | formatDate }}</span>
               </a-row>
               <a-row class="article-actions">
                 <span>
@@ -52,15 +52,14 @@
                   </a-tooltip>
                   <span style="padding-left: '8px';cursor: 'auto'">111</span>
                 </span>
-
               </a-row>
             </a-col>
           </a-list-item>
         </a-list>
       </p>
-      <p v-else-if="noTitleKey === 'app'">app content</p>
-      <p v-else-if="noTitleKey === 'project'">project content</p>
     </a-card>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
@@ -88,55 +87,7 @@ import {
 import formatDate from "plugins/format_date";
 
 export default {
-  data() {
-    return {
-      tabList: [
-        {
-          key: "tab1",
-          // tab: 'tab1',
-          scopedSlots: { tab: "customRender" }
-        },
-        {
-          key: "tab2",
-          tab: "tab2"
-        }
-      ],
-      contentList: {
-        tab1: "content1",
-        tab2: "content2"
-      },
-      tabListNoTitle: [
-        {
-          key: "article",
-          tab: "article"
-        },
-        {
-          key: "app",
-          tab: "app"
-        },
-        {
-          key: "project",
-          tab: "project"
-        }
-      ],
-      key: "tab1",
-      noTitleKey: "article",
-      listData: [
-        {
-          title: "Ant Design Title 1"
-        },
-        {
-          title: "Ant Design Title 2"
-        },
-        {
-          title: "Ant Design Title 3"
-        },
-        {
-          title: "Ant Design Title 4"
-        }
-      ]
-    };
-  },
+  data: defaultData,
   mounted: defaultMounted,
   watch: defaultWatch,
   methods: {
