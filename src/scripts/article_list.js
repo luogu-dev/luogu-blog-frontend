@@ -13,7 +13,8 @@ export function defaultData () {
     totalPages: 1,
     ready: false,
     uid: BlogGlobals.currentUser,
-    config: BlogGlobals.config
+    config: BlogGlobals.config,
+    BlogGlobals
   }
 }
 
