@@ -45,7 +45,7 @@
       </a-col>
       <a-col :span="16">
         <a-card style="width:100%" :title="'文章 ('+posts.length+')'">
-          <a :href="BlogGlobals.luoguAddress" slot="extra">管理后台</a>
+          <a :href="BlogGlobals.luoguAddress" slot="extra" v-if="BlogGlobals.isBlogAdmin" >管理后台</a>
           <p>
             <a-list itemLayout="horizontal" :dataSource="posts">
               <a-list-item slot="renderItem" slot-scope="post">
@@ -130,7 +130,6 @@ export default {
       let types = [];
       this.posts.map((post, index) => {
         types.push(post.Type);
-        console.log(post.Type);
       });
       let typeSet = new Set(types);
       return Array.from(typeSet);
