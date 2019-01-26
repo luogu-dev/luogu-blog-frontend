@@ -13,8 +13,8 @@
               <a-divider :dashed="true"/>
               <div>
                 <a-menu class="menu" v-for="(ty,index) in typeList" :key="index">
-                  <a-sub-menu>
-                    <span slot="title">
+                  <a-sub-menu >
+                    <span slot="title" @click.stop.prevent="type = ty">
                       <span>{{ty}}</span>
                     </span>
                   </a-sub-menu>
@@ -56,7 +56,7 @@
                   <a-row>
                     <a-list-item-meta>
                       <a-tooltip slot="description">
-                        <a-tag>{{post.Type}}</a-tag>
+                        <a-tag @click.stop.prevent="type = post.Type">{{post.Type}}</a-tag>
                       </a-tooltip>
                     </a-list-item-meta>
                   </a-row>
