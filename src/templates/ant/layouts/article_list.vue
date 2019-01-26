@@ -21,7 +21,13 @@
                 </a-menu>
               </div>
               <a-divider :dashed="true"/>
-              <a-input-search class="input-search" placeholder="input search text" v-model="keyword" />
+              <a-input-search
+                class="input-search"
+                placeholder="input search text"
+                v-model="keyword"
+                @click="getPosts(1)"
+                @keyup.enter="getPosts(1)"
+              />
               <a-divider :dashed="true"/>
               <div class="footer-info">
                 <div class="text-center">
