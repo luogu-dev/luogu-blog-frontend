@@ -13,7 +13,7 @@
               <a-divider :dashed="true"/>
               <div>
                 <a-menu class="menu" v-for="(ty,index) in typeList" :key="index">
-                  <a-sub-menu >
+                  <a-sub-menu>
                     <span slot="title" @click.stop.prevent="type = ty">
                       <span>{{ty}}</span>
                     </span>
@@ -45,7 +45,7 @@
       </a-col>
       <a-col :span="16">
         <a-card style="width:100%" :title="'文章 ('+posts.length+')'">
-          <a :href="BlogGlobals.luoguAddress" slot="extra" v-if="BlogGlobals.isBlogAdmin" >管理后台</a>
+          <a :href="BlogGlobals.luoguAddress" slot="extra" v-if="BlogGlobals.isBlogAdmin">管理后台</a>
           <p>
             <a-list itemLayout="horizontal" :dataSource="posts">
               <a-list-item slot="renderItem" slot-scope="post">
@@ -72,14 +72,16 @@
                   </a-row>
                   <a-row class="article-actions">
                     <span>
-                      <a-tooltip title="Like">
+                      <a-tooltip
+                        
+                      >
                         <a-icon type="like"/>
                       </a-tooltip>
                       <span style="padding-left: '8px';cursor: 'auto'">{{post.ThumbUp}}</span>
                     </span>
                     <a-divider type="vertical"/>
                     <span>
-                      <a-tooltip title="Message">
+                      <a-tooltip>
                         <a-icon type="message"/>
                       </a-tooltip>
                       <!-- 因为接口里没有评论数啊生气！ -->
@@ -136,7 +138,7 @@ export default {
     }
   },
   methods: {
-    getPosts
+    getPosts,
   },
   filters: {
     formatDate
