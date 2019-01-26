@@ -16,6 +16,7 @@
   <main class="spl-section">
     {{>content}}
   </main>
+
   <script>
     var BlogGlobals = {
       blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
@@ -23,7 +24,12 @@
       currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
       luoguAddress: '{{ luoguAddress }}',
       picAddress: '{{ picAddress }}',
-      blogSubtitle: '{{blogSubtitle}}'
+      blogSubtitle: '{{blogSubtitle}}',
+      {{#if isBlogAdmin}}
+      isBlogAdmin: true,
+      {{else }}
+      isBlogAdmin: false,
+      {{/if}}
     }
   </script>
   <script src="/static/blog/ant/common.js"></script>
