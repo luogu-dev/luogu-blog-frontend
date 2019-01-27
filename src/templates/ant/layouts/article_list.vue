@@ -120,7 +120,11 @@ import {
 import formatDate from "plugins/format_date";
 
 export default {
-  data: defaultData,
+  data: function(){
+    return {
+      ...defaultData(),
+      BlogGlobals:window.BlogGlobals
+    }},
   mounted: defaultMounted,
   watch: defaultWatch,
   computed: {
