@@ -17,8 +17,27 @@
         <a-card>
           <p>评论：</p>
           <a-form-item>
-            <a-textarea :rows="8" ></a-textarea>
+            <a-textarea :rows="8" v-model="commentContent"></a-textarea>
+            <a-row type="flex" justify="end" style="margin-top:10px;">
+              <a-col>
+                <a-button  @click="postComment" type="primary">发布</a-button>
+              </a-col>
+            </a-row>
           </a-form-item>
+          <a-divider/>
+          <a-list itemLayout="horizontal" :dataSource="comments">
+            <a-list-item slot="renderItem" slot-scope="comment">
+              <a-list-item-meta :description="comment.Content">
+                <a-avatar
+                  :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'"
+                  :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
+                  target="_blank"
+                  slot="avatar"
+                />
+              </a-list-item-meta>
+               <blockquote>At {{ comment.ReplyTime | formatDate }}</blockquote>
+            </a-list-item>
+          </a-list>
         </a-card>
       </a-col>
     </a-row>
@@ -42,7 +61,8 @@ import {
   Tag,
   Menu,
   Input,
-  Form
+  Form,
+  Button
 } from "ant-design-vue";
 import {
   defaultData,
@@ -74,7 +94,7 @@ export default {
   filters: { formatDate },
   components: {
     pagination,
-    "articleVote":article_vote,
+    articleVote: article_vote,
     "a-card": Card,
     "a-card-meta": Card.Meta,
     "a-list": List,
@@ -92,7 +112,8 @@ export default {
     "a-sub-menu": Menu.SubMenu,
     "a-input-search": Input.Search,
     "a-form-item": Form.Item,
-    "a-textarea": Input.TextArea
+    "a-textarea": Input.TextArea,
+    "a-button": Button
   }
 };
 </script>
