@@ -9,11 +9,13 @@
   <meta name="blog-name" content="{{ blogName }}">
   <meta name="current-user" content="{{ currentUser }}">
   <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
+  <link rel="stylesheet" href="/static/blog/ant/katex.css">
+  <link rel="stylesheet" href="/static/blog/ant/common.css">
   {{>styles}}
 </head>
 
 <body>
-  <main class="spl-section">
+  <main>
     {{>content}}
   </main>
 
