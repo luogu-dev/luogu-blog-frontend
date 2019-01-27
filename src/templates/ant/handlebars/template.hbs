@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="blog-uid" content="{{ blogUID }}">
+  <meta name="blog-name" content="{{ blogName }}">
+  <meta name="current-user" content="{{ currentUser }}">
+  <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
+  <link rel="stylesheet" href="/static/blog/ant/katex.css">
+  <link rel="stylesheet" href="/static/blog/ant/common.css">
+  {{>styles}}
+</head>
+
+<body>
+  <main>
+    {{>content}}
+  </main>
+
+  <script>
+    var BlogGlobals = {
+      blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+      blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+      currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+      luoguAddress: '{{ luoguAddress }}',
+      picAddress: '{{ picAddress }}',
+      blogSubtitle: '{{blogSubtitle}}',
+      {{#if isBlogAdmin}}
+      isBlogAdmin: true,
+      {{else }}
+      isBlogAdmin: false,
+      {{/if}}
+    }
+  </script>
+  <script src="/static/blog/ant/common.js"></script>
+  {{>scripts}}
+</body>
+
+</html>
