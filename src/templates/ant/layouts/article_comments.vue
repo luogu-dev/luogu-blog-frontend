@@ -1,52 +1,99 @@
 <template>
-  <div id="article-comments">
-    <form v-if="uid" @submit.prevent="postComment" class="clearfix">
-      <textarea v-model="commentContent"
-        class="spl-comment-editor spl-border"
-      ></textarea>
-      <button type="submit" class="spl-comment-submit spl-border"
-        :class="{ disabled: commentPosting }"
-      >
-        <i class="icon edit"></i> 评论
-      </button>
-    </form>
-    <div v-if="ready">
-      <div class="spl-comment clearfix" v-for="comment in comments">
-        <div class="avator">
-          <a
-            :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
-            target="_blank"
-          >
-            <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'">
-          </a>
-        </div>
-        <div class="content">
-          <div class="poster">
-            {{ comment.Author.Username }}
-            <i class="icon wait"></i>
-            <time>{{ comment.ReplyTime | formatDate }}</time>
-          </div>
-          {{ comment.Content }}&nbsp;
-        </div>
-      </div>
-      <pagination v-if="ready"
-        :page="page" :totalPages="totalPages" :callback="getComments"
-      ></pagination>
-    </div>
-    <p v-else>正在加载...</p>
+  <div style="background:#ECECEC; padding:30px">
+    <a-row type="flex" justify="center">
+      <a-col :span="18">
+        <a-card>
+          <h2>{{articleInfo.postTitle}}</h2>
+          <blockquote>{{articleInfo.postTime}}</blockquote>
+          <a-divider/>
+          <a :href="BlogGlobals.luoguAddress" slot="extra" v-if="BlogGlobals.isBlogAdmin">管理后台</a>
+          <div id="article-content" v-html="articleInfo.content"></div>
+          <articleVote></articleVote>
+        </a-card>
+      </a-col>
+    </a-row>
+    <a-row type="flex" justify="center" class="comments-top">
+      <a-col :span="18">
+        <a-card>
+          <p>评论：</p>
+          <a-form-item>
+            <a-textarea :rows="8" ></a-textarea>
+          </a-form-item>
+        </a-card>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
 <script>
-import pagination from '../components/pagination.vue'
-import { defaultData, defaultMounted, getComments, postComment } from 'scripts/article_comments'
-import formatDate from 'plugins/format_date'
+import pagination from "../components/pagination.vue";
+import article_vote from "./article_vote.vue";
+import {
+  Card,
+  List,
+  ListItem,
+  Avatar,
+  contentList,
+  Tooltip,
+  Icon,
+  Col,
+  Row,
+  Divider,
+  Tag,
+  Menu,
+  Input,
+  Form
+} from "ant-design-vue";
+import {
+  defaultData,
+  defaultMounted,
+  getComments,
+  postComment
+} from "scripts/article_comments";
+import formatDate from "plugins/format_date";
+
 export default {
-  data: defaultData,
+  data: function() {
+    return {
+      ...defaultData(),
+      articleInfo: window.articleInfo
+    };
+  },
   mounted: defaultMounted,
+  computed: {
+    typeList: function() {
+      let types = [];
+      this.posts.map((post, index) => {
+        types.push(post.Type);
+      });
+      let typeSet = new Set(types);
+      return Array.from(typeSet);
+    }
+  },
   methods: { getComments, postComment },
   filters: { formatDate },
-  components: { pagination }
-}
+  components: {
+    pagination,
+    "articleVote":article_vote,
+    "a-card": Card,
+    "a-card-meta": Card.Meta,
+    "a-list": List,
+    "a-list-item": List.Item,
+    "a-list-item-meta": List.Item.Meta,
+    "a-avatar": Avatar,
+    "a-tooltip": Tooltip,
+    "a-icon": Icon,
+    "a-row": Row,
+    "a-col": Col,
+    "a-divider": Divider,
+    "a-tag": Tag,
+    "a-menu": Menu,
+    "a-menu-item": Menu.Item,
+    "a-sub-menu": Menu.SubMenu,
+    "a-input-search": Input.Search,
+    "a-form-item": Form.Item,
+    "a-textarea": Input.TextArea
+  }
+};
 </script>
 
