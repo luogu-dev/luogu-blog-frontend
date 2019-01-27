@@ -51,7 +51,9 @@
               <a-list-item slot="renderItem" slot-scope="post">
                 <a-col>
                   <a-row>
-                    <a-list-item-meta :title="post.Title"></a-list-item-meta>
+                    <a-list-item-meta>
+                      <a :href="post.Identifier" slot="title">{{post.Title}}</a>
+                    </a-list-item-meta>
                   </a-row>
                   <a-row>
                     <a-list-item-meta>
@@ -63,18 +65,12 @@
                   <a-row class="article-content">{{ post.ContentDescription }}</a-row>
                   <a-row>
                     <a href>{{ post.Author.Username }}</a>
-                    <span class="inline-padding">发布了</span>
-                    <a
-                      class="inline-padding-right"
-                      href="https://vuecomponent.github.io/ant-design-vue/"
-                    >{{post.Title}}</a>
+                    <span class="inline-padding">发布于</span>
                     <span class="text-grey">{{ post.PostTime | formatDate }}</span>
                   </a-row>
                   <a-row class="article-actions">
                     <span>
-                      <a-tooltip
-                        
-                      >
+                      <a-tooltip>
                         <a-icon type="like"/>
                       </a-tooltip>
                       <span style="padding-left: '8px';cursor: 'auto'">{{post.ThumbUp}}</span>
