@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import pagination from "../components/pagination.vue";
+
 import article_vote from "./article_vote.vue";
 import {
   Card,
@@ -93,7 +93,6 @@ export default {
   methods: { getComments, postComment },
   filters: { formatDate },
   components: {
-    pagination,
     articleVote: article_vote,
     "a-card": Card,
     "a-card-meta": Card.Meta,

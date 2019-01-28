@@ -110,7 +110,7 @@ import {
   Menu,
   Input
 } from "ant-design-vue";
-import pagination from "../components/pagination.vue";
+
 import {
   defaultData,
   defaultMounted,
@@ -144,7 +144,6 @@ export default {
     formatDate
   },
   components: {
-    pagination,
     "a-card": Card,
     "a-card-meta": Card.Meta,
     "a-list": List,
