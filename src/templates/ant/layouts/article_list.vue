@@ -1,6 +1,6 @@
 <template>
   <div style="background:#ECECEC; padding:30px">
-    <a-row>
+    <a-row type="flex" justify="center">
       <a-col :span="8" class="authorinfo-padding">
         <a-card style="width:100%">
           <a-row type="flex" justify="center">
@@ -25,8 +25,8 @@
                 class="input-search"
                 placeholder="input search text"
                 v-model="keyword"
-                @click="getPosts(1)"
-                @keyup.enter="getPosts(1)"
+                @click="getPosts"
+                @keyup.enter="getPosts"
               />
               <a-divider :dashed="true"/>
               <div class="footer-info">
@@ -44,7 +44,7 @@
         </a-card>
       </a-col>
       <a-col :span="16">
-        <a-card style="width:100%" :title="'文章 ('+posts.length+')'">
+        <a-card style="width:100%" :title="'文章 ('+postCount+')'">
           <a :href="BlogGlobals.luoguAddress" slot="extra" v-if="BlogGlobals.isBlogAdmin">管理后台</a>
           <p>
             <a-list itemLayout="horizontal" :dataSource="posts">
@@ -88,6 +88,20 @@
               </a-list-item>
             </a-list>
           </p>
+          <a-divider/>
+          <a-row type="flex" justify="center">
+            <a-col>
+              <a-pagination
+                slots="[actions]"
+                :defaultCurrent="1"
+                :hideOnSinglePage="true"
+                v-model="page"
+                :total="postCount"
+                @change="getPosts"
+                href="#"
+              ></a-pagination>
+            </a-col>
+          </a-row>
         </a-card>
       </a-col>
     </a-row>
@@ -108,9 +122,10 @@ import {
   Divider,
   Tag,
   Menu,
-  Input
+  Input,
+  Pagination
 } from "ant-design-vue";
-import pagination from "../components/pagination.vue";
+
 import {
   defaultData,
   defaultMounted,
@@ -120,11 +135,12 @@ import {
 import formatDate from "plugins/format_date";
 
 export default {
-  data: function(){
+  data: function() {
     return {
       ...defaultData(),
-      BlogGlobals:window.BlogGlobals
-    }},
+      BlogGlobals: window.BlogGlobals
+    };
+  },
   mounted: defaultMounted,
   watch: defaultWatch,
   computed: {
@@ -144,7 +160,6 @@ export default {
     formatDate
   },
   components: {
-    pagination,
     "a-card": Card,
     "a-card-meta": Card.Meta,
     "a-list": List,
@@ -160,7 +175,8 @@ export default {
     "a-menu": Menu,
     "a-menu-item": Menu.Item,
     "a-sub-menu": Menu.SubMenu,
-    "a-input-search": Input.Search
+    "a-input-search": Input.Search,
+    "a-pagination": Pagination
   }
 };
 </script>
