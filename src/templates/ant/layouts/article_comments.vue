@@ -20,7 +20,7 @@
             <a-textarea :rows="8" v-model="commentContent"></a-textarea>
             <a-row type="flex" justify="end" style="margin-top:10px;">
               <a-col>
-                <a-button  @click="postComment" type="primary">发布</a-button>
+                <a-button @click="postComment" type="primary">发布</a-button>
               </a-col>
             </a-row>
           </a-form-item>
@@ -35,8 +35,20 @@
                   slot="avatar"
                 />
               </a-list-item-meta>
-               <blockquote>At {{ comment.ReplyTime | formatDate }}</blockquote>
+              <blockquote>回复于 {{ comment.ReplyTime | formatDate }}</blockquote>
             </a-list-item>
+            <a-row type="flex" justify="center" style="margin-top:10px;">
+              <a-col>
+                <a-pagination
+                  slots="[actions]"
+                  :defaultCurrent="1"
+                  :hideOnSinglePage="true"
+                  v-model="page"
+                  :total="commentCount"
+                  @change="getComments"
+                ></a-pagination>
+              </a-col>
+            </a-row>
           </a-list>
         </a-card>
       </a-col>
@@ -45,7 +57,6 @@
 </template>
 
 <script>
-
 import article_vote from "./article_vote.vue";
 import {
   Card,
@@ -62,7 +73,8 @@ import {
   Menu,
   Input,
   Form,
-  Button
+  Button,
+  Pagination
 } from "ant-design-vue";
 import {
   defaultData,
@@ -112,7 +124,8 @@ export default {
     "a-input-search": Input.Search,
     "a-form-item": Form.Item,
     "a-textarea": Input.TextArea,
-    "a-button": Button
+    "a-button": Button,
+    "a-pagination": Pagination
   }
 };
 </script>
