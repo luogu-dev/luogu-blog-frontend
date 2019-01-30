@@ -18,7 +18,7 @@
                 <a-row>
                   <a-list-item-meta>
                     <a-tooltip slot="description">
-                      <a-tag @click.stop.prevent="type = post.Type">{{post.Type}}</a-tag>
+                      <a-tag @click.stop.prevent="type = post.Type" href="#">{{post.Type}}</a-tag>
                     </a-tooltip>
                   </a-list-item-meta>
                 </a-row>

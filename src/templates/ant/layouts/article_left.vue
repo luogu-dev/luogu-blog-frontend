@@ -26,13 +26,17 @@
         />
         <a-divider :dashed="true"/>
         <div class="footer-info">
-          <div class="text-center">
-            Powered by
-            <a href="https://www.luogu.org/">LuoguBlog</a>
-          </div>
+
           <div class="text-center">
             Theme by
-            <a href="https://github.com/cleverdango">cleverdango</a>
+            <a href="https://github.com/cleverdango">@cleverdango</a>
+          </div>
+          <div class="text-center">
+            <a class="item" href="_sitemap">Site Map</a>
+            <a-divider type="vertical"/>
+            <a class="item" href="https://github.com/luogu-dev/luogu-blog-frontend">GitHub</a>
+            <a-divider type="vertical"/>
+            <a class="item" href="{{ luoguAddress }}">洛谷</a>
           </div>
         </div>
       </a-col>
@@ -49,7 +53,7 @@ import {
   Divider,
   Menu,
   Input
-} from "ant-design-vue"
+} from "ant-design-vue";
 import {
   defaultData,
   defaultMounted,
@@ -95,7 +99,7 @@ export default {
     "a-menu": Menu,
     "a-menu-item": Menu.Item,
     "a-sub-menu": Menu.SubMenu,
-    "a-input-search": Input.Search,
+    "a-input-search": Input.Search
   }
 };
 </script>
