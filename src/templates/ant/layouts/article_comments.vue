@@ -27,15 +27,21 @@
           <a-divider/>
           <a-list itemLayout="horizontal" :dataSource="comments">
             <a-list-item slot="renderItem" slot-scope="comment">
-              <a-list-item-meta :description="comment.Content">
+              <a-list-item-meta>
                 <a-avatar
                   :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'"
                   :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
                   target="_blank"
                   slot="avatar"
                 />
+                <div slot="title">
+                  <a
+                    :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
+                  >{{comment.Author.Username}}</a>
+                  <span style="padding-left:8px;color: #ccc;">{{ comment.ReplyTime | formatDate }}</span>
+                </div>
+                <div slot="description">{{ comment.Content }}</div>
               </a-list-item-meta>
-              <blockquote>回复于 {{ comment.ReplyTime | formatDate }}</blockquote>
             </a-list-item>
             <a-row type="flex" justify="center" style="margin-top:10px;">
               <a-col>
