@@ -8,7 +8,11 @@
           <a-divider/>
           <a :href="BlogGlobals.luoguAddress" slot="extra" v-if="BlogGlobals.isBlogAdmin">管理后台</a>
           <div id="article-content" v-html="articleInfo.content"></div>
-          <articleVote></articleVote>
+          <a-row type="flex" justify="end">
+            <a-col>
+              <articleVote></articleVote>
+            </a-col>
+          </a-row>
         </a-card>
       </a-col>
     </a-row>
