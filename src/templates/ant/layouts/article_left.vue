@@ -9,12 +9,11 @@
         </div>
         <a-divider :dashed="true"/>
         <div>
-          <a-menu class="menu" v-for="(ty,index) in typeList" :key="index">
-            <a-sub-menu>
-              <span slot="title" @click.stop.prevent="type = ty">
-                <span>{{ty}}</span>
-              </span>
-            </a-sub-menu>
+          <a-menu class="menu" :forceSubMenuRender="true">
+            <a-menu-item v-for="(tp,index) in typeList" :key="index" @click="type = tp" href="/">
+              <a-icon type="tag"/>
+              {{tp}}
+            </a-menu-item>
           </a-menu>
         </div>
         <a-divider :dashed="true"/>

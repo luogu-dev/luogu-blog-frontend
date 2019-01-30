@@ -30,8 +30,18 @@
     border-bottom: 1px solid #e8e8e8;
 }
 
+.ant-menu-item:not(:last-child) {
+    padding: 0 8px !important;
+    margin: 8px 8px !important;
+    border-bottom: 1px solid #e8e8e8 !important;
+}
+
 .menu {
     border: 1px solid #e8e8e8;
+}
+
+.ant-menu-item-selected {
+    background-color: transparent !important;
 }
 
 .footer-info {
