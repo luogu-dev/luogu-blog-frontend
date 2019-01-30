@@ -9,8 +9,18 @@
         </div>
         <a-divider :dashed="true"/>
         <div>
-          <a-menu class="menu" :forceSubMenuRender="true">
-            <a-menu-item v-for="(tp,index) in typeList" :key="index" @click="type = tp" href="/">
+          <a-menu class="menu" v-if="mode==='article-list'" :forceSubMenuRender="true">
+            <a-menu-item v-for="(tp,index) in typeList" :key="index" @click="type = tp">
+              <a-icon type="tag"/>
+              {{tp}}
+            </a-menu-item>
+          </a-menu>
+          <a-menu class="menu" v-if="mode==='article-comments'" :forceSubMenuRender="true">
+            <a-menu-item
+              v-for="(tp,index) in typeList"
+              :key="index"
+              v-on:click="goToListPageByType(tp)"
+            >
               <a-icon type="tag"/>
               {{tp}}
             </a-menu-item>
@@ -26,7 +36,6 @@
         />
         <a-divider :dashed="true"/>
         <div class="footer-info">
-
           <div class="text-center">
             Theme by
             <a href="https://github.com/cleverdango">@cleverdango</a>
@@ -63,6 +72,7 @@ import {
 
 import formatDate from "plugins/format_date";
 export default {
+  props: ["mode"],
   data: function() {
     return {
       ...defaultData(),
@@ -83,7 +93,11 @@ export default {
     }
   },
   methods: {
-    getPosts
+    getPosts,
+    goToListPageByType(type) {
+      window.location = "./#type=" + type;
+      this.type = type;
+    }
   },
   filters: {
     formatDate
