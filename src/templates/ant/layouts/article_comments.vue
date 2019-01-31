@@ -8,9 +8,19 @@
         <a-col :span="24">
           <a-card>
             <h2>{{articleInfo.postTitle}}</h2>
-            <blockquote>{{articleInfo.postTime}}</blockquote>
+            <blockquote class="article-content-post-title">
+              {{articleInfo.postTime}}
+              <span class="article-content-actions" v-if="BlogGlobals.isBlogAdmin">
+                <a href="{{ luoguAddress }}/blogAdmin/article/edit/{{ postID }}">
+                  <a-icon type="edit" theme="twoTone"/>
+                </a>
+                <a :href="BlogGlobals.luoguAddress" slot="extra">
+                  <a-icon type="setting" theme="twoTone"/>
+                </a>
+              </span>
+            </blockquote>
             <a-divider/>
-            <a :href="BlogGlobals.luoguAddress" slot="extra" v-if="BlogGlobals.isBlogAdmin">管理后台</a>
+
             <div id="article-content" v-html="articleInfo.content"></div>
             <a-row type="flex" justify="end">
               <a-col>
@@ -88,7 +98,8 @@ import {
   Input,
   Form,
   Button,
-  Pagination
+  Pagination,
+  ButtonGroup
 } from "ant-design-vue";
 import {
   defaultData,
@@ -136,6 +147,7 @@ export default {
     "a-form-item": Form.Item,
     "a-textarea": Input.TextArea,
     "a-button": Button,
+    "a-button-group": ButtonGroup,
     "a-pagination": Pagination
   }
 };
