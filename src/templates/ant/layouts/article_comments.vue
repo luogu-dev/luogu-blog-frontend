@@ -7,14 +7,22 @@
       <a-row type="flex" justify="center">
         <a-col :span="24">
           <a-card>
-            <h2>{{articleInfo.postTitle}}</h2>
+            <h2 class="article-content-post-title">
+              {{articleInfo.postTitle}}
+              <a class="article-content-actions" href="./">
+                <a-icon type="arrow-left"/>文章列表
+              </a>
+            </h2>
             <blockquote class="article-content-post-title">
               {{articleInfo.postTime}}
-              <span class="article-content-actions" v-if="BlogGlobals.isBlogAdmin">
+              <span
+                class="article-content-actions"
+                v-if="BlogGlobals.isBlogAdmin"
+              >
                 <a href="{{ luoguAddress }}/blogAdmin/article/edit/{{ postID }}">
                   <a-icon type="edit" theme="twoTone"/>
                 </a>
-                <a :href="BlogGlobals.luoguAddress" slot="extra">
+                <a :href="BlogGlobals.luoguAddress">
                   <a-icon type="setting" theme="twoTone"/>
                 </a>
               </span>
