@@ -10,12 +10,18 @@
         <a-divider :dashed="true"/>
         <div>
           <a-menu class="menu" v-if="mode==='article-list'" :forceSubMenuRender="true">
+            <a-menu-item @click="type = ''">
+              <a-icon type="tag"/>所有类型
+            </a-menu-item>
             <a-menu-item v-for="(tp,index) in typeList" :key="index" @click="type = tp">
               <a-icon type="tag"/>
               {{tp}}
             </a-menu-item>
           </a-menu>
           <a-menu class="menu" v-if="mode==='article-comments'" :forceSubMenuRender="true">
+            <a-menu-item v-on:click="goToListPageByType('')">
+              <a-icon type="tag"/>所有类型
+            </a-menu-item>
             <a-menu-item
               v-for="(tp,index) in typeList"
               :key="index"
@@ -88,7 +94,6 @@ export default {
         types.push(post.Type);
       });
       let typeSet = new Set(types);
-      console.log(Array.from(typeSet));
       return Array.from(typeSet);
     }
   },

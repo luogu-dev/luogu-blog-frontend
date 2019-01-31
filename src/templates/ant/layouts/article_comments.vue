@@ -117,16 +117,6 @@ export default {
     };
   },
   mounted: defaultMounted,
-  computed: {
-    typeList: function() {
-      let types = [];
-      this.posts.map((post, index) => {
-        types.push(post.Type);
-      });
-      let typeSet = new Set(types);
-      return Array.from(typeSet);
-    }
-  },
   methods: { getComments, postComment },
   filters: { formatDate },
   components: {
