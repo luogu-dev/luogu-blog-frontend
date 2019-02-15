@@ -17,6 +17,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist', themeName),
+    publicPath: `/static/blog/${themeName}/`,
     filename: '[name].js'
   },
   module: {
