@@ -1,7 +1,7 @@
 <style>
-  code {
-    font-family: Monaco, Menlo, Consolas, "Courier New", FontAwesome, monospace;
-  }
+	code {
+		font-family: Monaco, Menlo, Consolas, "Courier New", FontAwesome, monospace;
+	}
 </style>
 
 <article id="blog-container" data-blogid="{{ postID }}" data-vote="{{ userVote }}" data-thumbUp="{{ postThumbUp }}">
@@ -12,10 +12,10 @@
 		<br />
 		<small>
 			<time>{{ postTime }}</time>
-      in <a href=".#type={{ postType }}">{{ postType }}</a>
+			in <a href=".#type={{ postType }}">{{ postType }}</a>
 			{{#if isBlogAdmin}}
 				&emsp;
-				<a href="/blog/post_edit/{{ postID }}">编辑</a>
+				<a href="{{ luoguAddress }}/blogAdmin/article/edit/{{ postID }}">编辑</a>
 			{{/if}}
 		</small>
 	</header>
