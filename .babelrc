@@ -3,5 +3,8 @@
     ["env", { "modules": false }],
     "stage-3"
   ],
-  "plugins": ["lodash"]
+  "plugins": [
+    "lodash",
+    "syntax-dynamic-import"
+  ]
 }
