@@ -3,7 +3,11 @@
     <a-row type="flex" justify="center">
       <a-col>
         <div class="author-title">
-          <a-avatar :size="96" class="avatar-left" :src="BlogGlobals.picAddress"/>
+          <a-avatar
+            :size="96"
+            class="avatar-left"
+            :src="BlogGlobals.picAddress +'/upload/usericon/'+BlogGlobals.blogUID+'.png'"
+          />
           <h3 class="text-center blog-name">{{BlogGlobals.blogName}}</h3>
           <h4 class="text-center">{{BlogGlobals.blogSubtitle}}</h4>
         </div>
