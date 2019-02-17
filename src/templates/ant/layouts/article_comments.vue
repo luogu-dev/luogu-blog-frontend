@@ -19,7 +19,7 @@
                 class="article-content-actions"
                 v-if="BlogGlobals.isBlogAdmin"
               >
-                <a href="{{ luoguAddress }}/blogAdmin/article/edit/{{ postID }}">
+                <a :href="BlogGlobals.luoguAddress+'/blogAdmin/article/edit/'+BlogGlobals.postID">
                   <a-icon type="edit" theme="twoTone"/>
                 </a>
                 <a :href="BlogGlobals.luoguAddress">

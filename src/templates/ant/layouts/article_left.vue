@@ -51,7 +51,7 @@
             <a-divider type="vertical"/>
             <a class="item" href="https://github.com/luogu-dev/luogu-blog-frontend">GitHub</a>
             <a-divider type="vertical"/>
-            <a class="item" href="{{ luoguAddress }}">洛谷</a>
+            <a class="item" :href="BlogGlobals.luoguAddress">洛谷</a>
           </div>
         </div>
       </a-col>
