@@ -22,7 +22,7 @@
                 <a :href="BlogGlobals.luoguAddress+'/blogAdmin/article/edit/'+BlogGlobals.postID">
                   <a-icon type="edit" theme="twoTone"/>
                 </a>
-                <a :href="BlogGlobals.luoguAddress">
+                <a :href="BlogGlobals.luoguAddress+'/blogAdmin'">
                   <a-icon type="setting" theme="twoTone"/>
                 </a>
               </span>
