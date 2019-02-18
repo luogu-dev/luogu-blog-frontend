@@ -1,12 +1,10 @@
 import axios from 'axios'
 import katex from 'katex'
 import katexAutoRender from 'plugins/katex'
-
-import hljs from 'plugins/hljs'
-import $ from 'jquery'
+import { renderAllCodeElements } from 'plugins/hljs'
 
 export function initHighlight () {
-  $('pre code').each((i, block) => hljs.highlightBlock(block))
+  return renderAllCodeElements()
 }
 
 export function initKatex () {

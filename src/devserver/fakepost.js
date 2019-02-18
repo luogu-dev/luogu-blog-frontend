@@ -170,5 +170,40 @@ Linux对内存的访问控制更为严格，因此在Windows上可能正常运�
 数据可能真的有问题。但是如果不止一个人通过了这道题，那最好不要怀疑是数据的锅。</code></pre>
 <p>如有写得不好的地方，还请dalao多多指正！
 <strong>乱码是因为我用的预览体验系统......不过用正式版也可以了！</strong></p>
+<pre><code class="language-php">
+$test=233;
+var_dump($test);</code></pre>
+<pre><code class="language-cpp">
+#define mian main
+#define bao int
+#define hao int
+#define dailai scanf
+#define daizou printf
+#define gaoci return 0
+
+#include&lt;stdio.h&gt;
+
+bao mian(){
+    hao chi;
+    hao wan;
+    dailai("%d %d",&amp;chi,&amp;wan);
+    hao huai=chi+wan;
+    daizou("%d",huai);
+    gaoci;
+}</code></pre>
+<pre><code class="language-python">
+import flask
+
+app = flask.Flask("SAM Drawer")
+
+@app.route("/")
+def home()-&gt;str:
+    return "qwq"
+
+def main()-&gt;None:
+    app.run(port=8080)
+
+if __name__ == "__main__":
+    main()</code></pre>
   `
 })

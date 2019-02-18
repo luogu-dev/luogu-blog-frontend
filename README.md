@@ -17,7 +17,7 @@ yarn lint # 使用 ESLint 检查 Javascript 代码风格。
 
 API Mock 调试服务器使用时，访问 `http://localhost:<PORT>/<THEME>/` 来浏览该主题的预览。
 
-需要事先运行 `THEME=<theme> npm run build` 来产生对应的 JS 和 CSS 才能工作。
+需要事先运行 `THEME=<theme> yarn build` 来产生对应的 JS 和 CSS 才能工作。
 
 ## 主题审核标准
 
