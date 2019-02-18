@@ -4,6 +4,7 @@
       <articleLeft mode="article-list"></articleLeft>
     </a-col>
     <a-col :span="16" style="padding-left:16px;">
+      <a-card style="width:100%" :title="'文章 ('+postCount+')'" class="article-body-top">
       <a-card style="width:100%" :title="'文章 ('+postCount+')'">
         <a :href="BlogGlobals.luoguAddress" slot="extra" v-if="BlogGlobals.isBlogAdmin">管理后台</a>
         <p>
