@@ -19,10 +19,10 @@
                 class="article-content-actions"
                 v-if="BlogGlobals.isBlogAdmin"
               >
-                <a :href="BlogGlobals.luoguAddress+'/blogAdmin/article/edit/'+BlogGlobals.postID">
+                <a :href="BlogGlobals.luoguAddress+'/blogAdmin/article/edit/'+articleInfo.postID">
                   <a-icon type="edit" theme="twoTone"/>
                 </a>
-                <a :href="BlogGlobals.luoguAddress+'/blogAdmin'">
+                <a :href="BlogGlobals.luoguAddress+'/blogAdmin'" target="_blank">
                   <a-icon type="setting" theme="twoTone"/>
                 </a>
               </span>

@@ -6,6 +6,7 @@
     <a-col :span="16" style="padding-left:16px;">
       <a-card style="width:100%" :title="'文章 ('+postCount+')'" class="article-body-top">
         <a
+          target="_blank"
           :href="BlogGlobals.luoguAddress+'/blogAdmin'"
           slot="extra"
           v-if="BlogGlobals.isBlogAdmin"
