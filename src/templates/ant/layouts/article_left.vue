@@ -32,8 +32,7 @@
           class="input-search"
           placeholder="input search text"
           v-model="keyword"
-          @click="changeKeyWord"
-          @keyup.enter="changeKeyWord"
+          @search="changeKeyWord(keyword)"
         />
         <a-divider :dashed="true"/>
         <div class="footer-info">
@@ -71,6 +70,7 @@ import {
   getPosts
 } from "scripts/article_list";
 
+import * as searchBar from "scripts/search_bar";
 import formatDate from "plugins/format_date";
 import shareData from "../share.js";
 
@@ -97,16 +97,22 @@ export default {
     getPosts,
     goToListPageByType(type) {
       if (type) {
-      window.location = "./#type=" + type;
+        window.location = "./#type=" + type;
       } else if (this.type) {
         // 当前type不为空且需要跳转的也不为空
         window.location = "./";
       }
       shareData.$emit("changeTypeEvent", type);
     },
-    changeKeyWord() {
-      shareData.$emit("changeKeywordEvent", this.keyword);
-      console.log("changekeyword");
+    changeKeyWord(keyword) {
+      if (keyword) {
+        window.location = "./#keyword=" + keyword;
+        this.keyword = keyword;
+      } else if (this.keyword) {
+        // 当前keyword不为空且需要跳转的也不为空
+        window.location = "./";
+      }
+      shareData.$emit("changeKeywordEvent", keyword);
     }
   },
   filters: {

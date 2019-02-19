@@ -94,6 +94,7 @@ import {
 } from "scripts/article_list";
 import formatDate from "plugins/format_date";
 import shareData from "../share.js";
+import * as searchBar from "scripts/search_bar";
 
 export default {
   data() {
@@ -104,13 +105,14 @@ export default {
   },
   mounted() {
     defaultMounted.apply(this);
-    shareData.$on("changeTypeEvent", (type) => {
+    shareData.$on("changeTypeEvent", type => {
       this.type = type;
     });
-    shareData.$on("changeKeywordEvent",(keyword)=>{
+    shareData.$on("changeKeywordEvent", keyword => {
       this.keyword = keyword;
       this.getPosts(1);
-    })
+    });
+    
   },
 
   watch: defaultWatch,

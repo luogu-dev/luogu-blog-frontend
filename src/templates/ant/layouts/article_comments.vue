@@ -116,6 +116,7 @@ import {
   postComment
 } from "scripts/article_comments";
 import formatDate from "plugins/format_date";
+import shareData from "../share.js";
 
 export default {
   data: function() {
@@ -124,7 +125,23 @@ export default {
       articleInfo: window.articleInfo
     };
   },
-  mounted: defaultMounted,
+  mounted() {
+    defaultMounted.apply(this);
+    shareData.$on("changeTypeEvent", type => {
+      if (type) {
+        window.location = "./#type=" + type;
+      } else {
+        window.location = "./";
+      }
+    });
+    shareData.$on("changeKeywordEvent", keyword => {
+      if (keyword) {
+        window.location = "./#keyword=" + keyword;
+      } else {
+        window.location = "./";
+      }
+    });
+  },
   methods: { getComments, postComment },
   filters: { formatDate },
   components: {
