@@ -5,7 +5,11 @@
     </a-col>
     <a-col :span="16" style="padding-left:16px;">
       <a-card style="width:100%" :title="'文章 ('+postCount+')'" class="article-body-top">
-        <a :href="BlogGlobals.luoguAddress+'/blogAdmin'" slot="extra" v-if="BlogGlobals.isBlogAdmin">管理后台</a>
+        <a
+          :href="BlogGlobals.luoguAddress+'/blogAdmin'"
+          slot="extra"
+          v-if="BlogGlobals.isBlogAdmin"
+        >管理后台</a>
         <p>
           <a-list itemLayout="horizontal" :dataSource="posts">
             <a-list-item slot="renderItem" slot-scope="post">
@@ -18,7 +22,7 @@
                 <a-row>
                   <a-list-item-meta>
                     <a-tooltip slot="description">
-                      <a-tag @click.stop.prevent="type = post.Type" href="#">{{post.Type}}</a-tag>
+                      <a-tag @click.stop.prevent="type = post.Type">{{post.Type}}</a-tag>
                     </a-tooltip>
                   </a-list-item-meta>
                 </a-row>
@@ -58,7 +62,6 @@
               v-model="page"
               :total="postCount"
               @change="getPosts"
-              href="#"
             ></a-pagination>
           </a-col>
         </a-row>
@@ -90,15 +93,26 @@ import {
   getPosts
 } from "scripts/article_list";
 import formatDate from "plugins/format_date";
+import shareData from "../share.js";
 
 export default {
-  data: function() {
+  data() {
     return {
       ...defaultData(),
       BlogGlobals: window.BlogGlobals
     };
   },
-  mounted: defaultMounted,
+  mounted() {
+    defaultMounted.apply(this);
+    shareData.$on("changeTypeEvent", (type) => {
+      this.type = type;
+    });
+    shareData.$on("changeKeywordEvent",(keyword)=>{
+      this.keyword = keyword;
+      this.getPosts(1);
+    })
+  },
+
   watch: defaultWatch,
   methods: {
     getPosts
