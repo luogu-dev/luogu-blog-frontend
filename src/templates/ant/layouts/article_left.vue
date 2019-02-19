@@ -13,20 +13,7 @@
         </div>
         <a-divider :dashed="true"/>
         <div>
-          <a-menu class="menu" v-if="mode==='article-list'" :forceSubMenuRender="true">
-            <a-menu-item v-on:click="goToListPageByType('')">
-              <a-icon type="tag"/>所有类型
-            </a-menu-item>
-            <a-menu-item
-              v-for="(tp,index) in typeList"
-              :key="index"
-              v-on:click="goToListPageByType(tp)"
-            >
-              <a-icon type="tag"/>
-              {{tp}}
-            </a-menu-item>
-          </a-menu>
-          <a-menu class="menu" v-if="mode==='article-comments'" :forceSubMenuRender="true">
+          <a-menu class="menu" :forceSubMenuRender="true">
             <a-menu-item v-on:click="goToListPageByType('')">
               <a-icon type="tag"/>所有类型
             </a-menu-item>
@@ -88,7 +75,6 @@ import formatDate from "plugins/format_date";
 import shareData from "../share.js";
 
 export default {
-  props: ["mode"],
   data: function() {
     return {
       ...defaultData(),

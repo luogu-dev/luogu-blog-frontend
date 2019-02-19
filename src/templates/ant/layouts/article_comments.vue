@@ -1,7 +1,7 @@
 <template>
   <a-row type="flex" justify="center" style="background:#ECECEC;padding:30px;">
     <a-col :span="8" class="authorinfo-padding">
-      <articleLeft mode="article-comments"></articleLeft>
+      <articleLeft></articleLeft>
     </a-col>
     <a-col :span="16" style="padding-left:16px;">
       <a-row type="flex" justify="center">
