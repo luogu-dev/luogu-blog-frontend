@@ -1,0 +1,17 @@
+
+<script>
+    var articleInfo = {
+        postID: "{{ postID }}",
+        userVote: "{{ userVote }}",
+        postThumbUp: "{{postThumbUp}}",
+        isBlogAdmin: "{{isBlogAdmin}}",
+        postTitle: "{{ postTitle }}",
+        postType: "{{ postType }}",
+        postTime: "{{ postTime }}",
+        content:document.getElementById('article-content').innerHTML
+    }
+    BlogGlobals.blogID = "{{ postID }}";
+    BlogGlobals.vote = "{{ userVote }}";
+    BlogGlobals.thumbUp = "{{ postThumbUp }}";
+</script>
+<script src="/static/blog/ant/article.js"></script>

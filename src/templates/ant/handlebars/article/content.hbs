@@ -1,0 +1,22 @@
+<div id="article-comments">
+  {{!-- 在加载Vue组件之后会把下面的内容替换掉,为了使页面加载优化增加下列布局和样式 --}}
+  <div class="ant-col-24">
+    <div class="ant-row-flex ant-row-flex-center" style="background: rgb(236, 236, 236); padding: 30px;">
+      <div class="ant-col-8" style="">
+        <div class="ant-card ant-card-bordered" style="width: 100%;background: rgb(236, 236, 236); ">
+          <div class="ant-card-body" style="padding: 0 16px;">
+          </div>
+        </div>
+      </div>
+      <div class="ant-col-16">
+        <div class="ant-card ant-card-bordered">
+          <div class="ant-card-body">
+            <div id="article-content">
+              {{{ postContent }}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
