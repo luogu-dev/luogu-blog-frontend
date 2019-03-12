@@ -19,7 +19,7 @@
           <i class="tag icon"></i>
           {{ type }}
         </a>
-      </div> -->
+      </div>-->
     </div>
 
     <div class="site-info-contanier">
@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import { getPosts } from 'scripts/article_list'
 export default {
   props: {
     posts: Array

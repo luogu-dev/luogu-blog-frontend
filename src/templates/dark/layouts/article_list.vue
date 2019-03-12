@@ -45,10 +45,7 @@ export default {
   watch: defaultWatch,
   methods: { getPosts },
   filters: { formatDate },
-  components: { pagination, loader, articleLeft },
-  created () {
-    console.log(this)
-  }
+  components: { pagination, loader, articleLeft }
 }
 </script>
 <style>
