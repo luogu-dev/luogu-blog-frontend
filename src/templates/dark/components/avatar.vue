@@ -1,7 +1,7 @@
 <template>
   <div>
-    <img class="reading-avatar" :v-if='!imgError' url='url' @error="hideImg" />
-    <div class="reading-avatar" :v-if="imgError">{{ userName | getFirstChar }}</div>
+    <img class="dark-avatar" :v-if='!imgError' url='url' @error="hideImg" />
+    <div class="dark-avatar" :v-if="imgError">{{ userName | getFirstChar }}</div>
   </div>
 </template>
 

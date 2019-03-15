@@ -208,14 +208,14 @@ idv {
   flex: 1;
 }
 
-.reading-pagination {
+.dark-pagination {
   background-color: transparent !important;
   border: 1px solid white !important;
   border-radius: 2px !important;
   color: #cbc5c1 !important;
 }
 
-.reading-avatar{
+.dark-avatar{
   width: 33px;
   height: 33px;
   background-color: gray;
@@ -226,6 +226,6 @@ idv {
   display: block;
 }
 
-.reading-disable{
+.dark-disable{
   color:#cbc5c1 !important
 }
