@@ -1,0 +1,25 @@
+<div v-cloak class="ui text container" id="blog-container"
+     data-blogid="{{ postID }}"
+     data-vote="{{ userVote }}"
+     data-thumbUp="{{ postThumbUp }}">
+    <h1 class="ui">
+        {{ postTitle }}
+        <div id="article-vote"></div>
+    </h1>
+    <div class="ui divider"></div>
+    <div id="article-content">
+        {{{ postContent }}}
+        <br>
+    </div>
+    <p>
+        <i class="wait icon"></i>{{ postTime }} in <a href=".#type={{ postType }}">{{ postType }}</a>
+        {{#if isBlogAdmin}}
+            &emsp;
+            <a href="{{ luoguAddress }}/blogAdmin/article/edit/{{ postID }}">编辑</a>
+        {{/if}}
+    </p>
+
+    <div id="article-comments"></div>
+</div>
+
+<link rel="stylesheet" href="/static/blog/dark/katex.css">
