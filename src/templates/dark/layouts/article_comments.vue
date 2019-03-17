@@ -39,13 +39,14 @@
 
       <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getComments"></pagination>
     </div>
-    <loader v-else></loader>
+    <div class="message-invisiable" v-else>
+      只有登陆后才能查看评论
+    </div>
   </div>
 </template>
 
 <script>
 import pagination from '../components/pagination.vue'
-import loader from '../components/loader.vue'
 import { defaultData, defaultMounted, getComments, postComment } from 'scripts/article_comments'
 import formatDate from 'plugins/format_date'
 import avatar from '../components/avatar'
@@ -54,7 +55,17 @@ export default {
   mounted: defaultMounted,
   methods: { getComments, postComment },
   filters: { formatDate },
-  components: { pagination, loader, avatar }
+  components: { pagination, avatar }
 }
 </script>
+
+<style scoped>
+.message-invisiable{
+  width: 100%;
+  height:150px;
+  text-align: center;
+  line-height: 150px;
+}
+</style>
+
 

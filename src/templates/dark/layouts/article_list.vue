@@ -30,7 +30,6 @@
 
 <script>
 import pagination from '../components/pagination.vue'
-import loader from '../components/loader.vue'
 import articleLeft from './article_left.vue'
 import {
   defaultData,
@@ -45,7 +44,7 @@ export default {
   watch: defaultWatch,
   methods: { getPosts },
   filters: { formatDate },
-  components: { pagination, loader, articleLeft }
+  components: { pagination, articleLeft }
 }
 </script>
 <style>
