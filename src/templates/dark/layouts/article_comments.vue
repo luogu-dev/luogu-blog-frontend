@@ -39,8 +39,11 @@
 
       <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getComments"></pagination>
     </div>
-    <div class="message-invisiable" v-else>
-      只有登陆后才能查看评论
+    <div v-else-if="uid !== NaN" class="message-invisiable">
+      无法显示评论,评论获取失败
+    </div>
+    <div v-else class="message-invisiable">
+      <a href="https://www.luogu.org/">登陆</a>之后才能查看评论
     </div>
   </div>
 </template>

@@ -22,9 +22,9 @@
           <p class='font-color-1'>{{ post.ContentDescription }}</p>
         </div>
       </div>
+      <pagination :page="page" :totalPages="totalPages" :callback="getPosts"></pagination>
     </div>
 
-    <pagination :page="page" :totalPages="totalPages" :callback="getPosts"></pagination>
   </div>
 </template>
 
