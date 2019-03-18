@@ -1,0 +1,20 @@
+#article-content img {
+    max-width: 100%;
+}
+
+.comments-top {
+    margin-top: 30px;
+}
+
+.article-content-post-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-content-actions{
+    font-size: 16px;
+}
+
+.article-content-actions >a {
+    margin-left: 6px;
+}

@@ -10,19 +10,6 @@ svg {
   width: 100%;
 }
 
-p {
-  color: #3e3e3b;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #ebeced !important;
-}
-
 .main.container {
   margin-top: 2em;
 }
@@ -94,10 +81,11 @@ a:hover {
   color: #ebeced !important;
 }
 
-p,
-span,
-idv {
+* {
   color: #ebeced;
+}
+p,span,div,h1,h2,h3,h4,h5,h6,br,hr,ul,li,i,td,th,tr{
+  color: #ebeced !important;
 }
 
 .thump-up {
@@ -142,21 +130,10 @@ idv {
   font-size: 15px;
 }
 
-.post:hover {
-  background: linear-gradient(to left, #cbc5c1, #cbc5c1) left top no-repeat,
-    linear-gradient(to bottom, #cbc5c1, #cbc5c1) left top no-repeat,
-    linear-gradient(to left, #cbc5c1, #cbc5c1) right top no-repeat,
-    linear-gradient(to bottom, #cbc5c1, #cbc5c1) right top no-repeat,
-    linear-gradient(to left, #cbc5c1, #cbc5c1) left bottom no-repeat,
-    linear-gradient(to bottom, #cbc5c1, #cbc5c1) left bottom no-repeat,
-    linear-gradient(to left, #cbc5c1, #cbc5c1) right bottom no-repeat,
-    linear-gradient(to left, #cbc5c1, #cbc5c1) right bottom no-repeat;
-  background-size: 1px 20px, 20px 1px, 1px 20px, 20px 1px;
-}
 
 .article-left-container {
   display: block;
-  height: 700px;
+  height: 100%;
   position: fixed;
   left: 0;
   top: 50px;
@@ -167,8 +144,10 @@ idv {
 .site-info-contanier {
   padding-left: 10px;
   bottom: 60px;
-  position: absolute;
+  position: fixed;
   text-align: center;
+  text-overflow: ellipsis;
+  width: 300px;
 }
 
 .site-info-contanier a {
@@ -228,4 +207,31 @@ idv {
 
 .dark-disable{
   color:#cbc5c1 !important
+}
+
+@media screen and (max-width:766px){
+	.article-left-container{
+    display:none
+  }
+  .post-container{
+    width:100%;
+  }
+}
+
+@media screen and (max-width:1980px)and (minS-width:766px){
+  .post-container{
+    width:700px; 
+    margin-left:300px;
+  }
+  .post:hover {
+    background: linear-gradient(to left, #cbc5c1, #cbc5c1) left top no-repeat,
+      linear-gradient(to bottom, #cbc5c1, #cbc5c1) left top no-repeat,
+      linear-gradient(to left, #cbc5c1, #cbc5c1) right top no-repeat,
+      linear-gradient(to bottom, #cbc5c1, #cbc5c1) right top no-repeat,
+      linear-gradient(to left, #cbc5c1, #cbc5c1) left bottom no-repeat,
+      linear-gradient(to bottom, #cbc5c1, #cbc5c1) left bottom no-repeat,
+      linear-gradient(to left, #cbc5c1, #cbc5c1) right bottom no-repeat,
+      linear-gradient(to left, #cbc5c1, #cbc5c1) right bottom no-repeat;
+    background-size: 1px 20px, 20px 1px, 1px 20px, 20px 1px;
+  }
 }

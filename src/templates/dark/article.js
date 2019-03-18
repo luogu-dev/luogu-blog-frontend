@@ -3,7 +3,6 @@ import './common'
 import { initKatex, initHighlight } from 'scripts/article'
 import ArticleVote from './layouts/article_vote.vue'
 import ArticleComments from './layouts/article_comments.vue'
-import 'highlight.js/styles/atom-one-dark.css'
 
 initKatex()
 initHighlight()

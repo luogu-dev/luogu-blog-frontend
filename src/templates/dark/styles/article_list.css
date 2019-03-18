@@ -1,0 +1,23 @@
+.article-content {
+    margin: 16px 0;
+}
+
+.article-actions {
+    margin-top: 16px;
+}
+
+.inline-padding {
+    padding: 0 8px;
+}
+
+.inline-padding-right {
+    padding-right: 8px;
+}
+
+.text-grey {
+    color: #bfbfbf;
+}
+
+.ant-card-body:nth-of-type(1) {
+    padding-top: 6px !important;
+}
