@@ -8,16 +8,23 @@
 git clone https://github.com/luogu-dev/luogu-blog-frontend
 cd luogu-blog-frontend
 yarn install # 安装依赖、配置 debug 主题所用的 Semantic UI
-THEME=debug yarn build # 编译产生指定主题的 Javascript 生产环境归档
-THEME=debug yarn build-dev # 编译产生指定主题的 Javascript 测试环境归档（无压缩、优化）
+THEME=<YOUR_THEME_NAME> yarn build # 编译产生指定主题的 Javascript 生产环境归档
+THEME=<YOUR_THEME_NAME> yarn build-dev # 编译产生指定主题的 Javascript 测试环境归档（无压缩、优化）
 yarn dev-server # 启动用于调试的 API Mock 服务器。可以通过指定 PORT 环境变量修改监听端口。
 yarn dev # yarn build-dev && yarn dev-server 的简写。
 yarn lint # 使用 ESLint 检查 Javascript 代码风格。
 ```
 
-API Mock 调试服务器使用时，访问 `http://localhost:<PORT>/<THEME>/` 来浏览该主题的预览。
+API Mock 调试服务器启动后，可以访问 `http://localhost:<PORT>/<YOUR_THEME_NAME>/` 来浏览该主题的预览。
 
-需要事先运行 `THEME=<theme> yarn build` 来产生对应的 JS 和 CSS 才能工作。
+需要事先运行 `THEME=<YOUR_THEME_NAME> yarn build` 来产生对应的 JS 和 CSS 才能工作。
+
+需要说明的是，在 Windows 环境下，前置指定 `THEME` 环境变量无效，但可以在 PowerShell 中使用以下代码来替代：
+
+```powershell
+$env:THEME="<YOUR_THEME_NAME>" # 指定环境变量
+yarn build # 编译产生指定主题的 Javascript 生产环境归档
+```
 
 ## 主题审核标准
 
@@ -36,6 +43,7 @@ API Mock 调试服务器使用时，访问 `http://localhost:<PORT>/<THEME>/` �
 页面整体框架、以及博客的博文内容由服务器直出，此部分使用 Handlebars 模版引擎。
 
 服务器部分可访问到一些全局变量：
+
 ```
 blogUID: 博客主的 UID
 blogName: 博客标题
@@ -57,6 +65,7 @@ userVote: 用户对本文的评价，1 = 赞，-1 = 踩，0 = 没评价
 页面中部分结构，例如文章列表、评论、点赞功能，由 Vue 在客户端动态渲染。
 
 此部分允许由服务器向客户端传递一个名为 `BlogGlobals` 的全局变量，建议的结构如下：
+
 ```javascript
 var BlogGlobals = {
    blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
