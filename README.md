@@ -19,10 +19,10 @@ API Mock 调试服务器启动后，可以访问 `http://localhost:<PORT>/<YOUR_
 
 需要事先运行 `THEME=<YOUR_THEME_NAME> yarn build` 来产生对应的 JS 和 CSS 才能工作。
 
-需要说明的是，在 Windows 环境下，前置指定 `THEME` 环境变量无效，请在 PowerShell 中使用以下代码来替代：
+需要说明的是，在 Windows 环境下，前置指定 `THEME` 环境变量无效，但可以在 PowerShell 中使用以下代码来替代：
 
 ```powershell
-$env:THEME="<YOUR_THEME_NAME>" # 指定全局变量
+$env:THEME="<YOUR_THEME_NAME>" # 指定环境变量
 yarn build # 编译产生指定主题的 Javascript 生产环境归档
 ```
 
