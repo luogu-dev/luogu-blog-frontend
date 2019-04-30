@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="blog-uid" content="{{ blogUID }}" />
+  <meta name="blog-name" content="{{ blogName }}" />
+  <meta name="current-user" content="{{ currentUser }}" />
+  {{>styles}}
+  <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
+</head>
+
+<body class="flex-column">
+  <div class="align-content-center">
+    <div class="container-fluid" id="main">
+      <br /><br />
+      <div class="title1"><a href=".">{{ blogName }}</a></div>
+      <span class="smalltitle">
+        {{ blogSubtitle }}
+        {{#isBlogAdmin}}
+        | <a href="{{ luoguAddress }}/blogAdmin" class="right item">管理后台</a>
+        {{/isBlogAdmin}}
+      </span>
+      <hr />
+      {{>content}}
+    </div>
+  </div>
+  <footer class="footer mx-auto py-4" id="footer">
+    <div class="container">
+      <center>
+        <hr />
+        <a href="_sitemap">Site Map</a> |
+        <a href="https://github.com/luogu-dev/luogu-blog-frontend">GitHub</a> |
+        <a href="{{ luoguAddress }}">洛谷</a>
+        <p>Powered by Luogu Blog. Theme by <a href="https://roderickqiu.scris.top/" target="_blank">RoderickQiu</a>. All
+          rights reserved.</p>
+      </center>
+    </div>
+  </footer>
+  <script>
+var BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
+  </script>
+  <script src="/static/blog/themeazure/common.js"></script>
+  {{>scripts}}
+</body>
+
+</html>
