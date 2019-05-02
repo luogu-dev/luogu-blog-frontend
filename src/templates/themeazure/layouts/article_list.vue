@@ -1,21 +1,21 @@
 <template>
   <div id="article-list">
-    <div class="container">
-      <div class="row">
-        <div class="col post-list-container" style="margin-top: 20px;">
-          <div class="post-list" v-for="post in posts">
-            <a :href="post.Identifier">
-              <h2 class="title2">{{ post.Title }}</h2>
-            </a>
-            <div class="info">{{ post.ContentDescription }}</div>
-            <div class="smalltext">{{ post.Type }} on {{ post.PostTime | formatDate }}</div>
-            <br>
-          </div>
-          <center>
-            <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getPosts"></pagination>
-          </center>
+    <div class="post-list-container" style="margin-top: 20px;">
+      <div class="post-list" v-for="post in posts">
+        <a :href="post.Identifier">
+          <h2 class="title2">{{ post.Title }}</h2>
+        </a>
+        <div class="info">{{ post.ContentDescription }}</div>
+        <div class="smalltext">
+          类别
+          <b>{{ post.Type }}</b> 发表于
+          <b>{{ post.PostTime | formatDate }}</b>
         </div>
+        <br>
       </div>
+      <center>
+        <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getPosts"></pagination>
+      </center>
     </div>
   </div>
 </template>

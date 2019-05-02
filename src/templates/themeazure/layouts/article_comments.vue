@@ -1,5 +1,5 @@
 <template>
-  <div id="article-comments" class>
+  <div id="article-comments">
     <div class="form-group">
       <label for="comment-textArea" class="h3" style="margin-bottom: 20px;">回复文章</label>
       <textarea v-model="commentContent" class="form-control" id="comment-textArea" rows="3"></textarea>
@@ -13,7 +13,7 @@
     >提交</button>
     <hr>
     <h3 style="margin-bottom: 20px;">评论</h3>
-    <div class="themeazure-comment" v-for="comment in comments">
+    <div class="comment-container" v-for="comment in comments">
       <div class="avatar" style="margin-right: 12px;">
         <a target="_blank" class="user">
           <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'">
@@ -42,27 +42,25 @@
 .away {
   margin-top: 15px;
 }
-
-.themeazure-comment {
+.comment-container {
   width: 100%;
   display: inline-flex;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-
 .post-meta {
   display: inline-block;
 }
-
 .post-content .post-message p:last-child {
   margin: 0;
 }
-
 .post-content .post-message p {
   line-height: 21px;
   margin: 0 0 15px;
 }
 </style>
+
+
 
 <script>
 import pagination from '../components/pagination'

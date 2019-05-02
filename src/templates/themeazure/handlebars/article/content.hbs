@@ -1,27 +1,8 @@
-<style>
-  .main-head {
-    visibility: hidden;
-    display: none;
-  }
-
-  pre {
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    padding: 6px 10px;
-  }
-</style>
-<header class="footer themeazure-height-extended intro-header" style="margin-top: 20px;">
+<header class="footer intro-header" style="margin-top: 20px;">
   <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="site-heading">
-          <h1 id="themeazure-blog-title" style="font-style: normal;text-align: left;">{{ postTitle }}</h1>
-          <div class="themeazure-blog-meta" style="text-align: left;"><b>{{ postThumbUp }}</b> 个喜欢，写于
-            <b>{{ postTime }}</b>，属于类别 <a class="tag" style="color:#fff;"
-              href=".#type={{ postType }}"><b>{{ postType }}</b></a></div>
-        </div>
-      </div>
-    </div>
+    <h1 class="title2">{{ postTitle }}</h1>
+    <div class="smalltext"><b>{{ postThumbUp }}</b> 个喜欢，写于
+      <b>{{ postTime }}</b>，属于类别 <a class="tag" href=".#type={{ postType }}"><b>{{ postType }}</b></a></div>
   </div>
 </header>
 <div class="container" id="blog-container" style="margin-top: 30px;" data-blogid="{{ postID }}"
