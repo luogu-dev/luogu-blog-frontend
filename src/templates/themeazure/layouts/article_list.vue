@@ -1,7 +1,7 @@
 <template>
   <div id="article-list">
     <div class="post-list-container" style="margin-top: 20px;">
-      <div class="post-list" v-for="post in posts">
+      <div class="post-list" v-for="post in posts" :key="post.postID">
         <a :href="post.Identifier">
           <h2 class="title2">{{ post.Title }}</h2>
         </a>

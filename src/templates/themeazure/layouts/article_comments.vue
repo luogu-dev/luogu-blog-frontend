@@ -13,7 +13,7 @@
     >提交</button>
     <hr>
     <h3 style="margin-bottom: 20px;">评论</h3>
-    <div class="comment-container" v-for="comment in comments">
+    <div class="comment-container" v-for="comment in comments" :key="comment.ReplyTime">
       <div class="avatar" style="margin-right: 12px;">
         <a target="_blank" class="user">
           <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'">
