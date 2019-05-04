@@ -1,9 +1,9 @@
 import Vue from 'vue'
+import 'highlight.js/styles/mono-blue.css'
 import './common'
 import { initKatex, initHighlight } from 'scripts/article'
 import ArticleVote from './layouts/article_vote'
 import ArticleComments from './layouts/article_comments'
-import 'highlight.js/styles/tomorrow.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   initKatex()

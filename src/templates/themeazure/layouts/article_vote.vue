@@ -8,7 +8,8 @@
         @click="performVote(1)"
       >
         <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-      </button>&nbsp;
+      </button>
+      &nbsp;|&nbsp;
       <button
         type="button"
         class="btn btn-outline-secondary"

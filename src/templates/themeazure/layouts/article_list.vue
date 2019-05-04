@@ -8,7 +8,7 @@
         <div class="info">{{ post.ContentDescription }}</div>
         <div class="smalltext">
           类别
-          <b>{{ post.Type }}</b> 发表于
+          <a href="javascript:void 0" @click="type = post.Type">{{ post.Type }}</a> 发表于
           <b>{{ post.PostTime | formatDate }}</b>
         </div>
         <br>

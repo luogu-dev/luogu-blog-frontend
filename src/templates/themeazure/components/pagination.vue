@@ -1,10 +1,10 @@
 <template>
   <ul class="pagination">
     <li class="page-item">
-      <a class="page-link" v-if="page != 1" @click="callback(page - 1)" href="#">前一页</a>
+      <a class="page-link" v-if="page != 1" @click="callback(page - 1)" href="#">&lt; 前一页</a>
     </li>
     <li class="page-item">
-      <a class="page-link" v-if="page != totalPages" @click="callback(page + 1)" href="#">后一页</a>
+      <a class="page-link" v-if="page != totalPages" @click="callback(page + 1)" href="#">后一页 &gt;</a>
     </li>
   </ul>
 </template>

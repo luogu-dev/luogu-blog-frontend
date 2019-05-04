@@ -20,9 +20,9 @@
         </a>
       </div>
       <div class="post-body">
-        <a class="author" style="font-weight: 500">{{ comment.Author.Username }}</a>
+        <a class="author">{{ comment.Author.Username }}</a>
         <div class="post-meta">
-          <div class="date">{{ comment.ReplyTime | formatDate }}</div>
+          <div class="date smalltext">{{ comment.ReplyTime | formatDate }}</div>
         </div>
         <div class="post-body-inner" style="margin: 0;">{{ comment.Content }}</div>
       </div>
@@ -39,8 +39,17 @@
 </template>
 
 <style scoped>
+.avatar img {
+  padding: 0px;
+  border: 0px;
+  height: 48px;
+}
 .away {
   margin-top: 15px;
+}
+.author {
+  color: rgb(68, 114, 196);
+  font-weight: 500;
 }
 .comment-container {
   width: 100%;
@@ -55,7 +64,7 @@
   margin: 0;
 }
 .post-content .post-message p {
-  line-height: 21px;
+  line-height: 135%;
   margin: 0 0 15px;
 }
 </style>

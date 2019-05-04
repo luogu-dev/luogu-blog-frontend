@@ -1,15 +1,16 @@
 html, body {
   font-family: "Source Han Sans CN", -apple-system, "Microsoft YaHei UI", "微软雅黑", sans-serif;
-  background-color: rgb(250, 250, 250);
-  display: -webkit-flex;
+  background-color: rgb(253, 253, 253);
+  /*display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
+  display: flex;*/
   align-items: center;
   width: 100%;
+  overflow-x: hidden;
 }
 
 a {
-  appearance: none;
+  text-decoration: none;
   color: rgb(68, 114, 196);
 }
 
@@ -24,10 +25,9 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-pre {
-  background-color: rgb(248, 248, 248);
+img, pre {
   border: 1px solid rgb(139, 139, 139);
-  padding: 5px;
+  padding: 8px;
 }
 
 code {
@@ -50,6 +50,10 @@ img, .stretchy svg {
 
 .pagination {
   display: inline-block;
+}
+
+.hljs {
+  background-color: rgb(253, 253, 253);
 }
 
 .title1 {
@@ -78,11 +82,12 @@ img, .stretchy svg {
 .smalltext {
   font-size: 12px;
   color: rgb(96, 96, 96);
+  line-height: 125%;
 }
 
 @media (min-width: 801px) {
   #main {
-    width: 72%;
+    width: 60%;
   }
   .title1 {
     font-size: 32px;

@@ -9,6 +9,8 @@ const devMode = process.env.NODE_ENV !== 'production'
 
 const themeName = process.env.THEME || 'debug'
 
+console.log('Now dealing with: ' + themeName)
+
 module.exports = {
   entry: {
     article_list: ['babel-polyfill', path.resolve(__dirname, './src/templates', themeName, './article_list.js')],
