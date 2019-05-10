@@ -5,10 +5,8 @@ import { initKatex, initHighlight } from 'scripts/article'
 import ArticleVote from './layouts/article_vote'
 import ArticleComments from './layouts/article_comments'
 
-document.addEventListener('DOMContentLoaded', () => {
-  initKatex()
-  initHighlight()
-})
+initKatex()
+initHighlight()
 
 window.articleVote = new Vue({
   el: '#article-vote',

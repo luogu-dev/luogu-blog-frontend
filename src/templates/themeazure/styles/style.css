@@ -1,9 +1,6 @@
 html, body {
   font-family: "Source Han Sans CN", -apple-system, "Microsoft YaHei UI", "微软雅黑", sans-serif;
   background-color: rgb(253, 253, 253);
-  /*display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;*/
   align-items: center;
   width: 100%;
   overflow-x: hidden;
@@ -46,10 +43,15 @@ img, .stretchy svg {
 #footer {
   font-size: 12px;
   color: rgb(128, 128, 128);
+  align-content: center;
+  text-align: center;
 }
 
-.pagination {
-  display: inline-block;
+#article-vote {
+  display: block;
+  align-self: center;
+  align-content: center;
+  text-align: center;
 }
 
 .hljs {

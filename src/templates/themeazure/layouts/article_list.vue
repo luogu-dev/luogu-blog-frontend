@@ -13,9 +13,7 @@
         </div>
         <br>
       </div>
-      <center>
-        <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getPosts"></pagination>
-      </center>
+      <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getPosts"/>
     </div>
   </div>
 </template>

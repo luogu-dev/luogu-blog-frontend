@@ -1,24 +1,22 @@
 <template>
   <div id="article-vote">
-    <div>
-      <button
-        type="button"
-        class="btn btn-outline-primary"
-        :class="{ active: vote === 1 }"
-        @click="performVote(1)"
-      >
-        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-      </button>
-      &nbsp;|&nbsp;
-      <button
-        type="button"
-        class="btn btn-outline-secondary"
-        :class="{ active: vote === -1 }"
-        @click="performVote(-1)"
-      >
-        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-      </button>
-    </div>
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      :class="{ active: vote === 1 }"
+      @click="performVote(1)"
+    >
+      <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+    </button>
+    &nbsp;|&nbsp;
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      :class="{ active: vote === -1 }"
+      @click="performVote(-1)"
+    >
+      <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+    </button>
   </div>
 </template>
 
@@ -46,4 +44,3 @@ export default {
   }
 }
 </script>
-

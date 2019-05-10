@@ -34,7 +34,7 @@
       :page="page"
       :totalPages="totalPages"
       :callback="getComments"
-    ></pagination>
+    />
   </div>
 </template>
 
@@ -89,4 +89,3 @@ export default {
   components: { pagination }
 }
 </script>
-
