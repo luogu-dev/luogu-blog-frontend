@@ -17,7 +17,3 @@
 .text-grey {
     color: #bfbfbf;
 }
-
-.ant-card-body:nth-of-type(1) {
-    padding-top: 6px !important;
-}

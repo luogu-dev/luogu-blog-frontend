@@ -17,7 +17,7 @@
               <a-col>
                 <a-row>
                   <a-list-item-meta>
-                    <a :href="post.Identifier" slot="title">{{post.Title}}</a>
+                    <a :href="post.Identifier" slot="title" style="font-weight: bold;">{{post.Title}}</a>
                   </a-list-item-meta>
                 </a-row>
                 <a-row>
