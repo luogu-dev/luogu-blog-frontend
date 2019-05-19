@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <a-row type="flex" justify="center" style="background:#ECECEC; padding:30px;min-height:100vh;">
     <a-col :span="8" class="authorinfo-padding">
       <articleLeft></articleLeft>
@@ -17,7 +17,7 @@
               <a-col>
                 <a-row>
                   <a-list-item-meta>
-                    <a :href="post.Identifier" slot="title">{{post.Title}}</a>
+                    <a :href="post.Identifier" slot="title" style="font-weight: bold">{{post.Title}}</a>
                   </a-list-item-meta>
                 </a-row>
                 <a-row>

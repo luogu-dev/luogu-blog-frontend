@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <a-row type="flex" justify="center" style="background:#ECECEC;padding:30px;">
     <a-col :span="8" class="authorinfo-padding">
       <articleLeft></articleLeft>
@@ -41,7 +41,7 @@
       <a-row type="flex" justify="center" class="comments-top">
         <a-col :span="24">
           <a-card>
-            <p>评论：</p>
+            <p style="margin-top: 0.5em;">评论：</p>
             <a-form-item>
               <a-textarea :rows="8" v-model="commentContent"></a-textarea>
               <a-row type="flex" justify="end" style="margin-top:10px;">
