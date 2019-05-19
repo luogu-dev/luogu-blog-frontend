@@ -41,7 +41,7 @@
       <a-row type="flex" justify="center" class="comments-top">
         <a-col :span="24">
           <a-card>
-            <p style="margin-top: 0.5em;">评论：</p>
+            <p>评论：</p>
             <a-form-item>
               <a-textarea :rows="8" v-model="commentContent"></a-textarea>
               <a-row type="flex" justify="end" style="margin-top:10px;">
