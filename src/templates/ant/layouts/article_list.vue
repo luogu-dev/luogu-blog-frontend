@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <a-row type="flex" justify="center" style="background:#ECECEC; padding:30px;min-height:100vh;">
     <a-col :span="8" class="authorinfo-padding">
       <articleLeft></articleLeft>
