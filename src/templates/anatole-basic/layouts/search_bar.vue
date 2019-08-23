@@ -2,7 +2,7 @@
   <div id="search">
     <form role="search">
         <input type="text" class="st-search-input" v-model="keyword"/>
-        <i class="fa fa-search" @click.prevent="search()"></i>
+        <i class="fa fa-search" @click.prevent="search()" />
     </form>
   </div>
 </template>

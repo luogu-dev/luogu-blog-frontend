@@ -10,6 +10,7 @@ window.articleList = new Vue({
   el: '#article-list',
   render: h => h(ArticleList)
 })
+
 SearchBar.methods.search = redirectSearch
 window.searchBar = new Vue({
   el: '#search',

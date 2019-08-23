@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="blog-uid" content="{{ blogUID }}">
-    <meta name="blog-name" content="{{ blogName }}">
-    <meta name="current-user" content="{{ currentUser }}">
-    <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
-    <link rel="stylesheet" href="/static/blog/anatole-basic/common.css">
-    {{>styles}}
-  </head>
-  <body>
-<div class="sidebar animated fadeInDown">
-   <div class="logo-title">
-    <div class="title">
-     <img src="{{ picAddress }}/upload/usericon/{{ blogUID }}.png" style="width:127px;height:127px;border-radius:50%" />
-     <h3 title=""><a href=".">{{ blogName }}</a></h3>
-     <div class="description">
-      <p>{{ blogSubtitle }}</p>
-     </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="blog-uid" content="{{ blogUID }}">
+  <meta name="blog-name" content="{{ blogName }}">
+  <meta name="current-user" content="{{ currentUser }}">
+  <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
+  <link rel="stylesheet" href="/static/blog/anatole-basic/common.css">
+  {{>styles}}
+</head>
+
+<body>
+  <div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src="{{ picAddress }}/upload/usericon/{{ blogUID }}.png"
+          style="width:127px;height:127px;border-radius:50%" />
+        <h3>
+          <a href=".">{{ blogName }}</a>
+        </h3>
+        <div class="description">
+          <p>{{ blogSubtitle }}</p>
+        </div>
+      </div>
     </div>
-   </div>
-   <div class="footer">
-    <div class="p"> 
-     洛谷博客 with Anatole-Basic
-    </div>
-    <div class="by_farbox">
-        <a class="item" href="_sitemap">Site Map</a> | 
-        <a class="item" href="https://github.com/luogu-dev/luogu-blog-frontend">GitHub</a> | 
+    <div class="footer">
+      <div class="p">
+        洛谷博客 with Anatole-Basic
+      </div>
+      <div class="by_farbox">
+        <a class="item" href="_sitemap">Site Map</a> |
+        <a class="item" href="https://github.com/luogu-dev/luogu-blog-frontend">GitHub</a> |
         <a class="item" href="{{ luoguAddress }}">洛谷</a> | Theme by <a href="https://yemaster.github.io">Yemaster</a>.
+      </div>
     </div>
-   </div>
   </div>
-<div class="main">
-  <div class="page-top animated fadeInDown">
-   <div class="nav">
-    <li><a href=".">首页</a></li>
-    <li><a href=".">文章</a></li>
-      {{#isBlogAdmin}}
+  <div class="main">
+    <div class="page-top animated fadeInDown">
+      <div class="nav">
+        <li><a href=".">首页</a></li>
+        <li><a href=".">文章</a></li>
+        {{#isBlogAdmin}}
         <li><a href="{{ luoguAddress }}/blogAdmin">管理后台</a></li>
-      {{/isBlogAdmin}}
-    <li>
-     <div id="search">
-     </div></li>
-   </div>
-   <div class="information">
-    <div class="back_btn">
-     <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li>
+        {{/isBlogAdmin}}
+        <li>
+          <div id="search">
+          </div>
+        </li>
+      </div>
+      <div class="information">
+        <div class="back_btn">
+          <li>
+            <a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> 
+            </a>
+          </li>
+        </div>
+      </div>
     </div>
-   </div>
+    {{>content}}
   </div>
-  {{>content}}
-</div>
-    <script>
-var BlogGlobals = {
-  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
-  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
-  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
-  luoguAddress: '{{ luoguAddress }}',
-  picAddress: '{{ picAddress }}'
-}
-    </script>
-    <script src="/static/blog/anatole-basic/common.js"></script>
-    {{>scripts}}
-  </body>
+  <script>
+    var BlogGlobals = {
+      blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+      blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+      currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+      luoguAddress: '{{ luoguAddress }}',
+      picAddress: '{{ picAddress }}'
+    }
+  </script>
+  <script src="/static/blog/anatole-basic/common.js"></script>
+  {{>scripts}}
+</body>
+
 </html>
