@@ -5,14 +5,12 @@
 </style>
 
 
-<div id="blog-container" class="autopagerize_page_element"
-  data-blogid="{{ postID }}"
-  data-vote="{{ userVote }}"
-  data-thumbUp="{{ postThumbUp }}">
+<div id="blog-container" class="autopagerize_page_element" data-blogid="{{ postID }}" data-vote="{{ userVote }}" data-thumbUp="{{ postThumbUp }}">
   <div class="content">
     <div class="post-page">
       <div class="post animated fadeInDown">
         <div class="post-title">
+          <div id="article-vote"></div>
           <h3>
             <a>{{ postTitle }}</a>
           </h3>
@@ -26,13 +24,12 @@
               <i class="fa fa-sun-o"></i>
               <span class="date">{{ postTime }}</span>
               <i class="fa fa-tag"></i>
-              <a class="tag"  href=".#type={{ postType }}">{{ postType }}</a></div>
-
-    {{#if isBlogAdmin}}
-      &emsp;
-      <a href="/blog/post_edit/{{ postID }}">编辑</a>
-    {{/if}}
-            <div id="article-vote"></div>
+              <a class="tag" href=".#type={{ postType }}">{{ postType }}</a>
+            </div>
+            {{#if isBlogAdmin}}
+              &emsp;
+              <a href="/blog/post_edit/{{ postID }}">编辑</a>
+            {{/if}}
           </div>
         </div>
       </div>
