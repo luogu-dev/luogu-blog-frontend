@@ -17,8 +17,7 @@
   <div class="sidebar animated fadeInDown">
     <div class="logo-title">
       <div class="title">
-        <img src="{{ picAddress }}/upload/usericon/{{ blogUID }}.png"
-          style="width:127px;height:127px;border-radius:50%" />
+        <img src="{{ picAddress }}/upload/usericon/{{ blogUID }}.png" class="sitelogo" />
         <h3>
           <a href=".">{{ blogName }}</a>
         </h3>
@@ -50,14 +49,6 @@
           <div id="search">
           </div>
         </li>
-      </div>
-      <div class="information">
-        <div class="back_btn">
-          <li>
-            <a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> 
-            </a>
-          </li>
-        </div>
       </div>
     </div>
     {{>content}}

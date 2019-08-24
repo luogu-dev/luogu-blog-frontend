@@ -1,10 +1,3 @@
-<style>
-  code {
-    font-family: Monaco, Menlo, Consolas, "Courier New", FontAwesome, monospace;
-  }
-</style>
-
-
 <div id="blog-container" class="autopagerize_page_element" data-blogid="{{ postID }}" data-vote="{{ userVote }}" data-thumbUp="{{ postThumbUp }}">
   <div class="content">
     <div class="post-page">
@@ -21,9 +14,9 @@
         <div class="post-footer">
           <div class="meta">
             <div class="info">
-              <i class="fa fa-sun-o" />
+              <i class="fa fa-sun-o"></i>
               <span class="date">{{ postTime }}</span>
-              <i class="fa fa-tag" />
+              <i class="fa fa-tag"></i>
               <a class="tag" href=".#type={{ postType }}">{{ postType }}</a>
             </div>
             {{#if isBlogAdmin}}
