@@ -884,3 +884,18 @@ a.btn {
 .secondary {
   color: #5A6169;
 }
+
+.sitelogo {
+  width:127px;
+  height:127px;
+  border-radius:50%;
+}
+
+.commentlogo {
+  width:42px;
+  height:42px;
+}
+
+.commentdate {
+  margin-left: 5px;
+}

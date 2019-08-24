@@ -27,18 +27,18 @@
             >
               <img 
                 :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'" 
-                style="width:42px;height:42px"
+                class="commentlogo"
               >
             </a>
           </td>
           <td>
-            <p style="line-height:auto">
+            <p>
               <b>
                 <a :href="BlogGlobals.luoguAddress + '/space/show?uid=' + comment.Author.UID">
                   {{ comment.Author.Username }}
                 </a>
               </b>
-              <span style="margin-left:5px">
+              <span class="commentdate">
                 <i class="fa fa-sun-o" />
                   {{ comment.ReplyTime | formatDate }}
               </span>
