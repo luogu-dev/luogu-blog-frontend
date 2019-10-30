@@ -75,7 +75,7 @@
     "webpack": "^4.12.0",
     "webpack-bundle-analyzer": "^2.10.0",
     "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^3.1.11"
   },
   "resolutions": {
     "natives": "1.1.6"
