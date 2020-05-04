@@ -18,7 +18,7 @@
           <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.author.uid + '.png'"></a>
       </div>
       <div class="post-body">
-        <a class="author" style="font-weight: 500">{{ comment.author.username }}</a>
+        <a class="author" style="font-weight: 500">{{ comment.author.name }}</a>
         <div class="post-meta">
           <div class="date">
             {{ comment.time | formatDate }}

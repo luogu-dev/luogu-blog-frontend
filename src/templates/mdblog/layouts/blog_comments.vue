@@ -19,7 +19,7 @@
                   <div class="mdui-col-xs-11">
                       <div class="mdui-typo-body-1-opacity mdui-typo">{{ comment.content }}&nbsp;</div>
                       <div class="mdui-typo"><hr/></div>
-                      <a class="mdui-float-left mdui-typo-caption-opacity mdblog-comment-username" :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid">By {{ comment.author.username }}</a>
+                      <a class="mdui-float-left mdui-typo-caption-opacity mdblog-comment-username" :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid">By {{ comment.author.name }}</a>
                       <div class="mdui-typo-caption-opacity mdui-float-right">At {{ comment.time | formatDate }}</div>
                   </div>
               </div>

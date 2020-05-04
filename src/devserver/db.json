@@ -7,7 +7,7 @@
       "postTime": 1510225750,
       "author": {
         "uid": 256,
-        "username": "lin_toto",
+        "name": "lin_toto",
         "isAdmin": true,
         "isBanned": false
       },
@@ -25,7 +25,7 @@
       "postTime": 1510225424,
       "author": {
         "uid": 256,
-        "username": "lin_toto",
+        "name": "lin_toto",
         "isAdmin": true,
         "isBanned": false
       },
@@ -41,7 +41,7 @@
     {
       "author": {
         "uid": 256,
-        "username": "lin_toto",
+        "name": "lin_toto",
         "isAdmin": true,
         "isBanned": false
       },
@@ -51,7 +51,7 @@
     {
       "author": {
         "uid": 256,
-        "username": "lin_toto",
+        "name": "lin_toto",
         "isAdmin": true,
         "isBanned": false
       },

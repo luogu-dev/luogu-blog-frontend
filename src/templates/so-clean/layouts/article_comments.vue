@@ -30,7 +30,7 @@
           <a class="author"
              :href="BlogGlobals.luoguAddress + '/space/show?uid=' + comment.author.uid"
              target="_blank">
-            {{ comment.author.username }}
+            {{ comment.author.name }}
           </a>
           <div class="metadata">
             <span class="date">发表于 {{ comment.time | formatDate }}</span>

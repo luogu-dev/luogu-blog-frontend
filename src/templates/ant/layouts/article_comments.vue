@@ -63,7 +63,7 @@
                   <div slot="title">
                     <a
                       :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid"
-                    >{{comment.author.username}}</a>
+                    >{{comment.author.name}}</a>
                     <span style="padding-left:8px;color: #ccc;">{{ comment.time | formatDate }}</span>
                   </div>
                   <div slot="description">{{ comment.content }}</div>

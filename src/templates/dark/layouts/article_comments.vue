@@ -20,13 +20,13 @@
         <a class="avatar"
            :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid"
            target="_blank">
-           <avatar :url="BlogGlobals.picAddress + '/upload/usericon/' + comment.author.uid + '.png'" :userName='comment.author.username' />
+           <avatar :url="BlogGlobals.picAddress + '/upload/usericon/' + comment.author.uid + '.png'" :userName='comment.author.name' />
         </a>
         <div class="content">
           <a class="author"
              :href="BlogGlobals.luoguAddress + '/space/show?uid=' + comment.author.uid"
              target="_blank">
-            {{ comment.author.username }}
+            {{ comment.author.name }}
           </a>
           <div class="metadata">
             <span class="date">发表于 {{ comment.time | formatDate }}</span>

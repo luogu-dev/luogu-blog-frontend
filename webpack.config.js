@@ -3,8 +3,7 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production'
 
 const themeName = process.env.THEME || 'debug'
@@ -106,21 +105,11 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   module.exports.mode = 'production'
   module.exports.optimization.minimizer = [
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        beautify: false,
-        compress: true,
-        comments: false,
-        mangle: false,
+    new TerserPlugin({
+      terserOptions: {
         toplevel: false
-      }
-    }),
-    new OptimizeCSSAssetsPlugin({
-      cssProcessor: require('cssnano')({ zindex: false }),
-      cssProcessorOptions: {
-        safe: false,
-        discardComments: { removeAll: true }
-      }
+      },
+      parallel: true
     })
   ]
   // http://vue-loader.vuejs.org/en/workflow/production.html

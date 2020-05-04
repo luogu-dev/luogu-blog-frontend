@@ -22,7 +22,7 @@
         </div>
         <div class="content">
           <div class="poster">
-            {{ comment.author.username }}
+            {{ comment.author.name }}
             <i class="icon wait"></i>
             <time>{{ comment.time | formatDate }}</time>
           </div>

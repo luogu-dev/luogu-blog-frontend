@@ -29,7 +29,7 @@
                 </a-row>
                 <a-row class="article-content">{{ post.contentDescription }}</a-row>
                 <a-row>
-                  <a href>{{ post.author.username }}</a>
+                  <a href>{{ post.author.name }}</a>
                   <span class="inline-padding">发布于</span>
                   <span class="text-grey">{{ post.postTime | formatDate }}</span>
                 </a-row>

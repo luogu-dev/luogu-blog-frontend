@@ -29,7 +29,7 @@
         </a>
         <div style="padding-top: 5px;">
           <p>
-            <b>{{ comment.author.username }}</b>
+            <b>{{ comment.author.name }}</b>
             <small>{{ comment.time | formatDate }}</small>
           </p>
           <p>{{ comment.content }}&nbsp;</p>
