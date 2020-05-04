@@ -55,18 +55,18 @@
               <a-list-item slot="renderItem" slot-scope="comment">
                 <a-list-item-meta>
                   <a-avatar
-                    :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'"
-                    :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
+                    :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.author.uid + '.png'"
+                    :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid"
                     target="_blank"
                     slot="avatar"
                   />
                   <div slot="title">
                     <a
-                      :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
-                    >{{comment.Author.Username}}</a>
-                    <span style="padding-left:8px;color: #ccc;">{{ comment.ReplyTime | formatDate }}</span>
+                      :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid"
+                    >{{comment.author.username}}</a>
+                    <span style="padding-left:8px;color: #ccc;">{{ comment.time | formatDate }}</span>
                   </div>
-                  <div slot="description">{{ comment.Content }}</div>
+                  <div slot="description">{{ comment.content }}</div>
                 </a-list-item-meta>
               </a-list-item>
               <a-row type="flex" justify="center" style="margin-top:10px;">

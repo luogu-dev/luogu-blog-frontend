@@ -21,18 +21,18 @@
     <div class="hola-card">
       <h2 class="hola-card-title">评论</h2>
       <div style="margin-bottom: 15px; padding-bottom: 5px;" v-for="comment in comments">
-        <a :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
+        <a :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid"
            target="_blank">
-          <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'"
+          <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.author.uid + '.png'"
                class="hola-image hola-image-radii hola-avatar hola-avatar-medium hola-avatar-highlighted"
                style="float: left; margin-right: 20px;">
         </a>
         <div style="padding-top: 5px;">
           <p>
-            <b>{{ comment.Author.Username }}</b>
-            <small>{{ comment.ReplyTime | formatDate }}</small>
+            <b>{{ comment.author.username }}</b>
+            <small>{{ comment.time | formatDate }}</small>
           </p>
-          <p>{{ comment.Content }}&nbsp;</p>
+          <p>{{ comment.content }}&nbsp;</p>
         </div>
       </div>
 

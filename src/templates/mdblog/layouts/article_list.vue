@@ -7,16 +7,16 @@
                       <div style="margin: 20px;">
                           <div class="mdui-card-primary">
                             <div class="mdui-row">
-                                <a class="mdui-float-left mdblog-list-title mdui-card-primary-title" :href="post.Identifier">{{ post.Title }}</a>
+                                <a class="mdui-float-left mdblog-list-title mdui-card-primary-title" :href="post.identifier">{{ post.title }}</a>
                                 <div class="mdui-chip mdui-float-right">
-                                  <span class="mdui-chip-title" @click="type = post.Type" style="cursor: pointer">{{ post.Type }}</span>
+                                  <span class="mdui-chip-title" @click="type = post.type" style="cursor: pointer">{{ post.type }}</span>
                                 </div>
                             </div>
 
-                              <div class="mdui-card-primary-subtitle">{{ post.PostTime | formatDate }}</div>
+                              <div class="mdui-card-primary-subtitle">{{ post.postTime | formatDate }}</div>
 
                           </div>
-                          <div class="mdui-card-content mdui-typo-body-1">{{ post.ContentDescription }}</div>
+                          <div class="mdui-card-content mdui-typo-body-1">{{ post.contentDescription }}</div>
                       </div>
                   </div>
               </div>

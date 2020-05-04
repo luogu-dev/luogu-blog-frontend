@@ -2,6 +2,7 @@
 node_modules/
 dist/
 semantic/
+semantic\\/
 npm-debug.log
 yarn-error.log
 

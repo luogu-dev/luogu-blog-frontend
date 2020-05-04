@@ -7,7 +7,7 @@ apiRouter.render = (req, res) => {
   res.jsonp({
     status: 200,
     data: {
-      count: res.locals.data[0].BlogID ? 11 : 31,
+      count: 31,
       result: res.locals.data
     }
   })
@@ -15,7 +15,7 @@ apiRouter.render = (req, res) => {
 
 module.exports = {
   apiRewrite: rewriter({
-    '/blog/lists?uid=:uid&page=:page': '/blogPosts?Author.UID=:uid&_page=:page',
+    '/blog/lists?uid=:uid&page=:page': '/blogPosts?author.uid=:uid&_page=:page',
     '/blog/replies/:blogId?page=:page': '/comments?_page=:page'
   }),
   apiRouter

@@ -3,15 +3,15 @@
 		<article v-for="post in posts">
 			<header>
 				<h1>
-					<a :href="post.Identifier">{{ post.Title }}</a>
+					<a :href="post.identifier">{{ post.title }}</a>
 				</h1>
 				<br />
 				<small>
-          <time>{{ post.PostTime | formatDate }}</time>
-          in <a style="cursor: pointer" @click="type = post.Type">{{ post.Type }}</a>
+          <time>{{ post.postTime | formatDate }}</time>
+          in <a style="cursor: pointer" @click="type = post.type">{{ post.type }}</a>
         </small>
 			</header>
-			<p>{{ post.ContentDescription }}</p>
+			<p>{{ post.contentDescription }}</p>
 		</article>
 		<pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getPosts"></pagination>
 	</div>

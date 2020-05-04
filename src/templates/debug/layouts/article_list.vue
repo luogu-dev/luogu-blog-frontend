@@ -15,16 +15,16 @@
       <div v-if="ready">
         <div v-for="post in posts" class="ui vertical segment">
           <h2 class="ui header">
-            <a :href="post.Identifier">{{ post.Title }}</a>
+            <a :href="post.identifier">{{ post.title }}</a>
             <span class="sub header">
-              <i class="wait icon"></i>{{ post.PostTime | formatDate }}
+              <i class="wait icon"></i>{{ post.postTime | formatDate }}
               &emsp;
-              <i class="thumbs outline up icon"></i>{{ post.ThumbUp }}
+              <i class="thumbs outline up icon"></i>{{ post.thumbUp }}
               &emsp;
-              <i class="bookmark icon"></i><a style="cursor: pointer;" @click="type = post.Type">{{ post.Type }}</a>
+              <i class="bookmark icon"></i><a style="cursor: pointer;" @click="type = post.type">{{ post.type }}</a>
             </span>
           </h2>
-          <p>{{ post.ContentDescription }}</p>
+          <p>{{ post.contentDescription }}</p>
         </div>
       </div>
       <loader v-else></loader>

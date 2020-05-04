@@ -87,7 +87,7 @@ export default {
     typeList: function() {
       let types = [];
       this.posts.map((post, index) => {
-        types.push(post.Type);
+        types.push(post.type);
       });
       let typeSet = new Set(types);
       return Array.from(typeSet);

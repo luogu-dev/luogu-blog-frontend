@@ -15,16 +15,16 @@
     <div class="bread-comment" v-for="comment in comments">
       <div class="avatar" style="margin-right: 12px;">
         <a target="_blank" class="user">
-          <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'"></a>
+          <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.author.uid + '.png'"></a>
       </div>
       <div class="post-body">
-        <a class="author" style="font-weight: 500">{{ comment.Author.Username }}</a>
+        <a class="author" style="font-weight: 500">{{ comment.author.username }}</a>
         <div class="post-meta">
           <div class="date">
-            {{ comment.ReplyTime | formatDate }}
+            {{ comment.time | formatDate }}
           </div>
         </div>
-        <div class="post-body-inner" style="margin: 0;">{{ comment.Content }}</div>
+        <div class="post-body-inner" style="margin: 0;">{{ comment.content }}</div>
       </div>
     </div>
     <pagination v-if="ready" class="away" :page="page" :totalPages="totalPages" :callback="getComments"></pagination>

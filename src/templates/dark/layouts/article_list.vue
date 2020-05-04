@@ -5,21 +5,21 @@
       <div>
         <div v-for="post in posts" :key="post.postID" class="post">
           <h2>
-            <a :href="post.Identifier" class="title">{{ post.Title }}</a>
+            <a :href="post.identifier" class="title">{{ post.title }}</a>
             <span class="post-info-container font-color-1">
-               <i class="calendar icon"/>{{ post.PostTime | formatDate }}
+               <i class="calendar icon"/>{{ post.postTime | formatDate }}
               &emsp;
               <span class="thump-up">
-              <i class="heart icon"></i>{{ post.ThumbUp }}
+              <i class="heart icon"></i>{{ post.thumbUp }}
               </span>
               &emsp;
               <a
                 style="cursor: pointer;"
-                @click="type = post.Type"
-              ><i class="tag icon"></i>{{ post.Type }}</a>
+                @click="type = post.type"
+              ><i class="tag icon"></i>{{ post.type }}</a>
             </span>
           </h2>
-          <p class='font-color-1'>{{ post.ContentDescription }}</p>
+          <p class='font-color-1'>{{ post.contentDescription }}</p>
         </div>
       </div>
       <pagination :page="page" :totalPages="totalPages" :callback="getPosts"></pagination>

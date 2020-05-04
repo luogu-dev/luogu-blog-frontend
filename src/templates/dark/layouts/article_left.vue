@@ -51,7 +51,7 @@ export default {
     getPostTypes () {
       const tmp = []
       for (const post of this.posts) {
-        tmp.push(post.Type)
+        tmp.push(post.type)
       }
       // 去重
       return Array.from(new Set(tmp))

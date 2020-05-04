@@ -18,23 +18,23 @@
     <ul class="am-comments-list am-comments-list-flip lg-article" v-if="ready">
       <li class="am-comment am-comment-primary" v-for="comment in comments">
         <div class="lg-left">
-          <a class="avatar" :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
+          <a class="avatar" :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid"
           target="_blank">
-            <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'" class="am-comment-avatar">
+            <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.author.uid + '.png'" class="am-comment-avatar">
           </a>
         </div>
         <div class="am-comment-main">
           <header class="am-comment-hd">
             <div class="am-comment-meta">
-              <a class="author" :href="BlogGlobals.luoguAddress + '/space/show?uid=' + comment.Author.UID"
+              <a class="author" :href="BlogGlobals.luoguAddress + '/space/show?uid=' + comment.author.uid"
               target="_blank">
-                {{ comment.Author.Username }}
+                {{ comment.author.username }}
               </a>
-              {{ comment.ReplyTime | formatDate }}
+              {{ comment.time | formatDate }}
             </div>
           </header>
           <div class="am-comment-bd">
-            {{ comment.Content }}&nbsp;
+            {{ comment.content }}&nbsp;
           </div>
         </div>
       </li>

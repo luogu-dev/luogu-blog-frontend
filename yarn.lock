@@ -956,13 +956,12 @@ aws4@^1.2.1, aws4@^1.6.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.7.0.tgz#d4d0e9b9dbfca77bf08eeb0a8a471550fe39e289"
   integrity sha512-32NDda82rhwD9/JBCCkB+MRYDp0oSvlo2IL6rQWA10PQi7tDUM3eqMSltXmY+Oyl/7N3P3qNtAlv7X0d9bI28w==
 
-axios@^0.18.1:
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.1.tgz#ff3f0de2e7b5d180e757ad98000f1081b87bcea3"
-  integrity sha512-0BfJq4NSfQXd+SkFdrvFbG7addhYSBA2mQwISr46pD6E5iqkWg02RAs8vyTT/j0RTnoYmeXauBuSv1qKwR179g==
+axios@^0.19.2:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
   dependencies:
     follow-redirects "1.5.10"
-    is-buffer "^2.0.2"
 
 babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -4236,10 +4235,10 @@ follow-redirects@1.5.10, follow-redirects@^1.0.0:
   dependencies:
     debug "=3.1.0"
 
-fomantic-ui@^2.7.6:
-  version "2.7.6"
-  resolved "https://registry.yarnpkg.com/fomantic-ui/-/fomantic-ui-2.7.6.tgz#743525d83451cc4f8b370b870f08af2cd44db308"
-  integrity sha512-PkF5rQaj9Y+iCkA/2ULjlefLNs4gMckaUtU5LZoFSrmb7mNURhNbxAdI1ESUMwL0+RMXhTJ7C0S2v49nm4xi1A==
+fomantic-ui@^2.8:
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/fomantic-ui/-/fomantic-ui-2.8.4.tgz#4a910ff8cf877f356c1ea9cca95540ed4bb024f7"
+  integrity sha512-We34raC+xqoaIOFFamsN8cHc+tCNy+6JWjWmkWIEjeIxZRrbXsoqto8eLFjMIPEwL1C6H0FwONqt39AmL+8zeg==
   dependencies:
     "@octokit/rest" "^16.16.0"
     better-console "1.0.1"
@@ -4274,7 +4273,7 @@ fomantic-ui@^2.7.6:
     jquery "^3.4.0"
     less "^3.7.0"
     map-stream "^0.1.0"
-    merge-stream "^1.0.0"
+    merge-stream "^2.0.0"
     mkdirp "^0.5.1"
     normalize-path "^3.0.0"
     replace-ext "^1.0.0"
@@ -5713,11 +5712,6 @@ is-buffer@^1.1.5:
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
 
-is-buffer@^2.0.2:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.4.tgz#3e572f23c8411a5cfd9557c849e3665e0b290623"
-  integrity sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==
-
 is-builtin-module@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-builtin-module/-/is-builtin-module-1.0.0.tgz#540572d34f7ac3119f8f76c30cbc1b1e037affbe"
@@ -7127,6 +7121,11 @@ merge-stream@^1.0.0:
   integrity sha1-QEEgLVCKNCugAXQAjfDCUbjBNeE=
   dependencies:
     readable-stream "^2.0.1"
+
+merge-stream@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
+  integrity sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==
 
 method-override@^2.3.10:
   version "2.3.10"

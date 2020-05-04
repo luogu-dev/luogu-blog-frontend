@@ -4,7 +4,7 @@
      data-thumbUp="{{ postThumbUp }}">
   <article class="lg-article am-g">
     <h3 class="am-article-title blog-title">
-      <a :href="post.Identifier">{{ postTitle }}</a>
+      <a :href="post.identifier">{{ postTitle }}</a>
     </h3>
     <b> posted on {{ postTime }} | under <a href=".#type={{ postType }}">{{ postType }}</a>
       {{#if isBlogAdmin}}|

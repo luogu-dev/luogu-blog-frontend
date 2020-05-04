@@ -3,14 +3,14 @@
     <div v-if="ready">
       <article v-for="post in posts" class="lg-article am-g">
         <h3 class="am-article-title blog-title">
-          <a :href="post.Identifier">{{ post.Title }}</a>
+          <a :href="post.identifier">{{ post.title }}</a>
         </h3>
         <h4 class="am-article-meta blog-meta">
-          <span class="am-icon-thumbs-up">&nbsp;{{ post.ThumbUp }} </span>
-          | posted on {{ post.PostTime | formatDate }} | under
-          <a @click="type = post.Type" style="cursor: pointer">{{ post.Type }}</a>
+          <span class="am-icon-thumbs-up">&nbsp;{{ post.thumbUp }} </span>
+          | posted on {{ post.postTime | formatDate }} | under
+          <a @click="type = post.type" style="cursor: pointer">{{ post.type }}</a>
         </h4>
-        <p>{{ post.ContentDescription }}</p>
+        <p>{{ post.contentDescription }}</p>
       </article>
     </div>
     <loader v-else>

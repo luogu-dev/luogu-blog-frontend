@@ -17,36 +17,35 @@
               <a-col>
                 <a-row>
                   <a-list-item-meta>
-                    <a :href="post.Identifier" slot="title" style="font-weight: bold;">{{post.Title}}</a>
+                    <a :href="post.identifier" slot="title" style="font-weight: bold;">{{post.title}}</a>
                   </a-list-item-meta>
                 </a-row>
                 <a-row>
                   <a-list-item-meta>
                     <a-tooltip slot="description">
-                      <a-tag @click.stop.prevent="type = post.Type">{{post.Type}}</a-tag>
+                      <a-tag @click.stop.prevent="type = post.type">{{post.type}}</a-tag>
                     </a-tooltip>
                   </a-list-item-meta>
                 </a-row>
-                <a-row class="article-content">{{ post.ContentDescription }}</a-row>
+                <a-row class="article-content">{{ post.contentDescription }}</a-row>
                 <a-row>
-                  <a href>{{ post.Author.Username }}</a>
+                  <a href>{{ post.author.username }}</a>
                   <span class="inline-padding">发布于</span>
-                  <span class="text-grey">{{ post.PostTime | formatDate }}</span>
+                  <span class="text-grey">{{ post.postTime | formatDate }}</span>
                 </a-row>
                 <a-row class="article-actions">
                   <span>
                     <a-tooltip>
                       <a-icon type="like"/>
                     </a-tooltip>
-                    <span style="padding-left: '8px';cursor: 'auto'">{{post.ThumbUp}}</span>
+                    <span style="padding-left: '8px';cursor: 'auto'">{{post.thumbUp}}</span>
                   </span>
                   <a-divider type="vertical"/>
                   <span>
                     <a-tooltip>
                       <a-icon type="message"/>
                     </a-tooltip>
-                    <!-- 因为接口里没有评论数啊生气！ -->
-                    <!-- <span style="padding-left: '8px';cursor: 'auto'">111</span> -->
+                    <span style="padding-left: '8px';cursor: 'auto'">{{post.commentCount}}</span>
                   </span>
                 </a-row>
               </a-col>
@@ -113,7 +112,7 @@ export default {
       this.keyword = keyword;
       this.getPosts(1);
     });
-    
+
   },
 
   watch: defaultWatch,

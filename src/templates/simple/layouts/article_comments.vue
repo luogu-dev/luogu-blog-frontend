@@ -14,19 +14,19 @@
       <div class="spl-comment clearfix" v-for="comment in comments">
         <div class="avator">
           <a
-            :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
+            :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid"
             target="_blank"
           >
-            <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'">
+            <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.author.uid + '.png'">
           </a>
         </div>
         <div class="content">
           <div class="poster">
-            {{ comment.Author.Username }}
+            {{ comment.author.username }}
             <i class="icon wait"></i>
-            <time>{{ comment.ReplyTime | formatDate }}</time>
+            <time>{{ comment.time | formatDate }}</time>
           </div>
-          {{ comment.Content }}&nbsp;
+          {{ comment.content }}&nbsp;
         </div>
       </div>
       <pagination v-if="ready"

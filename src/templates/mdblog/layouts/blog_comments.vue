@@ -12,15 +12,15 @@
           <div class="mdblog-comments mdui-container">
               <div class="mdblog-comment mdui-row" style="margin-top: 50px;padding-right: 30px;" v-for="comment in comments">
                   <div class="mdui-col-xs-1">
-                      <img class="mdui-img-circle mdui-img-fluid" :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'"
-                           :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
+                      <img class="mdui-img-circle mdui-img-fluid" :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.author.uid + '.png'"
+                           :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid"
                            target="_blank">
                   </div>
                   <div class="mdui-col-xs-11">
-                      <div class="mdui-typo-body-1-opacity mdui-typo">{{ comment.Content }}&nbsp;</div>
+                      <div class="mdui-typo-body-1-opacity mdui-typo">{{ comment.content }}&nbsp;</div>
                       <div class="mdui-typo"><hr/></div>
-                      <a class="mdui-float-left mdui-typo-caption-opacity mdblog-comment-username" :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID">By {{ comment.Author.Username }}</a>
-                      <div class="mdui-typo-caption-opacity mdui-float-right">At {{ comment.ReplyTime | formatDate }}</div>
+                      <a class="mdui-float-left mdui-typo-caption-opacity mdblog-comment-username" :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid">By {{ comment.author.username }}</a>
+                      <div class="mdui-typo-caption-opacity mdui-float-right">At {{ comment.time | formatDate }}</div>
                   </div>
               </div>
               <pagination v-if="ready" :page="page" :totalPages="totalPages" :callback="getComments"></pagination>

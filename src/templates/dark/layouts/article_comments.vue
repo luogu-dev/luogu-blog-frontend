@@ -16,23 +16,23 @@
 
     <h3 class="ui dividing header">评论</h3>
     <div v-if="ready">
-      <div class="comment" v-for="comment in comments" :key="comment.ReplyTime">
+      <div class="comment" v-for="comment in comments" :key="comment.time">
         <a class="avatar"
-           :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
+           :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid"
            target="_blank">
-           <avatar :url="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'" :userName='comment.Author.Username' />
+           <avatar :url="BlogGlobals.picAddress + '/upload/usericon/' + comment.author.uid + '.png'" :userName='comment.author.username' />
         </a>
         <div class="content">
           <a class="author"
-             :href="BlogGlobals.luoguAddress + '/space/show?uid=' + comment.Author.UID"
+             :href="BlogGlobals.luoguAddress + '/space/show?uid=' + comment.author.uid"
              target="_blank">
-            {{ comment.Author.Username }}
+            {{ comment.author.username }}
           </a>
           <div class="metadata">
-            <span class="date">发表于 {{ comment.ReplyTime | formatDate }}</span>
+            <span class="date">发表于 {{ comment.time | formatDate }}</span>
           </div>
           <div class="font-color-1">
-            {{ comment.Content }}&nbsp;
+            {{ comment.content }}&nbsp;
           </div>
         </div>
       </div>

@@ -18,12 +18,12 @@
       </div>
     </div>
     <div class="hola-columns-item" v-for="post in posts">
-      <a :href="post.Identifier" style="text-decoration: none; color: var(--hola-text-dark-color);">
+      <a :href="post.identifier" style="text-decoration: none; color: var(--hola-text-dark-color);">
         <div class="hola-card">
           <h2 class="hola-card-title">
-            {{ post.Title }}
+            {{ post.title }}
           </h2>
-          <p style="word-wrap: break-all; line-height: 2em;"><span class="hola-badge" @click.stop.prevent="type = post.Type">{{ post.Type }}</span> {{ post.ContentDescription }}</p>
+          <p style="word-wrap: break-all; line-height: 2em;"><span class="hola-badge" @click.stop.prevent="type = post.type">{{ post.type }}</span> {{ post.contentDescription }}</p>
         </div>
       </a>
     </div>

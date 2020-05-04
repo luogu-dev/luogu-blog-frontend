@@ -5,15 +5,15 @@
         <div class="col post-list-container"
              style="margin-top: 30px;">
           <div class="post-list" v-for="post in posts">
-            <a :href="post.Identifier">
+            <a :href="post.identifier">
               <h2 class="post-title">
-                {{ post.Title }}
+                {{ post.title }}
               </h2>
               <div class="post-content-preview">
-                {{ post.ContentDescription }}
+                {{ post.contentDescription }}
               </div>
               <div class="post-meta">
-                {{ post.Type }} on {{ post.PostTime | formatDate }}
+                {{ post.type }} on {{ post.postTime | formatDate }}
               </div>
             </a>
             <hr/>

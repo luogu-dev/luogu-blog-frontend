@@ -18,21 +18,21 @@
     <div v-if="ready">
       <div class="comment" v-for="comment in comments">
         <a class="avatar"
-           :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.Author.UID"
+           :href="BlogGlobals.luoguAddress +'/space/show?uid=' + comment.author.uid"
            target="_blank">
-          <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.Author.UID + '.png'">
+          <img :src="BlogGlobals.picAddress + '/upload/usericon/' + comment.author.uid + '.png'">
         </a>
         <div class="content">
           <a class="author"
-             :href="BlogGlobals.luoguAddress + '/space/show?uid=' + comment.Author.UID"
+             :href="BlogGlobals.luoguAddress + '/space/show?uid=' + comment.author.uid"
              target="_blank">
-            {{ comment.Author.Username }}
+            {{ comment.author.username }}
           </a>
           <div class="metadata">
-            <span class="date">发表于 {{ comment.ReplyTime | formatDate }}</span>
+            <span class="date">发表于 {{ comment.time | formatDate }}</span>
           </div>
           <div class="text">
-            {{ comment.Content }}&nbsp;
+            {{ comment.content }}&nbsp;
           </div>
         </div>
       </div>

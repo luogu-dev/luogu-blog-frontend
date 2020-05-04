@@ -1,19 +1,19 @@
 <template>
   <div id="article-list">
-    <article v-for="post in posts" :key="post.Identifier" class="spl-article">
+    <article v-for="post in posts" :key="post.identifier" class="spl-article">
       <header>
         <div class="spl-header">
-          <a :href="post.Identifier">{{ post.Title }}</a>
+          <a :href="post.identifier">{{ post.title }}</a>
         </div>
         <i class="icon wait"></i>
-        <time>{{ post.PostTime | formatDate }}</time>
-        <a href="javascript:void 0" @click="type = post.Type">
+        <time>{{ post.postTime | formatDate }}</time>
+        <a href="javascript:void 0" @click="type = post.type">
           <i class="icon bookmark"></i>
-          {{ post.Type }}
+          {{ post.type }}
         </a>
       </header>
       <div class="spl-article-body">
-        {{ post.ContentDescription }}
+        {{ post.contentDescription }}
       </div>
     </article>
     <pagination v-if="ready"
