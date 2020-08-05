@@ -67,3 +67,12 @@ main {
 .mdblog-comment-send-btn {
   cursor:pointer;
 }
+
+.mdui-appbar {
+  width: 100%;
+}
+
+.mdui-textfield {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
