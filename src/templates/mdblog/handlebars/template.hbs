@@ -101,11 +101,11 @@ window.BlogGlobals = {
   blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
   blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
   currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
-  isAuthor: (this.blogUID === this.currentUser),
   luoguAddress: '{{ luoguAddress }}',
   picAddress: '{{ picAddress }}',
   config: JSON.parse(document.querySelector('meta[name=theme-settings]').getAttribute('content'))
 }
+BlogGlobals.isBlogAdmin = BlogGlobals.blogUID === BlogGlobals.currentUser;
 </script>
 <script src="/static/blog/mdblog/common.js"></script>
 {{>scripts}}
