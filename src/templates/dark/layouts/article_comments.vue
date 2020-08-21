@@ -43,7 +43,7 @@
       无法显示评论,评论获取失败
     </div>
     <div v-else class="message-invisiable">
-      <a href="https://www.luogu.org/">登陆</a>之后才能查看评论
+      <a href="https://www.luogu.com.cn/">登录</a>之后才能查看评论
     </div>
   </div>
 </template>
