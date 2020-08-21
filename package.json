@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js,.vue,.hbs src/",
     "lint-fix": "eslint --ext .js,.vue,.hbs --fix src/",
     "dev-server": "node src/devserver/index.js",
-    "dev": "npm run build-dev && npm run dev-server",
+    "dev": "yarn build-dev && yarn dev-server",
     "analyze": "cross-env NODE_ENV=development BUNDLE_ANALYZE=true webpack --progress --hide-modules"
   },
   "dependencies": {
@@ -24,7 +24,7 @@
     "date-fns": "^2.12.0",
     "fomantic-ui": "^2.8.6",
     "font-awesome": "^4.7.0",
-    "highlight.js": "^10.0.2",
+    "highlight.js": "^10.1.2",
     "holakit": "^0.23.0",
     "i": "^0.3.6",
     "jquery": "^3.5.0",
@@ -75,10 +75,10 @@
     "url-loader": "^4.1.0",
     "vue-loader": "^15.9.2",
     "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.43.0",
+    "webpack": "^4.44.1",
     "webpack-bundle-analyzer": "^3.7.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "resolutions": {
     "natives": "1.1.6"
