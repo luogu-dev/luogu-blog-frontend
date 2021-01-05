@@ -18,7 +18,7 @@
     "@babel/polyfill": "^7.10.4",
     "amazeui": "^2.7.2",
     "ant-design-vue": "^1.5.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.13.0",
     "date-fns": "^2.12.0",
