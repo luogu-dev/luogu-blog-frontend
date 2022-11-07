@@ -42,5 +42,5 @@ export async function postComment () {
   })
   this.commentContent = ''
   this.commentPosting = false
-  this.getComments(1 + parseInt((this.commentCount) / 10))
+  this.getComments(1)
 }
