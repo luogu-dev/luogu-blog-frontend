@@ -1,0 +1,11 @@
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+:root[data-theme=light] .hljs{color:#24292e}:root[data-theme=light] .hljs-doctag,:root[data-theme=light] .hljs-keyword,:root[data-theme=light] .hljs-meta:root[data-theme=light] .hljs-keyword,:root[data-theme=light] .hljs-template-tag,:root[data-theme=light] .hljs-template-variable,:root[data-theme=light] .hljs-type,:root[data-theme=light] .hljs-variable.language_{color:#d73a49}:root[data-theme=light] .hljs-title,:root[data-theme=light] .hljs-title.class_,:root[data-theme=light] .hljs-title.class_.inherited__,:root[data-theme=light] .hljs-title.function_{color:#6f42c1}:root[data-theme=light] .hljs-attr,:root[data-theme=light] .hljs-attribute,:root[data-theme=light] .hljs-literal,:root[data-theme=light] .hljs-meta,:root[data-theme=light] .hljs-number,:root[data-theme=light] .hljs-operator,:root[data-theme=light] .hljs-selector-attr,:root[data-theme=light] .hljs-selector-class,:root[data-theme=light] .hljs-selector-id,:root[data-theme=light] .hljs-variable{color:#005cc5}:root[data-theme=light] .hljs-meta:root[data-theme=light] .hljs-string,:root[data-theme=light] .hljs-regexp,:root[data-theme=light] .hljs-string{color:#032f62}:root[data-theme=light] .hljs-built_in,:root[data-theme=light] .hljs-symbol{color:#e36209}:root[data-theme=light] .hljs-code,:root[data-theme=light] .hljs-comment,:root[data-theme=light] .hljs-formula{color:#6a737d}:root[data-theme=light] .hljs-name,:root[data-theme=light] .hljs-quote,:root[data-theme=light] .hljs-selector-pseudo,:root[data-theme=light] .hljs-selector-tag{color:#22863a}:root[data-theme=light] .hljs-subst{color:#24292e}:root[data-theme=light] .hljs-section{color:#005cc5;font-weight:700}:root[data-theme=light] .hljs-bullet{color:#735c0f}:root[data-theme=light] .hljs-emphasis{color:#24292e;font-style:italic}:root[data-theme=light] .hljs-strong{color:#24292e;font-weight:700}:root[data-theme=light] .hljs-addition{color:#22863a;background-color:#f0fff4}:root[data-theme=light] .hljs-deletion{color:#b31d28;background-color:#ffeef0}

@@ -1,0 +1,32 @@
+<div id='nav-bar'></div>
+<div id='header-block'>
+  <div id='header-block-content'>
+    <div class='post-title'>{{ postTitle }}</div>
+    <div class='post-info'>
+      <div id='post-votes'></div>
+      <span class='post-detail'>发布于 {{ postTime }}</span>
+    </div>
+  </div>
+</div>
+
+<div id="blog-container" data-blogid="{{ postID }}" data-vote="{{ userVote }}" data-thumbUp="{{ postThumbUp }}">
+  <div id="blog-contents">
+    <div id="article-wrapper">
+      <div id="article-content">
+        {{{ postContent }}}
+        <hr>
+        <p>文章发布于 {{ postTime }}，在 <a href=".#type={{ postType }}">{{ postType }}</a> 分类下。{{#if isBlogAdmin}}
+            <a href="{{ luoguAddress }}/blogAdmin/article/edit/{{ postID }}">编辑此页</a>。
+          {{/if}}</p>
+      </div>
+      <div id="article-comments"></div>
+    </div>
+    <div id="toc-wrapper">
+      <div id="toc">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<link rel="stylesheet" href="/static/blog/oipress/katex.css">

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="blog-uid" content="{{ blogUID }}">
+    <meta name="blog-name" content="{{ blogName }}">
+    <meta name="current-user" content="{{ currentUser }}">
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Fira+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/blog/oipress/common.css">{{>styles}}
+    <title>{{ title }} - {{ blogName }} - 洛谷博客</title>
+    <script>
+document.documentElement.setAttribute('data-theme', localStorage.getItem('oipress-theme') || 'light')
+    </script>
+  </head>
+
+  <body>
+    <div>
+{{>content}}
+      <div class="footer-wrapper">
+        <div class="footer">
+          <p>
+            <a href="_sitemap">Site Map</a>
+            <span class="splitter"></span>
+            <a href="https://github.com/luogu-dev/luogu-blog-frontend">GitHub</a>
+            <span class="splitter"></span>
+            <a href="{{ luoguAddress }}">洛谷</a>
+            <span class="splitter"></span>
+            <a href="https://www.luogu.com.cn/blog/tiger2005/oi-press">Theme Guide</a>
+          </p>
+          <p>
+            The major design concept of this theme originated from <a href="https://squidfunk.github.io/mkdocs-material/">MKDocs Material</a>.
+          </p>
+          <p>Powered by Luogu Blog. Theme "OI Press" by tiger2005. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+var BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  luoguAddress: '{{ luoguAddress }}',
+  picAddress: '{{ picAddress }}'
+}
+    </script>
+    <script src="/static/blog/oipress/common.js">
+    </script>{{>scripts}}
+  </body>
+
+</html>
