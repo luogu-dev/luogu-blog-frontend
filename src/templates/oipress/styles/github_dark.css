@@ -1,0 +1,11 @@
+/*!
+  Theme: GitHub Dark
+  Description: Dark theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-dark
+  Current colors taken from GitHub's CSS
+*/
+:root[data-theme=dark] .hljs{color:#c9d1d9}:root[data-theme=dark] .hljs-doctag,:root[data-theme=dark] .hljs-keyword,:root[data-theme=dark] .hljs-meta:root[data-theme=dark] .hljs-keyword,:root[data-theme=dark] .hljs-template-tag,:root[data-theme=dark] .hljs-template-variable,:root[data-theme=dark] .hljs-type,:root[data-theme=dark] .hljs-variable.language_{color:#ff7b72}:root[data-theme=dark] .hljs-title,:root[data-theme=dark] .hljs-title.class_,:root[data-theme=dark] .hljs-title.class_.inherited__,:root[data-theme=dark] .hljs-title.function_{color:#d2a8ff}:root[data-theme=dark] .hljs-attr,:root[data-theme=dark] .hljs-attribute,:root[data-theme=dark] .hljs-literal,:root[data-theme=dark] .hljs-meta,:root[data-theme=dark] .hljs-number,:root[data-theme=dark] .hljs-operator,:root[data-theme=dark] .hljs-selector-attr,:root[data-theme=dark] .hljs-selector-class,:root[data-theme=dark] .hljs-selector-id,:root[data-theme=dark] .hljs-variable{color:#79c0ff}:root[data-theme=dark] .hljs-meta:root[data-theme=dark] .hljs-string,:root[data-theme=dark] .hljs-regexp,:root[data-theme=dark] .hljs-string{color:#a5d6ff}:root[data-theme=dark] .hljs-built_in,:root[data-theme=dark] .hljs-symbol{color:#ffa657}:root[data-theme=dark] .hljs-code,:root[data-theme=dark] .hljs-comment,:root[data-theme=dark] .hljs-formula{color:#8b949e}:root[data-theme=dark] .hljs-name,:root[data-theme=dark] .hljs-quote,:root[data-theme=dark] .hljs-selector-pseudo,:root[data-theme=dark] .hljs-selector-tag{color:#7ee787}:root[data-theme=dark] .hljs-subst{color:#c9d1d9}:root[data-theme=dark] .hljs-section{color:#1f6feb;font-weight:700}:root[data-theme=dark] .hljs-bullet{color:#f2cc60}:root[data-theme=dark] .hljs-emphasis{color:#c9d1d9;font-style:italic}:root[data-theme=dark] .hljs-strong{color:#c9d1d9;font-weight:700}:root[data-theme=dark] .hljs-addition{color:#aff5b4;background-color:#033a16}:root[data-theme=dark] .hljs-deletion{color:#ffdcd7;background-color:#67060c}
